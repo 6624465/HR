@@ -9,6 +9,9 @@ namespace HR.App_Start
     using Ninject;
     using Ninject.Web.Common;
     using Data;
+    using Service.Master;
+    using Service.Master.IMasterService;
+    using Service.Master.MasterService;
     public static class NinjectWebCommon 
     {
         private static readonly Bootstrapper bootstrapper = new Bootstrapper();
@@ -60,6 +63,7 @@ namespace HR.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind(typeof(IRepository<>)).To(typeof(Repository<>)).InRequestScope();
-        }        
+            kernel.Bind<IMaster>().To<Master>();
+        }
     }
 }

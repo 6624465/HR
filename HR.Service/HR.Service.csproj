@@ -49,6 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Master\IMasterService\IMaster.cs" />
+    <Compile Include="Master\MasterService\Master.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -56,8 +58,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Master\IMasterService\" />
-    <Folder Include="Master\MasterService\" />
+    <ProjectReference Include="..\HR.Core\HR.Core.csproj">
+      <Project>{d7d12fea-e02c-41e1-8496-8687ed67ccda}</Project>
+      <Name>HR.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HR.Data\HR.Data.csproj">
+      <Project>{5d5e9e1d-54b8-4513-8f1b-4e9870f96ca3}</Project>
+      <Name>HR.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

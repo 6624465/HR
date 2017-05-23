@@ -1,0 +1,214 @@
+﻿@*@model IEnumerable<HR.Core.Models.Master.Company>
+    @model IEnumerable<HR.ViewModels.CountryViewModel>*@
+@{
+    ViewBag.Title = "Company";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+   .my-Validate-class {
+    color:red;
+}
+</style>
+<form method="post" style="margin: 5% 0 0" action="/Company/SaveCompany" name="customer">
+    <div class="card-body card-padding p-t-15 p-b-15" id="profile-main">
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <div class="form-group fg-line">
+                    <label>Company Code</label>
+                    <input type="text" id="txt-CompanyCode" name="CompanyCode" class="form-control" />@*data-val-required="Please enter company code."*@
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <div class="form-group fg-line">
+                    <label>Name</label>
+                    <input type="text" id="txt-CompanyName" name="CompanyName" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+
+                <div class="form-group fg-line">
+                    <div class="form-group fg-line">
+                        <label>Reg NO</label>
+                        <input type="text" id="txt-RegNo" name="RegNo" class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pmbb-header  m-b-15">Address</div>
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <div class="form-group fg-line">
+                    <lable id="lbl-Address1">Address1</lable>
+                    <input type="text" class="form-control" name="Address.Address1" id="txt-Address1" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <div class="form-group fg-line">
+                    <lable id="lbl-Address2">Address2</lable>
+                    <input type="text" class="form-control" name="Address.Address2" id="txt-Address2" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <div class="form-group fg-line">
+                    <lable id="lbl-City">City</lable>
+                    <input type="text" id="txt-City" name="Address.CityName" class="form-control" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <div class="form-group fg-line">
+                    <lable id="lbl-State">State</lable>
+                    <input type="text" id="txt-State" name="Address.StateName" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-xs-12 col-md-6">
+                <div class="form-group fg-line">
+                    <lable id="lbl-ZIPCode">ZIP Code</lable>
+                    <input type="text" id="txt-ZIPCode" name="Address.ZipCode" class="form-control" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <div class="form-group fg-line">
+                    <lable id="lbl-Country">Country</lable>
+                    @Html.DropDownList("Address.CountryId", new SelectList((System.Collections.IEnumerable)ViewData["Countries"], "Id", "CountryName"), "Please select a Country", new { @class = "form-control" })
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <div class="form-group fg-line">
+                    <lable id="lbl-PhoneNo">Phone No</lable>
+                    <input type="text" id="txt-PhoneNo" name="Address.MobileNo" class="form-control" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <div class="form-group fg-line">
+                    <lable id="lbl-Fax">Fax</lable>
+                    <input type="text" id="txt-Fax" name="Address.FaxNo" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <div class="form-group fg-line">
+                    <lable id="lbl-WebSite">Web Site</lable>
+                    <input type="text" id="txt-WebSite" class="form-control" name="Address.Email" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <button type="Submit" class="btn btn-primary btn-sm waves-effect">Save</button>
+                <button type="button" class="btn btn-primary btn-sm waves-effect">Add Branch</button>
+            </div>
+        </div>
+    </div>
+</form>
+<script src="~/scripts/jquery-1.10.2.min.js"></script>
+<script src="~/scripts/jquery.validate.min.js"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        jQuery.validator.addMethod("noSpace", function (value, element) {
+            debugger//Code used for blank space Validation 
+            return value.indexOf(" ") < 0 && value != "";
+        });
+
+        $("form").validate({
+            errorClass: "my-Validate-class",
+            rules: {
+                CompanyCode: {
+                    //noSpace: true,
+                    required: true,
+                },
+                //CompanyCode: "required",
+                CompanyName: {
+                    noSpace: true,
+                    required: true,
+                },
+                RegNo: {
+                    noSpace: true,
+                    required: true,
+                },
+            },
+            messages: {
+                CompanyCode: "CompanyCode field cannot be blank!",
+                CompanyName: "Name field cannot be blank!",
+                RegNo: "RegNo field cannot be blank!"
+            }
+        })
+      
+       
+
+        //});
+        //$.ajax({
+        //    url: '/Company/GetCountries',
+        //    type: "POST",
+        //    dataType: "json",
+        //    async: false,
+        //    contentType: 'application/json, charset=utf-8',
+        //    success: function (data) {
+        //        $.each(data, function (index, elem) {
+        //            $('#ddl-Country').append($("<option value='" + elem.Id + "'>" + elem.CountryName + "</option>"));
+        //        })
+        //    },
+        //    error: function (e, data) {
+        //        notify("error", '');
+        //    }
+        //});
+        //var companyId = 4;
+        //$.ajax({
+        //    url: '/Company/getCompanyDetails',
+        //    type: "GET",
+        //    dataType: "json",
+        //    //async: false,
+        //    data: { companyId: companyId },
+        //    contentType: 'application/json, charset=utf-8',
+        //    success: function (data) {
+        //        $('#txt-Address1').val(data.AddressID);
+        //        $('#txt-CompanyCode').val(data.CompanyCode);
+        //        $('#txt-CompanyName').val(data.CompanyName);
+        //        $('#txt-RegNo').val(data.RegNo);
+        //    },
+        //    error: function (e, data) {
+        //        notify("error", '');
+        //    }
+        //});
+
+        //$('#btn-Save').click(function () {
+        //    $.ajax({
+        //        url: "/Company/SaveComanyDetails",
+        //        type: "POST",
+        //        dataType: "json",
+        //        async: false,
+        //        contentType: 'application/json, charset=utf-8',
+        //        data: JSON.stringify({
+        //            companyViewModel: {
+        //                AddressID: $('#txt-Address1').val(),
+        //                CompanyCode: $('#txt-CompanyCode').val(),
+        //                CompanyName: $('#txt-CompanyName').val(),
+        //                IsActive: true,
+        //                RegNo: $('#txt-RegNo').val(),
+        //            }
+        //        }),
+        //        success: function (data) {
+        //        }
+        //    })
+        //})
+
+        //$('#btn-Branch').click(function () {
+        //    location.href = '/Branch/Index';
+        //})
+    })
+
+</script>

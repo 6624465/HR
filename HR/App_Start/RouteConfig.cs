@@ -13,11 +13,19 @@ namespace HR
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            //routes.MapRoute(
+            //    name: "Default",
+            //    url: "{controller}/{action}/{id}",
+            //    defaults: new { controller = "Branch", action = "Branch", id = UrlParameter.Optional }
+            //);
+
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+                "Default", // Route name
+                "{controller}/{action}/{id}", // URL with parameters
+                new { area = "Branch", controller = "Branch", action = "Index", id = UrlParameter.Optional }, // Parameter defaults
+                null,
+                new[] { "HrProject.Areas.Master.Controllers" }
+            ).DataTokens.Add("area", "Master");
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
@@ -10,8 +11,13 @@ namespace HR.Data
 {
     public class Repository<T> : IRepository<T> where T :class
     {
-        private readonly HRDbContext hrDbContext = null;
+        public readonly HRDbContext hrDbContext;
         private IDbSet<T> entities;
+
+        public Repository(HRDbContext context)
+        {
+            this.hrDbContext = context;
+        }
         public T GetById(object id)
         {
             return this.Entities.Find(id);
@@ -95,6 +101,22 @@ namespace HR.Data
                 }
                 var fail = new Exception(msg, dbEx);
                 throw fail;
+            }
+        }
+
+        public IQueryable<T> FindAll(bool disableProxies = false)
+        {
+            try
+            {
+                if (disableProxies)
+                    ((IObjectContextAdapter)hrDbContext).ObjectContext.ContextOptions.ProxyCreationEnabled = false;
+
+                return hrDbContext.Set<T>();
+            }
+            finally
+            {
+                if (disableProxies)
+                    ((IObjectContextAdapter)hrDbContext).ObjectContext.ContextOptions.ProxyCreationEnabled = true;
             }
         }
 

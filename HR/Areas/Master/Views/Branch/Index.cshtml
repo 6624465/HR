@@ -1,0 +1,182 @@
+﻿
+@{
+    ViewBag.Title = "Branch";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card-header">
+    <h2>
+        Branch Profile
+    </h2>
+</div>
+@using (Html.BeginForm("SaveBranchDetails", "Branch"))
+{
+    <div class="card-body card-padding p-t-15 p-b-15" id="profile-main">
+        <div class="row" style="margin-bottom: 15px;">
+            <div class="col-sm-12 col-md-6">
+                <div class="form-group fg-line">
+                    <lable id="lbl-BranchCode">Branch Code</lable>
+
+                    <input type="text" id="txt-BranchCode" name="BranchCode" class="form-control" />
+                </div>
+            </div> <div class="col-sm-12 col-md-6">
+                <div class="form-group fg-line">
+                    <lable id="lbl-Name">Registration No.</lable>
+
+                    <input type="text" id="txt-RegistrationNo" name="RegNo" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <div class="form-group fg-line">
+                    <lable id="lbl-BranchName">Branch Name</lable>
+
+                    <input type="text" id="txt-BranchName" class="form-control" name="BranchName" />
+                </div>
+            </div>   <div class="col-sm-12 col-md-6">
+                <div class="form-group fg-line">
+                    <lable id="lbl-CompanyCode">Company Code.</lable>
+
+                    <input type="text" id="txt-CompanyCode" class="form-control" disabled name="CompanyCode" />
+                </div>
+            </div>
+        </div>
+        <div class="pmbb-header m-b-15">Address</div>
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <div class="form-group fg-line">
+                    <lable id="lbl-Address1">Address1</lable>
+                    <input type="text" class="form-control" id="txt-Address1" placeholder="Address1" name="Address.Address1" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <div class="form-group fg-line">
+                    <lable id="lbl-Address2">Address2</lable>
+                    <input type="text" class="form-control" id="txt-Address2" placeholder="Address2" name="Address.Address2" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <div class="form-group fg-line">
+                    <lable id="lbl-City">City</lable>
+
+                    <input type="text" id="txt-City" name="Address.CityName" class="form-control"  />
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <div class="form-group fg-line">
+                    <lable id="lbl-State">State</lable>
+
+                    <input type="text" id="txt-State" name="Address.StateName" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-xs-12 col-md-6">
+                <div class="form-group fg-line">
+                    <lable id="lbl-ZIPCode">ZIP Code</lable>
+                    <input type="text" id="txt-ZIPCode" name="Address.ZipCode" class="form-control" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <div class="form-group fg-line">
+                    <lable id="lbl-Country">Country</lable>
+
+                    @*<input type="text" id="txt-Country" name="txt-Country" placeholder="Country"/>*@
+                    @*<select id="ddl-Country" class="selectpicker" name="selector">
+                        <option value="">Select a Country</option>
+                    </select>*@
+                    @Html.DropDownList("Address.CountryId", new SelectList((System.Collections.IEnumerable)ViewData["Countries"], "Id", "CountryName"), new { @class = "form-control" })
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-xs-12 col-md-6">
+                <div class="form-group fg-line">
+                    <lable id="lbl-PhoneNo">Phone No</lable>
+                    <input type="text" id="txt-PhoneNo" name="Address.MobileNo" class="form-control" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <div class="form-group fg-line">
+                    <lable id="lbl-Fax">Fax</lable>
+                    <input type="text" id="txt-Fax" name="Address.FaxNo" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <div class="form-group fg-line">
+                    <lable id="lbl-WebSite">Email</lable>
+                    <input type="text" id="txt-WebSite" class="form-control" name="Email" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <div class="form-group fg-line">
+                    <lable id="lbl-WebSite">Web Site</lable>
+                    <input type="text" id="txt-WebSite" class="form-control" name="Address.WebSite" />
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-xs-12 col-md-6 text-left">
+                <button type="Submit" id="btn-Save" class="btn btn-primary btn-sm waves-effect">Save</button>
+                <button type="button" id="btn-Delete" class="btn btn-danger btn-sm waves-effect"> Delete </button>
+
+
+            </div>
+            <div class="col-xs-12 col-md-6 text-right">
+                <button type="button" class="btn btn-default btn-sm waves-effect" id="btn-Clear">Clear</button><button type="button" id="btn-Back" class="btn btn-primary btn-sm waves-effect"> Back </button>
+
+            </div>
+        </div>
+    </div>
+}
+@*<script src="~/scripts/jquery-3.2.1.min.js"></script>*@
+<script type="text/javascript">
+    //$(document).ready(function () {
+
+    //    $.ajax({
+    //        url: '/Company/GetCountries',
+    //        type: "POST",
+    //        dataType: "json",
+    //        async: false,
+    //        contentType: 'application/json, charset=utf-8',
+    //        success: function (data) {
+    //            $.each(data, function (index, elem) {
+    //                $('#ddl-Country').append($("<option value='" + elem.Id + "'>" + elem.CountryName + "</option>"));
+    //            })
+    //        },
+    //        error: function (e, data) {
+    //            notify("error", '');
+    //        }
+    //    });
+    //    $('#btn-Save').click(function () {
+    //        $.ajax({
+    //            url: "/Branch/SaveBrachDetails",
+    //            type: "POST",
+    //            dataType: "json",
+    //            async: false,
+    //            contentType: 'application/json, charset=utf-8',
+    //            data: JSON.stringify({
+    //                branchViewModel: {
+    //                    BranchCode: $('#txt-BranchCode').val(),
+    //                    BranchName: $('#txt-BranchName').val(),
+    //                    RegNo: $('#txt-RegistrationNo').val(),
+    //                    IsActive: true,
+    //                    CompanyCode: $('#txt-CompanyCode').val(),
+    //                    AddressID: $('#txt-Address1').val(),
+    //                }
+    //            })
+    //        })
+    //    })
+    //})
+</script>
