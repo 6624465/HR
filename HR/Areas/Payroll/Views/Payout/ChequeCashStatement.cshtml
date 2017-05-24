@@ -1,0 +1,135 @@
+﻿
+@{
+    ViewBag.Title = "ChequeCashStatement";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="card-header">
+    <h2>
+        Cash Statement and Tracker
+    </h2>
+
+</div>
+<div class="card-body card-padding" id="profile-main">
+    <div class="card">
+        <div class="card-body card-padding">
+
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <div class="checkbox m-b-15 ">
+                        <label>
+                            <input type="checkbox" value="" id="chk1">
+                            <i class="input-helper"></i>
+                            Select all employees across all pages for the selected filter criteria
+
+                        </label>
+                    </div>
+
+                </div>
+                <div class="col-sm-12 col-md-2">
+                    <div class="form-group fg-line">
+                        <label>status</label>
+                        <select class="selectpicker" data-live-search="true" title='filter'>
+                            <option>All</option>
+                            <option>Jan 2017</option>
+
+                        </select>
+                    </div>
+
+                </div>
+                <div class="col-sm-12 col-md-2">
+                    <div class="form-group fg-line">
+                        <label>Payment Type</label>
+                        <select class="selectpicker" data-live-search="true" title='filter'>
+                            <option>cash</option>
+                            <option>Jan 2017</option>
+
+                        </select>
+                    </div>
+
+                </div>
+                <div class="col-sm-12 col-md-2">
+                    <div class="form-group fg-line">
+                        <label>Employee</label>
+                        <select class="selectpicker" data-live-search="true" title='filter'>
+                            <option>All</option>
+                            <option>Jan 2017</option>
+
+                        </select>
+                    </div>
+
+                </div>
+            
+            </div>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+
+                    <th>Employee No</th>
+                    <th>Name</th>
+                    <th>Net Pay</th>
+                    <th>Salary Paid</th>
+                    <th>Paid On</th>
+                    <th>Remarks</th>
+                  
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+
+                    <th>Component</th>
+                    <th>APR</th>
+                    <th>MAY</th>
+                    <th>JUN</th>
+                    <th>JULY</th>
+                    <th>AUG</th>
+                    <th>SEP</th>
+                    <th>OCT</th>
+                    <th>NOV</th>
+                    <th>DEC</th>
+                    <th>JAN</th>
+                    <th>FAB</th>
+                    <th>MAR</th>
+                    <th>TOTAL</th>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr>
+
+                    <td>CONVEYANCE</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+
+                    <td>0</td>
+                    <td>0</td>
+                    <td>1,548</td>
+                    <td>1,600</td>
+                    <td>1,600</td>
+                    <td>4,748</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="row m-t-25 text-right">
+        <div class="col-xs-12">
+            <a href="" class="btn btn-primary waves-effect btn-sm">  Cheque Paid Report</a>
+
+            <a href="" class="btn btn-primary waves-effect btn-sm">  Cheque Unpaid Report</a>
+
+            <a href="" class="btn btn-primary waves-effect btn-sm"> Cheque Paid Voucher</a>
+
+            <a href="" class="btn btn-primary waves-effect btn-sm"> Save</a>
+        </div>
+    </div>
+</div>

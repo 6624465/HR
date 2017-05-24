@@ -1,0 +1,862 @@
+﻿
+@{
+    ViewBag.Title = "IncomeTax";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card-header">
+    <h2>
+        Income Tax
+    </h2>
+
+</div>
+<div class="card-body card-padding" id="profile-main">
+    <div class="row m-b-25">
+        <div class="col-sm-12 col-md-4">
+            <select class="selectpicker" data-live-search="true" title='slect an employee'>
+                <option>Vinathi</option>
+            </select>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body card-padding">
+
+            <div class="row">
+                <div class="col-sm-12 col-md-4">
+                    <dl class="dl-horizontal"> <dt>Join Date</dt><dd>	01/01/2016</dd></dl>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <dl class="dl-horizontal"> <dt>Date Of Birth</dt><dd>	01/01/1979 (37 Yrs 10 Months)</dd></dl>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <dl class="dl-horizontal"> <dt>Gender</dt><dd>	Male</dd></dl>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-4">
+                    <dl class="dl-horizontal"> <dt>Location</dt><dd>Bangalore</dd></dl>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-xs-12 text-right">
+            <a href="@Url.Action("Salary","PayrollInputs",new { area ="Payroll"},null)" class="btn btn-primary waves-effect btn-sm">
+
+
+                Back To Salary
+            </a>
+
+            <a href="" class="btn bgm-gray waves-effect btn-sm">
+
+
+                Save
+            </a>
+            <a href="" class="btn bgm-gray waves-effect btn-sm">
+
+
+                Recalculate
+            </a>
+
+        </div>
+    </div>
+    <div class="row m-t-25">
+        <div class="col-sm-12 ">
+            <div class="" id="profile-main">
+                <div class="pm-body clearfix p-0">
+                    <div class="form-wizard-basic fw-container">
+                        <ul class="tab-nav text-left">
+                            <li><a href="#Income" data-toggle="tab">Income</a></li>
+                            <li><a href="#Income-Previous" data-toggle="tab">Income From Previous Employer</a></li>
+                            <li><a href="#Exemptions" data-toggle="tab">Exemptions</a></li>
+                            <li><a href="#Perquisite" data-toggle="tab">Perquisite</a></li>
+                            <li><a href="#Deductions" data-toggle="tab">Deductions</a></li>
+                            <li><a href="#Other-Income" data-toggle="tab">Other Income</a></li>
+                            <li><a href="#Result" data-toggle="tab">Result</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <div class="tab-pane fade" id="Income">
+
+                                <div class="row">
+                                    <div class="col-sm-12 ">
+                                        <div class="card-header">
+                                            <h2>
+                                                Tax Related Components
+                                            </h2>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                    <tr>
+
+                                                        <th>Component</th>
+                                                        <th>APR</th>
+                                                        <th>MAY</th>
+                                                        <th>JUN</th>
+                                                        <th>JULY</th>
+                                                        <th>AUG</th>
+                                                        <th>SEP</th>
+                                                        <th>OCT</th>
+                                                        <th>NOV</th>
+                                                        <th>DEC</th>
+                                                        <th>JAN</th>
+                                                        <th>FAB</th>
+                                                        <th>MAR</th>
+                                                        <th>TOTAL</th>
+                                                    </tr>
+                                                </thead>
+                                                <tfoot>
+                                                    <tr>
+
+                                                        <th>Component</th>
+                                                        <th>APR</th>
+                                                        <th>MAY</th>
+                                                        <th>JUN</th>
+                                                        <th>JULY</th>
+                                                        <th>AUG</th>
+                                                        <th>SEP</th>
+                                                        <th>OCT</th>
+                                                        <th>NOV</th>
+                                                        <th>DEC</th>
+                                                        <th>JAN</th>
+                                                        <th>FAB</th>
+                                                        <th>MAR</th>
+                                                        <th>TOTAL</th>
+                                                    </tr>
+                                                </tfoot>
+                                                <tbody>
+                                                    <tr>
+
+                                                        <td>CONVEYANCE</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>0</td>
+
+                                                        <td>0</td>
+                                                        <td>0</td>
+                                                        <td>1,548</td>
+                                                        <td>1,600</td>
+                                                        <td>1,600</td>
+                                                        <td>4,748</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="card m-t-25">
+                                    <div class="card-body card-padding">
+                                        <div class="row">
+
+                                            <div class="col-sm-12 col-md-4 ">
+                                                <dl class="dl-horizontal"> <dt> Total Monthly Salary : </dt><dd> Rs -3,710.00 </dd></dl>
+                                            </div>
+
+                                            <div class="col-sm-12 col-md-4 ">
+                                                <dl class="dl-horizontal"> <dt>  Total Ad-hoc Salary : </dt><dd>Rs 0.00</dd></dl>
+                                            </div>
+                                            <div class="col-sm-12 col-md-4 ">
+                                                <dl class="dl-horizontal"> <dt>    Total Salary : </dt><dd>Rs -3,710.00</dd></dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="Income-Previous">
+                                <div class="row">
+                                    <div class="col-sm-12 ">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                    <tr>
+
+                                                        <th>Month</th>
+                                                        <th>Income After Exemption</th>
+                                                        <th>Professional Tax</th>
+                                                        <th>PF</th>
+                                                        <th>Income Tax</th>
+                                                        <th>Raw Tax</th>
+                                                        <th>Surcharge</th>
+                                                        <th>Cess</th>
+                                                        <th>LTA Exemption</th>
+                                                    </tr>
+                                                </thead>
+                                                <tfoot>
+                                                    <tr>
+
+                                                        <th>Month</th>
+                                                        <th>Income After Exemption</th>
+                                                        <th>Professional Tax</th>
+                                                        <th>PF</th>
+                                                        <th>Income Tax</th>
+                                                        <th>Raw Tax</th>
+                                                        <th>Surcharge</th>
+                                                        <th>Cess</th>
+                                                        <th>LTA Exemption</th>
+                                                    </tr>
+                                                </tfoot>
+                                                <tbody>
+                                                    <tr>
+
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="Exemptions">
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-6">
+                                        <div class="card-header">
+                                            <h2>
+                                                Exemptions
+                                            </h2>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                    <tr>
+
+                                                        <th>Component</th>
+                                                        <th>Total</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tfoot>
+                                                    <tr>
+
+                                                        <th>Component</th>
+                                                        <th>Total</th>
+
+                                                    </tr>
+                                                </tfoot>
+                                                <tbody>
+                                                    <tr>
+
+                                                        <td>EDUCATION EXEMPT</td>
+                                                        <td></td>
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="card-header m-t-15">
+                                            <h2>Other Exemptions</h2>
+                                        </div>
+
+
+
+                                        <div class="row">
+
+                                            <div class="col-xs-12 col-md-6">
+                                                <div class="checkbox m-b-15">
+                                                    <label>
+                                                        <input type="checkbox" value="">
+                                                        <i class="input-helper"></i>
+                                                        Conv.Exemption
+
+                                                    </label>
+                                                </div>
+                                                <div class="form-group fg-line">
+
+                                                    <input class="form-control input-mask" value="16000.00" autocomplete="off" type="number" disabled>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+                                        <div class="row">
+
+                                            <div class="col-xs-12 col-md-6">
+                                                <div class="checkbox m-b-15">
+                                                    <label>
+                                                        <input type="checkbox" value="">
+                                                        <i class="input-helper"></i>
+                                                        Medical Exemption
+
+                                                    </label>
+                                                </div>
+                                                <div class="form-group fg-line">
+
+                                                    <input class="form-control input-mask" value="0.00" autocomplete="off" type="number" disabled>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+
+                                            <div class="col-xs-12 col-md-6">
+                                                <div class="checkbox m-b-15">
+                                                    <label>
+                                                        <input type="checkbox" value="">
+                                                        <i class="input-helper"></i>
+                                                        LTA Exemption
+
+                                                    </label>
+                                                </div>
+                                                <div class="form-group fg-line">
+
+                                                    <input class="form-control input-mask" value="0.00" autocomplete="off" type="number" disabled>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+
+                                            <div class="col-xs-12 col-md-6">
+                                                <dl class="dl-horizontal"> <dt>Total Exemptions :</dt><dd> Rs 16,000.00</dd></dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-6">
+                                        <div class="card-header">
+                                            <h2> HRA Exemption</h2>
+                                        </div>
+                                        <div class="row m-b-25">
+                                            <div class="col-sm-12 text-right">
+                                                <button href="" class="btn btn-primary waves-effect btn-sm">
+                                                    Monthly Rent
+                                                </button>
+                                                <button href="" class="btn btn-primary waves-effect btn-sm">
+                                                    Monthly Breakup
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="row m-b-25">
+                                            <div class="col-sm-12 col-md-6">
+                                                <div class="form-group fg-line">
+                                                    <label>Total Rent Paid p.a</label>
+
+
+                                                    <input type='text' class="form-control" value="0">
+
+
+
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-6">
+                                                <div class="form-group fg-line">
+                                                    <label>
+                                                        Total Rent Paid (Prorated):
+                                                    </label>
+
+
+                                                    <input type='text' class="form-control" value="0">
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+
+                                            <div class="col-xs-12 ">
+                                                <div class="checkbox m-b-15">
+                                                    <label>
+                                                        <input type="checkbox" value="">
+                                                        <i class="input-helper"></i>
+                                                        LTA Exemption
+
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row m-b-25">
+                                            <div class="col-sm-12 col-md-6">
+                                                <div class="form-group fg-line">
+                                                    <label>
+                                                        Total HRA
+                                                    </label>
+
+
+                                                    <input type='text' class="form-control" value="0">
+
+
+
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-6">
+                                                <div class="form-group fg-line">
+                                                    <label>
+                                                        40% of Basic
+
+                                                    </label>
+
+
+                                                    <input type='text' class="form-control" value="0">
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row m-b-25">
+                                            <div class="col-sm-12 col-md-6">
+                                                <div class="form-group fg-line">
+                                                    <label>
+                                                        Excess Rent
+                                                    </label>
+
+
+                                                    <input type='text' class="form-control" value="0">
+
+
+
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-6">
+                                                <div class="form-group fg-line">
+                                                    <label>
+                                                        HRA Exemption
+
+
+                                                    </label>
+
+
+                                                    <input type='text' class="form-control" value="0">
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+
+                                            <div class="col-xs-12 ">
+                                                <div class="checkbox m-b-15">
+                                                    <label>
+                                                        <input type="checkbox" value="">
+                                                        <i class="input-helper"></i>
+                                                        LTA Exemption
+
+                                                    </label>
+                                                </div>
+                                                <button href="" class="btn btn-primary waves-effect btn-sm">
+                                                    Rent Proof Info
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="Perquisite">
+                                <div class="row">
+                                    <div class="col-sm-12 ">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                    <tr>
+
+                                                        <th>Component</th>
+                                                        <th>Total</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tfoot>
+                                                    <tr>
+
+                                                        <th>Component</th>
+                                                        <th>Total</th>
+
+                                                    </tr>
+                                                </tfoot>
+                                                <tbody>
+                                                    <tr>
+
+                                                        <td>VEHICLE PERQUISITE</td>
+                                                        <td>Rs  0.00</td>
+
+                                                    </tr>
+                                                    <tr>
+
+                                                        <td>HOUSE PERQUISITE</td>
+                                                        <td>Rs  0.00</td>
+
+                                                    </tr>
+                                                    <tr>
+
+                                                        <td>ASSETS IN RESIDENCE</td>
+                                                        <td>Rs  0.00</td>
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="card m-t-25">
+                                    <div class="card-body card-padding">
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-6 ">
+                                                <dl class="dl-horizontal"> <dt> Total Perquisite :  </dt><dd> Rs 0.00</dd></dl>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="Deductions">
+                                <div class="row">
+                                    <div class="col-sm-12 ">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                    <tr>
+
+                                                        <th>Narration</th>
+                                                        <th>Section</th>
+                                                        <th>Max Limit</th>
+                                                        <th>Gross</th>
+                                                        <th>Qualifying</th>
+                                                        <th>Deductible</th>
+                                                        <th>Proof</th>
+                                                        <th>Remarks</th>
+                                                    </tr>
+                                                </thead>
+                                                <tfoot>
+                                                    <tr>
+
+                                                        <th>Narration</th>
+                                                        <th>Section</th>
+                                                        <th>Max Limit</th>
+                                                        <th>Gross</th>
+                                                        <th>Qualifying</th>
+                                                        <th>Deductible</th>
+                                                        <th>Proof</th>
+                                                        <th>Remarks</th>
+                                                    </tr>
+                                                </tfoot>
+                                                <tbody>
+                                                    <tr>
+
+                                                        <td>PF</td>
+                                                        <td>80C</td>
+                                                        <td>Rs  1,50,000.00</td>
+                                                        <td>Rs  8,000.00</td>
+                                                        <td>Rs  8,000.00</td>
+                                                        <td>
+                                                            <div class="checkbox m-b-15">
+                                                                <label>
+                                                                    <input type="checkbox" value="">
+                                                                    <i class="input-helper"></i>
+
+
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                        <td></td>
+                                                        <td>
+                                                        <td> <button class="btn btn-primary waves-effect btn-xs" data-ma-action="profile-edit"><i class="zmdi zmdi-edit"></i> Edit</button> <button class="btn btn-info waves-effect btn-xs" data-ma-action="profile-edit"><i class="zmdi zmdi-refresh"></i> refresh</button></td>
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="card m-t-25">
+                                    <div class="card-body card-padding">
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-6 ">
+                                                <dl class="dl-horizontal"> <dt> Total Chapter VI A Deduction : </dt><dd> Rs 8,000.00 </dd></dl>
+                                            </div>
+
+                                            <div class="col-sm-12 col-md-6 ">
+                                                <dl class="dl-horizontal"> <dt> Total Prof.Tax : </dt><dd>Rs 1,600.00</dd></dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="Other-Income">
+                                <div class="row">
+                                    <div class="col-sm-12 ">
+                                        <div class="card-header">
+                                            <h2>
+                                                Other Income
+                                            </h2>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                    <tr>
+
+                                                        <th>Description</th>
+                                                        <th>Max Limit</th>
+                                                        <th>Amount</th>
+                                                        <th>Lender's Name</th>
+                                                        <th>Lender's PAN</th>
+                                                        <th>Remarks</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tfoot>
+                                                    <tr>
+
+                                                        <th>Description</th>
+                                                        <th>Max Limit</th>
+                                                        <th>Amount</th>
+                                                        <th>Lender's Name</th>
+                                                        <th>Lender's PAN</th>
+                                                        <th>Remarks</th>
+
+                                                    </tr>
+                                                </tfoot>
+                                                <tbody>
+                                                    <tr>
+
+                                                        <td></td>
+                                                        <td>0.00</td>
+                                                        <td>0.00</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12 ">
+                                        <div class="card-header">
+                                            <h2>
+                                                Short Term Income
+                                            </h2>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                    <tr>
+
+                                                        <th>Description</th>
+                                                        <th>Amount</th>
+                                                        <th>Remarks</th>
+                                                        <th>Tax Rate</th>
+                                                        <th></th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tfoot>
+                                                    <tr>
+
+                                                        <th>Description</th>
+                                                        <th>Amount</th>
+                                                        <th>Remarks</th>
+                                                        <th>Tax Rate</th>
+                                                        <th></th>
+                                                    </tr>
+                                                </tfoot>
+                                                <tbody>
+                                                    <tr>
+
+                                                        <td></td>
+                                                        <td>0.00</td>
+                                                        <td></td>
+                                                        <td>0</td>
+                                                        <td></td>
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="Result">
+                                <div class="card m-t-25">
+                                    <div class="card-body card-padding">
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-6 ">
+                                                <dl class="dl-horizontal"> <dt> Total Chapter VI A Deduction : </dt><dd> Rs 8,000.00 </dd></dl>
+                                            </div>
+
+                                            <div class="col-sm-12 col-md-6 text-right">
+                                                <button class="btn btn-primary waves-effect btn-sm" data-ma-action="profile-edit"> Verify</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-header">
+                                    <h2>
+                                        Total Tax to be Paid
+                                    </h2>
+                                </div>
+                                <div class="card m-t-25">
+                                    <div class="card-body card-padding">
+                                        <div class="row">
+
+                                            <div class="col-sm-12 col-md-3 ">
+                                                <div class="form-group fg-line">
+                                                    <label> Raw Tax : </label> <input type="text" class="form-control" disabled />
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-12 col-md-3 ">
+
+
+                                                <div class="form-group fg-line"><label> Surcharge  :</label><input type="text" class="form-control" disabled /></div>
+
+                                            </div>
+                                            <div class="col-sm-12 col-md-3 ">
+
+
+                                                <div class="form-group fg-line"><label> Education Cess     :</label><input type="text" class="form-control" disabled /></div>
+
+                                            </div>
+                                            <div class="col-sm-12 col-md-3 ">
+
+
+                                                <div class="form-group fg-line"><label>  Total    :</label><input type="text" class="form-control" disabled /></div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+
+                                                <th>Paid Till Date</th>
+                                                <th>APR</th>
+
+                                            </tr>
+                                        </thead>
+
+
+                                        <tbody>
+                                            <tr>
+                                                <th></th>
+                                                <th>Raw Tax</th>
+                                                <th>Surcharge</th>
+                                                <th>Edu. Cess</th>
+                                                <th>Total</th>
+                                            </tr>
+                                            <tr>
+                                                <th>Deduction Through Payroll</th>
+                                                <td>Rs  0.00</td>
+                                                <td>Rs  0.00</td>
+                                                <td>Rs  0.00</td>
+                                                <td>Rs  0.00</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Direct TDS</th>
+                                                <td>Rs  0.00</td>
+                                                <td>Rs  0.00</td>
+                                                <td>Rs  0.00</td>
+                                                <td>Rs  0.00</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Previous Employment</th>
+                                                <td>Rs  0.00</td>
+                                                <td>Rs  0.00</td>
+                                                <td>Rs  0.00</td>
+                                                <td>Rs  0.00</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Total</th>
+                                                <td>Rs  0.00</td>
+                                                <td>Rs  0.00</td>
+                                                <td>Rs  0.00</td>
+                                                <td>Rs  0.00</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Annual Tax Balance</th>
+                                                <td>Rs  0.00</td>
+                                                <td>Rs  0.00</td>
+                                                <td>Rs  0.00</td>
+                                                <td>Rs  0.00</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Monthly Tax to be Paid</th>
+                                                <td>Rs  0.00</td>
+                                                <td>Rs  0.00</td>
+                                                <td>Rs  0.00</td>
+                                                <td>Rs  0.00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="row m-t-15">
+                                    <div class="col-sm-12 col-md-6 ">
+                                        <dl class="dl-horizontal"> <dt> Remaining Months :  </dt><dd> 2 </dd></dl>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                          
+                                    <ul class="fw-footer pagination wizard">
+                                        @*<li >
+
+                        <a href="@Url.Action("Salary","PayrollInputs",new { area ="Payroll"},null)" class="btn btn-primary waves-effect btn-sm">
+
+                            Back To Salary
+                        </a>
+                    </li>*@
+                                        <li class="previous first">
+                                            <a class="a-prevent" href="">
+                                                <i class="zmdi zmdi-more-horiz"></i>
+                                            </a>
+                                        </li>
+                                        <li class="previous">
+                                            <a class="a-prevent" href="">
+                                                <i class="zmdi zmdi-chevron-left"></i>
+                                            </a>
+                                        </li>
+                                        <li class="next">
+                                            <a class="a-prevent" href="">
+                                                <i class="zmdi zmdi-chevron-right"></i>
+                                            </a>
+                                        </li>
+                                        <li class="next last">
+                                            <a class="a-prevent" href="">
+                                                <i class="zmdi zmdi-more-horiz"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                               
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
