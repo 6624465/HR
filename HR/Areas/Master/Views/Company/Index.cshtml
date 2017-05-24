@@ -1,21 +1,19 @@
-﻿@*@model IEnumerable<HR.Core.Models.Master.Company>
-    @model IEnumerable<HR.ViewModels.CountryViewModel>*@
-@{
+﻿@{
     ViewBag.Title = "Company";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <style>
-   .my-Validate-class {
-    color:red;
-}
+    .my-Validate-class {
+        color: red;
+    }
 </style>
-<form method="post" style="margin: 5% 0 0" action="/Company/SaveCompany" name="customer">
+<form style="margin: 5% 0 0" action="/Company/SaveCompany">
     <div class="card-body card-padding p-t-15 p-b-15" id="profile-main">
         <div class="row">
             <div class="col-sm-12 col-md-6">
                 <div class="form-group fg-line">
                     <label>Company Code</label>
-                    <input type="text" id="txt-CompanyCode" name="CompanyCode" class="form-control" />@*data-val-required="Please enter company code."*@
+                    <input type="text" id="txt-CompanyCode" name="CompanyCode" class="form-control" />
                 </div>
             </div>
             <div class="col-sm-12 col-md-6">
@@ -118,9 +116,22 @@
 <script type="text/javascript">
 
     $(document).ready(function () {
+        $.getJSON("/Company/GetCompanyDetails?companyId=1005", function (data) {
 
+            $.each(data, function (key, value) {
+                if (key && key == "Address") {
+                    debugger
+                    $.each(data.Address, function (name, value) {
+                        $("form").find("input[name='" + "Address." +name + "']").val(value);
+                    })
+                }
+                else
+                    $("form").find("input[name='" + key + "']").val(value);
+            });
+
+        })
         jQuery.validator.addMethod("noSpace", function (value, element) {
-            debugger//Code used for blank space Validation 
+            debugger//Code used for blank space Validation
             return value.indexOf(" ") < 0 && value != "";
         });
 
@@ -147,8 +158,8 @@
                 RegNo: "RegNo field cannot be blank!"
             }
         })
-      
-       
+
+
 
         //});
         //$.ajax({

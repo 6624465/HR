@@ -45,6 +45,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -187,6 +195,32 @@
     <Content Include="Areas\Master\Views\web.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Areas\Employee\Views\Admin\BulletinBoard.cshtml" />
+    <Content Include="Areas\Employee\Views\Admin\ContractDetails.cshtml" />
+    <Content Include="Areas\Employee\Views\Admin\DataDrive.cshtml" />
+    <Content Include="Areas\Employee\Views\Admin\ExcelImport.cshtml" />
+    <Content Include="Areas\Employee\Views\Admin\GenerateLetter.cshtml" />
+    <Content Include="Areas\Employee\Views\Admin\IdentityVerification.cshtml" />
+    <Content Include="Areas\Employee\Views\Admin\MassCommunication.cshtml" />
+    <Content Include="Areas\Employee\Views\Information\AccessCardDetails.cshtml" />
+    <Content Include="Areas\Employee\Views\Information\Assets.cshtml" />
+    <Content Include="Areas\Employee\Views\Information\Assetss.cshtml" />
+    <Content Include="Areas\Employee\Views\Information\BankAccounts.cshtml" />
+    <Content Include="Areas\Employee\Views\Information\EmployeeContracts.cshtml" />
+    <Content Include="Areas\Employee\Views\Information\EmployeeDocuments.cshtml" />
+    <Content Include="Areas\Employee\Views\Information\EmployeeProfile.cshtml" />
+    <Content Include="Areas\Employee\Views\Information\FamilyDetails.cshtml" />
+    <Content Include="Areas\Employee\Views\Information\NominationDetails.cshtml" />
+    <Content Include="Areas\Employee\Views\Information\PassportVisa.cshtml" />
+    <Content Include="Areas\Employee\Views\Information\PositionHistory.cshtml" />
+    <Content Include="Areas\Employee\Views\Information\PreviousEmployment.cshtml" />
+    <Content Include="Areas\Employee\Views\Information\Separation.cshtml" />
+    <Content Include="Areas\Employee\Views\web.config" />
+    <Content Include="Areas\Employee\Views\Main\AddEmployee.cshtml" />
+    <Content Include="Areas\Employee\Views\Main\EmployeeDirectory.cshtml" />
+    <Content Include="Areas\Employee\Views\Main\Overview.cshtml" />
+    <Content Include="Areas\Employee\Views\Main\ReportingStructure.cshtml" />
+    <None Include="Properties\PublishProfiles\HR.pubxml" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
@@ -196,7 +230,6 @@
     <Content Include="scripts\jquery.validate.unobtrusive.js" />
     <Content Include="scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="scripts\modernizr-2.6.2.js" />
-    <Content Include="scripts\require.js" />
     <Content Include="scripts\respond.js" />
     <Content Include="scripts\respond.min.js" />
     <None Include="scripts\_references.js" />
@@ -4103,6 +4136,10 @@
   <ItemGroup>
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Employee\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Employee\Controllers\InformationController.cs" />
+    <Compile Include="Areas\Employee\Controllers\MainController.cs" />
+    <Compile Include="Areas\Employee\Controllers\SetUpController.cs" />
     <Compile Include="Areas\Master\Controllers\BranchController.cs" />
     <Compile Include="Areas\Master\Controllers\CompanyController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -4675,8 +4712,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Employee\Controllers\" />
-    <Folder Include="Areas\Employee\Views\" />
+    <Folder Include="Areas\Employee\Views\SetUp\" />
     <Folder Include="Models\" />
     <Folder Include="vendors\bower_components\bower\Packager\" />
     <Folder Include="vendors\bower_components\jquery-mask-plugin\test\" />

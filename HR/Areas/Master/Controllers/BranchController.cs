@@ -13,9 +13,9 @@ namespace HR.Areas.Master.Controllers
     public class BranchController : BaseController
     {
         // GET: Master/Branch
-        public BranchController(IMaster MasterService):base(MasterService)
+        public BranchController(IMaster MasterService) : base(MasterService)
         {
-            //this.MasterService = MasterService;
+            this.MasterService = MasterService;
         }
 
         #region SaveBranchDetails

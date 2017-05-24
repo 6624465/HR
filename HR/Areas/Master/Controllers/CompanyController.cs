@@ -13,13 +13,43 @@ namespace HR.Areas.Master.Controllers
     public class CompanyController : BaseController
     {
         #region Constructor
-        public CompanyController(IMaster MasterService):base(MasterService)
+        public CompanyController(IMaster MasterService) : base(MasterService)
         {
         }
         #endregion
 
-        #region save company
+        #region Get Company Details
+        public JsonResult GetCompanyDetails(int companyId)
+        {
+            JsonResult result = null;
+            try
+            {
+                if (companyId > 0)
+                {
+                    Company company = MasterService.GetCompany(companyId);
+                    Address address = company != null ? MasterService.GetAddress(company.AddressID) : null;
+                    CompanyViewModel companyViewModel = new CompanyViewModel();
+                    AddressViewModel addressViewModel = new AddressViewModel();
+                    companyViewModel.Id = company.Id;
+                    companyViewModel.CompanyCode = company.CompanyCode;
+                    companyViewModel.CompanyName = company.CompanyName;
+                    companyViewModel.RegNo = company.RegNo;
+                    companyViewModel.Address = PrepareAddressViewModel(address);
 
+                    result = Json(companyViewModel, JsonRequestBehavior.AllowGet);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                if (ex.InnerException != null && !string.IsNullOrWhiteSpace(ex.InnerException.Message))
+                    result = Json(new { sucess = false, exception = ex.InnerException.Message, JsonRequestBehavior.AllowGet });
+            }
+            return result;
+        }
+        #endregion
+
+        #region Save Company
         public JsonResult SaveCompany(CompanyViewModel companyViewModel)
         {
             JsonResult result = null;
@@ -49,7 +79,7 @@ namespace HR.Areas.Master.Controllers
 
                     MasterService.Save(company);
 
-                    result = Json(new { success = true, message = "Saved Successfully.",  JsonRequestBehavior.AllowGet });
+                    result = Json(new { success = true, message = "Saved Successfully.", JsonRequestBehavior.AllowGet });
                 }
                 catch (Exception ex)
                 {
@@ -59,10 +89,9 @@ namespace HR.Areas.Master.Controllers
             }
             return result;
         }
-
         #endregion
 
-        #region view result
+        #region View Result
         public ActionResult Index()
         {
             ViewData["Countries"] = GetCountryDetails();

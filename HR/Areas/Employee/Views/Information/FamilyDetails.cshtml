@@ -1,0 +1,337 @@
+﻿
+@{
+    ViewBag.Title = "FamilyDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card-header">
+    <h2>Family Details</h2>
+
+</div>
+
+<div class="card-body card-padding" id="profile-main">
+    
+    <div class="pmb-block">
+        
+            <div class="row">
+                <div class="col-sm-12 col-md-4">
+                    <div class="form-group fg-line">
+                       
+                        <select class="selectpicker" data-live-search="true" title='slect an employee'>
+                            <option>Vinathi</option>
+
+                        </select>
+                    </div>
+                    
+                    </div>
+                <div class="col-sm-12 col-md-8 text-right">
+                    <button class="btn btn-primary waves-effect" data-ma-action="profile-edit"><i class="zmdi zmdi-plus"></i> Add</button>
+                </div>
+           
+
+           
+        </div>
+        <div class="pmbb-body p-l-0">
+            <div class="pmbb-view">
+                <div class="table-responsive">
+                    <table class="table table-striped expense-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Relation</th>
+                                <th>DOB</th>
+                                <th>Age</th>
+                                <th>Blood Group</th>
+                                <th>Gender</th>
+                                <th>Nationality</th>
+                                <th>Profession</th>
+                                <th>Remarks</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Airfare</td>
+                                <td>07/06/2016</td>
+                                <td>SIN - HANOI - HCM</td>
+                                <td>Y</td>
+                                <td></td>
+                                <td>$350.5</td>
+                                <td>SGD</td>
+                                <td>$1.00</td>
+                                <td>$350.50</td>
+                                <td> <button class="btn btn-primary waves-effect btn-xs" data-ma-action="profile-edit"><i class="zmdi zmdi-edit"></i> Edit</button> <button class="btn btn-danger waves-effect btn-xs" data-ma-action="profile-edit"><i class="zmdi zmdi-delete"></i> Delete</button></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+            <div class="pmbb-edit">
+                <div class="card">
+                    <div class="card-body card-padding">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group fg-line">
+                                    <label>
+                                        Name
+                                    </label>
+
+                                    <input type="text" class="form-control">
+
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group fg-line">
+                                    <label> DOB </label>
+
+                                    <div class="input-group form-group">
+                                        <span class="input-group-addon"><i class="zmdi zmdi-calendar"></i></span>
+                                        <div class="dtp-container">
+                                            <input type='text' class="form-control date-picker"
+                                                   placeholder="Click here...">
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group fg-line">
+                                    <label>Relation </label>
+
+                                    <div class="fg-line">
+                                        <input type="text" class="form-control">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+
+                                <div class="form-group fg-line">
+                                    <label>Age</label>
+
+                                    <div class="fg-line">
+                                        <input type="text" class="form-control">
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+
+                                <div class="form-group fg-line">
+                                    <label>
+                                        Blood Group
+                                    </label>
+
+                                    <select class="selectpicker">
+                                        <option>A+</option>
+                                        <option>A-</option>
+                                        <option>B+</option>
+                                        <option>B+</option>
+                                        <option>AB+</option>
+                                        <option>AB-</option>
+                                        <option>O+</option>
+                                        <option>O-</option>
+
+                                    </select>
+
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+
+                                <div class="form-group fg-line">
+                                    <label>
+                                        Gender
+                                    </label>
+                                    <br /><br />
+                                    <label class="radio radio-inline m-r-20">
+                                        <input type="radio" name="inlineRadioOptions" value="option1">
+                                        <i class="input-helper"></i>
+                                        Female
+                                    </label>
+
+                                    <label class="radio radio-inline m-r-20">
+                                        <input type="radio" name="inlineRadioOptions" value="option2">
+                                        <i class="input-helper"></i>
+                                        male
+                                    </label>
+
+                                    <label class="radio radio-inline m-r-20">
+                                        <input type="radio" name="inlineRadioOptions" value="option3">
+                                        <i class="input-helper"></i>
+                                        Others
+                                    </label>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+
+                                <div class="form-group fg-line">
+                                    <label>
+                                        Nationality
+                                    </label>
+
+                                    <select class="selectpicker">
+                                        <option>Indian</option>
+                                        <option>Others</option>
+
+                                    </select>
+
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+
+                                <div class="form-group fg-line">
+                                    <label>
+                                        Profession
+                                    </label>
+
+                                    <div class="fg-line">
+                                        <input type="text" class="form-control">
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                <div class="checkbox m-b-15">
+                                    <label>
+                                        <input type="checkbox" value="" id="chk7">
+                                        <i class="input-helper"></i>
+                                        Address Same As employee
+
+                                    </label>
+                                </div>
+
+
+                                <div id="sb7">
+                                    <div class="card">
+                                        <div class="card-body card-padding">
+
+                                            <div class="row">
+                                                <div class="col-xs-12 col-md-6">
+                                                    <div class="form-group fg-line">
+                                                        <label>
+                                                            Address
+                                                        </label>
+                                                        <input class="form-control input-mask" autocomplete="off" type="text">
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-xs-12 col-md-6">
+                                                    <div class="form-group fg-line">
+                                                        <label>
+                                                            City
+                                                        </label>
+                                                        <input class="form-control input-mask" autocomplete="off" type="text">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-md-6">
+                                                    <div class="form-group fg-line">
+                                                        <label>
+                                                            State
+
+                                                        </label>
+                                                        <select class="selectpicker" data-live-search="true">
+                                                            <option>Andhra pradesh</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 col-md-6">
+                                                    <div class="form-group fg-line">
+                                                        <label>
+                                                            Country
+
+                                                        </label>
+                                                        <select class="selectpicker" data-live-search="true">
+                                                            <option>India</option>
+
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-md-6">
+                                                    <div class="form-group fg-line">
+                                                        <label>
+                                                            Pincode
+
+                                                        </label>
+                                                        <input class="form-control input-mask" autocomplete="off" type="text">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 col-md-6">
+                                                    <div class="form-group fg-line">
+                                                        <label>
+                                                            Mobile
+
+                                                        </label>
+                                                        <input class="form-control input-mask" autocomplete="off" type="text">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-md-6">
+                                                    <div class="form-group fg-line">
+                                                        <label>
+                                                            Phone
+                                                        </label>
+                                                        <input class="form-control input-mask" autocomplete="off" type="text">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 col-md-6">
+                                                    <div class="form-group fg-line">
+                                                        <label>
+                                                            Email ID
+                                                        </label>
+                                                        <input class="form-control input-mask" autocomplete="off" type="text">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+
+                                <div class="form-group fg-line">
+                                    <label>Remarks</label>
+
+                                    <div class="fg-line">
+                                        <textarea class="form-control"></textarea>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="m-t-30">
+                            <button class="btn btn-primary btn-sm">Save</button>
+                            <button data-ma-action="profile-edit-cancel" class="btn bgm-gray waves-effect btn-sm">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,162 @@
+﻿
+@{
+    ViewBag.Title = "EmployeeDirectory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card-header">
+    <h2>Employee Directory </h2>
+</div>
+<div class="card-body card-padding">
+    <div class="add-top">
+        <a href="@Url.Action("AddEmployee","Main",new { area ="Employee"},null)" class="btn btn-primary waves-effect pull-right btn-sm "> <i class="zmdi zmdi-account-add"> Add Employee</i></a>
+        <div class="clearfix"></div>
+    </div>
+        <div class="table-responsive">
+            <table class="table table-striped data-table-basic">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Employee No</th>
+                        <th>Employee Name</th>
+                        <th>Join Date</th>
+                        <th>Leaving Date</th>
+                        <th>Status</th>
+                        <th>Phone No</th>
+                        <th>Email</th>
+                        <th>Extension Number</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>#</th>
+                        <th>Employee No</th>
+                        <th>Employee Name</th>
+                        <th>Join Date</th>
+                        <th>Leaving Date</th>
+                        <th>Status</th>
+                        <th>Phone No</th>
+                        <th>Email</th>
+                        <th>Extension Number</th>
+
+                    </tr>
+                </tfoot>
+                <tbody>
+                    <tr>
+                        <th>1</th>
+                        <th>001#</th>
+                        <td>sudarshan</td>
+                        <td>2011/04/25</td>
+                        <td></td>
+                        <td>Confirmed</td>
+                        <td>91+ 1234567890</td>
+                        <td>sudarshan@logicon.in</td>
+                        <td>130</td>
+
+                    </tr>
+                    <tr>
+                        <th>2</th>
+                        <th>002#</th>
+                        <th>vijaya babu arigela</th>
+                        <td>2011/04/25</td>
+                        <td></td>
+                        <td>Confirmed</td>
+                        <td>91+ 1234567890</td>
+                        <td>vijaya@logicon.in</td>
+                        <td>130</td>
+                    </tr>
+                    <tr>
+                        <th>3</th>
+                        <th>003#</th>
+                        <th>prasad</th>
+                        <td>2011/04/25</td>
+                        <td></td>
+                        <td>Confirmed</td>
+                        <td>91+ 1234567890</td>
+                        <td>prasad@logicon.in</td>
+                        <td>130</td>
+                    </tr>
+                    <tr>
+                        <th>4</th>
+                        <th>004#</th>
+                        <th>pankaj</th>
+                        <td>2011/04/25</td>
+                        <td></td>
+                        <td>Confirmed</td>
+                        <td>91+ 1234567890</td>
+                        <td>pankaj@logicon.in</td>
+                        <td>130</td>
+                    </tr>
+                    <tr>
+                        <th>5</th>
+                        <th>005#</th>
+                        <th>srinivas</th>
+                        <td>2011/04/25</td>
+                        <td></td>
+                        <td>Confirmed</td>
+                        <td>91+ 1234567890</td>
+                        <td>srinivas@logicon.in</td>
+                        <td>130</td>
+                    </tr>
+                    <tr>
+                        <th>6</th>
+                        <th>006#</th>
+                        <th>vinathi</th>
+                        <td>2011/04/25</td>
+                        <td></td>
+                        <td>Confirmed</td>
+                        <td>91+ 1234567890</td>
+                        <td>vinathi@logicon.in</td>
+                        <td>130</td>
+                    </tr>
+                    <tr>
+                        <th>7</th>
+                        <th>007#</th>
+                        <th>maruthi</th>
+                        <td>2011/04/25</td>
+                        <td></td>
+                        <td>Confirmed</td>
+                        <td>91+ 1234567890</td>
+                        <td>maruthi@logicon.in</td>
+                        <td>130</td>
+                    </tr>
+                    <tr>
+                        <th>8</th>
+                        <th>008#</th>
+                        <th>krishna prasad</th>
+                        <td>2011/04/25</td>
+                        <td></td>
+                        <td>Confirmed</td>
+                        <td>91+ 1234567890</td>
+                        <td>krishna@logicon.in</td>
+                        <td>130</td>
+                    </tr>
+                    <tr>
+                        <th>9</th>
+                        <th>009#</th>
+                        <th>naresh</th>
+                        <td>2011/04/25</td>
+                        <td></td>
+                        <td>Confirmed</td>
+                        <td>91+ 1234567890</td>
+                        <td>naresh@logicon.in</td>
+                        <td>130</td>
+                    </tr>
+                    <tr>
+                        <th>10</th>
+                        <th>010#</th>
+                        <th>chaithanya</th>
+                        <td>2011/04/25</td>
+                        <td></td>
+                        <td>Confirmed</td>
+                        <td>91+ 1234567890</td>
+                        <td>chaithanya@logicon.in</td>
+                        <td>130</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>

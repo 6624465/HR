@@ -91,7 +91,7 @@
                     @*<select id="ddl-Country" class="selectpicker" name="selector">
                         <option value="">Select a Country</option>
                     </select>*@
-                    @Html.DropDownList("Address.CountryId", new SelectList((System.Collections.IEnumerable)ViewData["Countries"], "Id", "CountryName"), new { @class = "form-control" })
+                    @Html.DropDownList("Address.CountryId", new SelectList((System.Collections.IEnumerable)ViewData["Countries"], "Id", "CountryName"), "Please select a Country", new { @class = "form-control" })
                 </div>
             </div>
         </div>

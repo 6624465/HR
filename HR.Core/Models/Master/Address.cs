@@ -10,7 +10,7 @@ namespace HR.Core.Models.Master
     {
         public int AddressID { get; set; }
         public string AddressLinkID { get; set; }
-        public int SeqNo { get; set; }
+        public Int16 SeqNo { get; set; }
         public string AddressType { get; set; }
         public string Address1 { get; set; }
         public string Address2 { get; set; }

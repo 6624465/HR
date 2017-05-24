@@ -70,15 +70,16 @@
                             <ul>
                                 <li><a href="@Url.Action("Index","Company",new { area="Master" },null)">Company</a></li>
                                 <li><a href="@Url.Action("Index","Branch",new { area="Master" },null)">Branch</a></li>
-                               @* <li><a href="@Url.Action("EmployeeDirectory","Main",new { area ="Employee"},null)">Employee Directory</a></li>
-                                <li><a href="@Url.Action("ReportingStructure","Main",new { area ="Employee"},null)">Reporting Structure</a></li>*@
+                                <li><a href="@Url.Action("OverView","Main",new { area ="Employee"},null)">Overview</a></li>
+                                <li><a href="@Url.Action("EmployeeDirectory","Main",new { area ="Employee"},null)">Employee Directory</a></li>
+                                <li><a href="@Url.Action("ReportingStructure","Main",new { area ="Employee"},null)">Reporting Structure</a></li>
                             </ul>
                         </li>
                         <li class="sub-menu">
                             <a href="" data-ma-action="submenu-toggle">Information</a>
 
                             <ul>
-                                @*<li><a href="@Url.Action("EmployeeProfile","Information",new { area ="Employee"},null)">Employee Profile</a></li>
+                                <li><a href="@Url.Action("EmployeeProfile","Information",new { area ="Employee"},null)">Employee Profile</a></li>
                                 <li><a href="@Url.Action("BankAccounts","Information",new { area ="Employee"},null)">Bank/PF/ESI Accounts</a></li>
                                 <li><a href="@Url.Action("FamilyDetails","Information",new { area ="Employee"},null)">Family Details</a></li>
                                 <li><a href="@Url.Action("PassportVisa","Information",new { area ="Employee"},null)">Passport & Visa</a></li>
@@ -90,20 +91,19 @@
                                 <li><a href="@Url.Action("AccessCardDetails","Information",new { area ="Employee"},null)">Access Card Details</a></li>
                                 <li><a href="@Url.Action("NominationDetails","Information",new { area ="Employee"},null)">Nomination Details</a></li>
                                 <li><a href="@Url.Action("EmployeeDocuments","Information",new { area ="Employee"},null)">Employee Documents </a></li>
-                                <li><a href="@Url.Action("EmployeeContracts","Information",new { area ="Employee"},null)">Employee Contracts</a></li>*@
+                                <li><a href="@Url.Action("EmployeeContracts","Information",new { area ="Employee"},null)">Employee Contracts</a></li>
                             </ul>
                         </li>
                         <li class="sub-menu">
                             <a href="" data-ma-action="submenu-toggle">Admin</a>
-
                             <ul>
-                                @*<li><a href="@Url.Action("GenerateLetter","Admin",new { area ="Employee"},null)">Generate Letter</a></li>
+                                <li><a href="@Url.Action("GenerateLetter","Admin",new { area ="Employee"},null)">Generate Letter</a></li>
                                 <li><a href="@Url.Action("ExcelImport","Admin",new { area ="Employee"},null)">Excel Import</a></li>
                                 <li><a href="@Url.Action("BulletinBoard","Admin",new { area ="Employee"},null)">Bulletin Board</a></li>
                                 <li><a href="@Url.Action("MassCommunication","Admin",new { area ="Employee"},null)">Mass Communication</a></li>
                                 <li><a href="@Url.Action("IdentityVerification","Admin",new { area ="Employee"},null)">Identity Verification</a></li>
                                 <li><a href="@Url.Action("DataDrive","Admin",new { area ="Employee"},null)">Data Drive</a></li>
-                                <li><a href="@Url.Action("ContractDetails","Admin",new { area ="Employee"},null)">Contract Details</a></li>*@
+                                <li><a href="@Url.Action("ContractDetails","Admin",new { area ="Employee"},null)">Contract Details</a></li>
                             </ul>
                         </li>
                         <li class="sub-menu">
@@ -445,11 +445,11 @@
             $(document).ready(function() {
                 $('.data-table-basic').DataTable();
             });
-            $('.dtp-container').datepicker({
-                format: 'yyyy',
-                viewMode: 'years',
-                minViewMode: 'years'
-            });
+            //$('.dtp-container').datepicker({
+            //    format: 'yyyy',
+            //    viewMode: 'years',
+            //    minViewMode: 'years'
+            //});
 
     </script>
 

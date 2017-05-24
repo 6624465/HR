@@ -1,0 +1,208 @@
+﻿
+@{
+    ViewBag.Title = "AccessCardDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="profile-main">
+    <div class="card-header">
+        <h2>
+            Access Card Details
+        </h2>
+       
+    </div>
+    <div class="card-body card-padding" id="profile-main">
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <br /><br />
+                <div class="card p-t-5">
+                    <div class="card-body card-padding">
+                        <div class="pmb-block p-t-0">
+                            <div class="pmbb-header">
+                                <h2 class="pull-left"><i class="zmdi zmdi-accounts-list m-r-10"></i> Access Card Details  </h2>
+                                <button class="btn btn-primary btn-xs pull-right" data-ma-action="profile-edit">
+                                    <i class="zmdi zmdi-plus"></i>  Add
+                                </button>
+                                <div class="clearfix"></div>
+                            </div>
+                           
+                            <div class="pmbb-body p-l-0">
+                                <div class="pmbb-view">
+                                    <div class="pmb-block  p-l-5 p-0" style="border-bottom: 1px solid #eee;">
+
+                                        <ul class="actions text-right">
+                                            <li class="dropdown">
+                                                <a href="" data-toggle="dropdown">
+                                                    <i class="zmdi zmdi-more-vert"></i>
+                                                </a>
+
+                                                <ul class="dropdown-menu dropdown-menu-right">
+                                                    <li>
+                                                        <a data-ma-action="profile-edit" href="">Edit</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        <div class="pmbb-body p-l-0">
+                                            <div class="pmbb-view">
+
+                                                <dl class="dl-horizontal">
+                                                    <dt>
+                                                        123
+                                                    </dt>
+                                                    <dd>
+                                                        09 May 2017 - 10 May 2017
+                                                    </dd>
+                                                </dl>
+                                            </div>
+
+                                            <div class="pmbb-edit">
+
+                                                <br /><br />
+
+                                                <div class="card">
+                                                    <div class="card-body card-padding">
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <div class="form-group fg-line">
+                                                                    <label>
+                                                                        Access Card Number
+
+                                                                    </label>
+
+                                                                    <input type="text" class="form-control">
+
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+
+
+
+
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+
+                                                                <div class="form-group fg-line">
+                                                                    <label>From Date</label>
+
+                                                                    <div class="input-group form-group">
+                                                                        <span class="input-group-addon"><i class="zmdi zmdi-calendar"></i></span>
+                                                                        <div class="dtp-container">
+                                                                            <input type='text' class="form-control date-picker"
+                                                                                   placeholder="Click here...">
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-group fg-line">
+                                                                    <label>To date</label>
+
+                                                                    <div class="input-group form-group">
+                                                                        <span class="input-group-addon"><i class="zmdi zmdi-calendar"></i></span>
+                                                                        <div class="dtp-container">
+                                                                            <input type='text' class="form-control date-picker"
+                                                                                   placeholder="Click here...">
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="m-t-30">
+                                                            <button class="btn btn-primary btn-sm">Save</button>
+                                                            <button data-ma-action="profile-edit-cancel" class="btn bgm-gray waves-effect btn-sm">Cancel</button>
+                                                            <button data-ma-action="profile-edit-delete" class="btn bgm-gray waves-effect btn-sm">Delete</button>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="pmbb-edit">
+
+
+                                    <div class="card">
+                                        <div class="card-body card-padding">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group fg-line">
+                                                        <label>
+                                                            Access Card Number
+
+                                                        </label>
+
+                                                        <input type="text" class="form-control">
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+
+
+
+
+                                            <div class="row">
+                                                <div class="col-md-6">
+
+                                                    <div class="form-group fg-line">
+                                                        <label>From Date</label>
+
+                                                        <div class="input-group form-group">
+                                                            <span class="input-group-addon"><i class="zmdi zmdi-calendar"></i></span>
+                                                            <div class="dtp-container">
+                                                                <input type='text' class="form-control date-picker"
+                                                                       placeholder="Click here...">
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group fg-line">
+                                                        <label>To date</label>
+
+                                                        <div class="input-group form-group">
+                                                            <span class="input-group-addon"><i class="zmdi zmdi-calendar"></i></span>
+                                                            <div class="dtp-container">
+                                                                <input type='text' class="form-control date-picker"
+                                                                       placeholder="Click here...">
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="m-t-30">
+                                                <button class="btn btn-primary btn-sm">Save</button>
+                                                <button data-ma-action="profile-edit-cancel" class="btn bgm-gray waves-effect btn-sm">Cancel</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,559 @@
+﻿
+@{
+    ViewBag.Title = "BankAccounts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card-header">
+    <h2> Bank/ PF/ ESI/ LWF Accounts </h2>
+
+</div>
+<div class="card-body card-padding">
+    <div class="row">
+        <div class="col-sm-12 col-md-4">
+            <select class="selectpicker" data-live-search="true" title='slect an employee'>
+                <option>Vinathi</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row m-t-25">
+        <div class="col-sm-12 ">
+            <div class="" id="profile-main">
+                <div class="pm-body clearfix p-0">
+                    <div class="form-wizard-basic fw-container">
+                        <ul class="tab-nav text-left">
+                            <li><a href="#Bank-Account" data-toggle="tab">Bank Account</a></li>
+                            <li><a href="#Ps-ESI-LWF" data-toggle="tab">PF &amp; ESI &amp; LWF Account</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <div class="tab-pane fade" id="Bank-Account">
+
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-6">
+                                        <div class="pmb-block">
+                                            <div class="pmbb-header">
+                                                <h2><i class="zmdi zmdi-account m-r-10"></i> Bank Details</h2>
+
+                                                <ul class="actions">
+                                                    <li class="dropdown">
+                                                        <a href="" data-toggle="dropdown">
+                                                            <i class="zmdi zmdi-more-vert"></i>
+                                                        </a>
+
+                                                        <ul class="dropdown-menu dropdown-menu-right">
+                                                            <li>
+                                                                <a data-ma-action="profile-edit" href="">Edit</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="pmbb-body p-l-30">
+                                                <div class="pmbb-view">
+                                                    <dl class="dl-horizontal">
+                                                        <dt>Bank Name</dt>
+                                                        <dd>ICICI Bank</dd>
+                                                    </dl>
+                                                    <dl class="dl-horizontal">
+                                                        <dt>Bank Branch</dt>
+                                                        <dd>Hyderbad</dd>
+                                                    </dl>
+                                                    <dl class="dl-horizontal">
+                                                        <dt>Bank Account No</dt>
+                                                        <dd>1234567</dd>
+                                                    </dl>
+                                                    <dl class="dl-horizontal">
+                                                        <dt>IFSC Code</dt>
+                                                        <dd>123456</dd>
+                                                    </dl>
+                                                    <dl class="dl-horizontal">
+                                                        <dt>Account Type</dt>
+                                                        <dd>Saving</dd>
+                                                    </dl>
+
+
+                                                    <dl class="dl-horizontal">
+                                                        <dt>Payment Type</dt>
+                                                        <dd>Cash</dd>
+                                                    </dl>
+                                                    <dl class="dl-horizontal">
+                                                        <dt> Name As Per Bank Records DD </dt>
+                                                        <dd></dd>
+                                                    </dl>
+                                                    <dl class="dl-horizontal">
+                                                        <dt>Payable At</dt>
+                                                        <dd></dd>
+                                                    </dl>
+
+                                                </div>
+
+                                                <div class="pmbb-edit">
+                                                    <div class="form-group fg-line">
+                                                        <label>
+                                                            Bank Name
+                                                        </label>
+
+                                                        <div class="fg-line">
+                                                            <select class="form-control">
+                                                                <option>City Bank</option>
+                                                                <option>IOB Bank</option>
+                                                                <option>ICICI Bank</option>
+                                                                <option>SBI Bank</option>
+                                                                <option>HDFC Bank</option>
+                                                            </select>
+                                                        </div>
+
+
+                                                    </div>
+                                                    <div class="form-group fg-line">
+                                                        <label>Bank Branch</label>
+
+                                                        <div class="fg-line">
+                                                            <select class="form-control">
+                                                                <option>Hyderabad</option>
+
+                                                            </select>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="form-group fg-line">
+                                                        <label>Bank Account No</label>
+
+                                                        <div class="fg-line">
+                                                            <input type="text" class="form-control">
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="form-group fg-line">
+                                                        <label>IFSC Code</label>
+
+                                                        <div class="fg-line">
+                                                            <input type="text" class="form-control" disabled>
+                                                        </div>
+
+
+                                                    </div>
+                                                    <div class="form-group fg-line">
+                                                        <label>Account Type</label>
+
+                                                        <select class="selectpicker">
+                                                            <option>Savings</option>
+                                                            <option>Current</option>
+                                                            <option>Fixed</option>
+                                                        </select>
+
+                                                    </div>
+                                                    <div class="form-group fg-line">
+                                                        <label>
+                                                            Payment Type
+                                                        </label>
+                                                        <div class="fg-line">
+                                                            <select class="selectpicker">
+                                                                <option>Cash</option>
+                                                                <option>Bank Transfer</option>
+                                                                <option>Others</option>
+                                                            </select>
+
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    <div class="form-group fg-line">
+                                                        <label>
+                                                            DD Payable At
+                                                        </label>
+                                                        
+                                                            <div class="fg-line">
+                                                                <input type="text" class="form-control">
+                                                            </div>
+
+                                                        
+                                                    </div>
+
+
+
+                                                    <div class="form-group fg-line">
+                                                        <label>
+                                                            Name As Per Bank Records
+                                                        </label>
+                                                       
+                                                            <div class="fg-line">
+                                                                <input type="text" class="form-control">
+
+                                                            </div>
+                                                       
+                                                    </div>
+
+
+                                                    <div class="m-t-30">
+                                                        <button class="btn btn-primary btn-sm">Save</button>
+                                                        <button data-ma-action="profile-edit-cancel" class="btn bgm-gray waves-effect btn-sm">Cancel</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="Ps-ESI-LWF">
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-6">
+                                        <div class="pmb-block p-t-0">
+                                            <div class="pmbb-header">
+                                                <h2><i class="zmdi zmdi-account m-r-10"></i> PF Information</h2>
+
+                                                <ul class="actions">
+                                                    <li class="dropdown">
+                                                        <a href="" data-toggle="dropdown">
+                                                            <i class="zmdi zmdi-more-vert"></i>
+                                                        </a>
+
+                                                        <ul class="dropdown-menu dropdown-menu-right">
+                                                            <li>
+                                                                <a data-ma-action="profile-edit" href="">Edit</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="pmbb-body p-l-0">
+                                                <div class="pmbb-view">
+
+                                                    <dl class="dl-horizontal">
+                                                        <dt>UAN</dt>
+                                                        <dd>125478245845</dd>
+                                                    </dl>
+                                                    <dl class="dl-horizontal">
+                                                        <dt> PF Number</dt>
+                                                        <dd> KN/BLR/1921442/074/0954785</dd>
+                                                    </dl>
+                                                    <dl class="dl-horizontal">
+                                                        <dt>PF Join Date</dt>
+                                                        <dd></dd>
+                                                    </dl>
+                                                    <dl class="dl-horizontal">
+                                                        <dt>Family PF No</dt>
+                                                        <dd></dd>
+                                                    </dl>
+                                                    <dl class="dl-horizontal m-0 p-0">
+                                                        <dt class="p-t-10">
+
+
+                                                        </dt>
+                                                        <dd>
+                                                            <div class="checkbox m-b-15 disabled">
+                                                                <label>
+                                                                    <input type="checkbox" value="" disabled>
+                                                                    <i class="input-helper"></i>
+                                                                    Is existing member of PF
+
+                                                                </label>
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                    <dl class="dl-horizontal p-0 m-0">
+                                                        <dt class="p-t-10">
+
+
+                                                        </dt>
+                                                        <dd>
+                                                            <div class="checkbox m-b-15 disabled">
+                                                                <label>
+                                                                    <input type="checkbox" value="" disabled>
+                                                                    <i class="input-helper"></i>
+                                                                    Allow EPF excess contribution
+
+                                                                </label>
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                    <dl class="dl-horizontal p-0 m-0">
+                                                        <dt class="p-t-10">
+
+
+                                                        </dt>
+                                                        <dd>
+                                                            <div class="checkbox m-b-15 disabled">
+                                                                <label>
+                                                                    <input type="checkbox" value="" disabled>
+                                                                    <i class="input-helper"></i>
+                                                                    Allow EPS excess contribution
+
+                                                                </label>
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                    <div class="alert alert-danger text-center" role="alert">
+                                                        PF KYC Not Done!
+                                                        No verified employee identity found.
+                                                    </div>
+                                                </div>
+
+                                                <div class="pmbb-edit">
+                                                    <div class="checkbox m-b-15">
+                                                        <label>
+                                                            <input type="checkbox" value="" id="chk1">
+                                                            <i class="input-helper"></i>
+                                                            Employee is covered under PF
+
+                                                        </label>
+                                                    </div>
+
+
+                                                    <div id="sb1" style="display:none;">
+                                                        <div class="form-group fg-line">
+                                                            <label>
+                                                                UAN
+                                                            </label>
+                                                            
+                                                                <div class="fg-line">
+                                                                    <input type="text" class="form-control">
+                                                                </div>
+                                                            
+                                                        </div>
+                                                        <div class="form-group fg-line" >
+                                                            <label>
+                                                                PF Number
+                                                            </label>
+                                                            
+                                                                <div class="fg-line">
+                                                                    <input type="text" class="form-control">
+                                                                </div>
+                                                            
+                                                        </div>
+                                                        <div class="form-group fg-line">
+                                                            <label>
+                                                                PF Join Date
+
+                                                            </label>
+                                                            
+                                                                <div class="fg-line">
+                                                                    <input type="text" class="form-control">
+                                                                </div>
+                                                            
+                                                        </div>
+                                                        <div class="form-group fg-line">
+                                                            <label>
+                                                                Family PF No
+
+                                                            </label>
+                                                            
+                                                                <div class="fg-line">
+                                                                    <input type="text" class="form-control">
+                                                                </div>
+                                                           
+                                                        </div>
+                                                        <div class="form-group fg-line">
+                                                            
+                                                                <div class="checkbox m-b-15">
+                                                                    <label>
+                                                                        <input type="checkbox" value="">
+                                                                        <i class="input-helper"></i>
+                                                                        Is existing member of PF
+
+                                                                    </label>
+                                                                </div>
+                                                                                                                    </div>
+                                                        <div class="form-group fg-line">
+                                                           <label>
+
+
+                                                            </label>
+                                                           
+                                                                <div class="checkbox m-b-15">
+                                                                    <label>
+                                                                        <input type="checkbox" value="">
+                                                                        <i class="input-helper"></i>
+                                                                        Allow EPF excess contribution
+
+                                                                    </label>
+                                                                </div>
+                                                           
+                                                        </div>
+                                                        <div class="form-group fg-line">
+                                                                <div class="checkbox m-b-15">
+                                                                    <label>
+                                                                        <input type="checkbox" value="">
+                                                                        <i class="input-helper"></i>
+                                                                        Allow EPS excess contribution
+
+                                                                    </label>
+                                                                </div>
+                                                                                                                   </div>
+                                                        <div class="form-group fg-line">
+                                                            <label>
+                                                                Document Type
+
+                                                            </label>
+                                                            
+                                                                <select class="selectpicker" data-live-search="true">
+                                                                    <option>Driving License</option>
+                                                                    <option>Election Card</option>
+
+                                                                </select>
+                                                            
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="m-t-30">
+                                                        <button class="btn btn-primary btn-sm">Save</button>
+                                                        <button data-ma-action="profile-edit-cancel" class="btn bgm-gray waves-effect btn-sm">Cancel</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-6">
+                                        <div class="pmb-block p-t-0">
+                                            <div class="pmbb-header">
+                                                <h2><i class="zmdi zmdi-account m-r-10"></i> ESI Information</h2>
+
+                                                <ul class="actions">
+                                                    <li class="dropdown">
+                                                        <a href="" data-toggle="dropdown">
+                                                            <i class="zmdi zmdi-more-vert"></i>
+                                                        </a>
+
+                                                        <ul class="dropdown-menu dropdown-menu-right">
+                                                            <li>
+                                                                <a data-ma-action="profile-edit" href="">Edit</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="pmbb-body p-l-0">
+                                                <div class="pmbb-view">
+
+                                                    <dl class="dl-horizontal">
+                                                        <dt>ESI Number</dt>
+                                                        <dd> 14587845214</dd>
+                                                    </dl>
+
+                                                </div>
+
+                                                <div class="pmbb-edit">
+                                                    <div class="checkbox m-b-15">
+                                                        <label>
+                                                            <input type="checkbox" value="" id="chk5">
+                                                            <i class="input-helper"></i>
+                                                            Employee is covered under ESI
+
+                                                        </label>
+                                                    </div>
+
+
+                                                    <div id="sb5" style="display:none;">
+                                                        <div class="form-group fg-line">
+                                                            <label>
+                                                                ESI Number
+
+                                                            </label>
+                                                           
+                                                                <div class="fg-line">
+                                                                    <input type="text" class="form-control">
+                                                                </div>
+                                                           
+                                                        </div>
+
+
+                                                    </div>
+
+                                                    <div class="m-t-30">
+                                                        <button class="btn btn-primary btn-sm">Save</button>
+                                                        <button data-ma-action="profile-edit-cancel" class="btn bgm-gray waves-effect btn-sm">Cancel</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pmb-block p-t-25">
+                                            <div class="pmbb-header">
+                                                <h2><i class="zmdi zmdi-account m-r-10"></i> Labour Welfare Fund Information</h2>
+
+                                                <ul class="actions">
+                                                    <li class="dropdown">
+                                                        <a href="" data-toggle="dropdown">
+                                                            <i class="zmdi zmdi-more-vert"></i>
+                                                        </a>
+
+                                                        <ul class="dropdown-menu dropdown-menu-right">
+                                                            <li>
+                                                                <a data-ma-action="profile-edit" href="">Edit</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="pmbb-body p-l-0">
+                                                <div class="pmbb-view">
+
+                                                    <div class="checkbox m-b-15 disabled">
+                                                        <label>
+                                                            <input type="checkbox" value="" disabled checked="checked">
+                                                            <i class="input-helper"></i>
+                                                            Employee is covered under LWF
+
+                                                        </label>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="pmbb-edit">
+                                                    <div class="checkbox m-b-15">
+                                                        <label>
+                                                            <input type="checkbox" value="" checked="checked">
+                                                            <i class="input-helper"></i>
+                                                            Employee is covered under LWF
+
+                                                        </label>
+                                                    </div>
+
+
+
+                                                    <div class="m-t-30">
+                                                        <button class="btn btn-primary btn-sm">Save</button>
+                                                        <button data-ma-action="profile-edit-cancel" class="btn bgm-gray waves-effect btn-sm">Cancel</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <ul class="fw-footer pagination wizard">
+                                <li class="previous first">
+                                    <a class="a-prevent" href="">
+                                        <i class="zmdi zmdi-more-horiz"></i>
+                                    </a>
+                                </li>
+                                <li class="previous">
+                                    <a class="a-prevent" href="">
+                                        <i class="zmdi zmdi-chevron-left"></i>
+                                    </a>
+                                </li>
+                                <li class="next">
+                                    <a class="a-prevent" href="">
+                                        <i class="zmdi zmdi-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="next last">
+                                    <a class="a-prevent" href="">
+                                        <i class="zmdi zmdi-more-horiz"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
