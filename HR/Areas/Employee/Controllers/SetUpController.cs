@@ -8,6 +8,7 @@ namespace HR.Areas.Employee.Controllers
 {
     public class SetUpController : Controller
     {
+
         public ActionResult LetterTemplate()
         {
             return View("LetterTemplate");
