@@ -22,6 +22,7 @@ namespace HR.Data
             modelBuilder.Entity<Country>().ToTable("Countries", "Master");
             modelBuilder.Entity<Address>().ToTable("Addresses", "Master");
             modelBuilder.Entity<Branch>().ToTable("Branches", "Master");
+            modelBuilder.Entity<HolidayList>().ToTable("HolidayLists", "Master");
             #endregion
         }
 
@@ -32,6 +33,7 @@ namespace HR.Data
 
         public virtual DbSet<Company> Companies { get; set; }
         public virtual DbSet<Country> Countries { get; set; }
+        public virtual DbSet<HolidayList> HolidayLists { get; set; }
         #endregion
     }
 }

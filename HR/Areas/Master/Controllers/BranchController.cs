@@ -12,10 +12,8 @@ namespace HR.Areas.Master.Controllers
 {
     public class BranchController : BaseController
     {
-        // GET: Master/Branch
         public BranchController(IMaster MasterService) : base(MasterService)
         {
-            this.MasterService = MasterService;
         }
 
         #region SaveBranchDetails
@@ -43,9 +41,10 @@ namespace HR.Areas.Master.Controllers
                     branch.BranchName = !string.IsNullOrWhiteSpace(branchViewModel.BranchName) ? branchViewModel.BranchName : string.Empty;
                     branch.BranchCode = !string.IsNullOrWhiteSpace(branchViewModel.BranchCode) ? branchViewModel.BranchCode : string.Empty;
                     branch.CompanyCode = !string.IsNullOrWhiteSpace(branch.CompanyCode) ? branchViewModel.CompanyCode : string.Empty;
+
                     branch.RegNo = !string.IsNullOrWhiteSpace(branchViewModel.RegNo) ? branchViewModel.RegNo : string.Empty;
                     branch.IsActive = branchViewModel.IsActive;
-                    branch.Address = GetAddress(branchViewModel.Address, false);
+                    branch.Address = GetAddress(branchViewModel.Address, branch.Address, false);
 
                     MasterService.Save(branch);
 

@@ -60,6 +60,8 @@ namespace HR.Areas.Master.Controllers
                     Company company = new Company();
                     if (companyViewModel.Id > 0)
                     {
+                        company = MasterService.GetCompany(companyViewModel.Id);
+                        //company.Address = MasterService.GetAddress(company.AddressID);
                         company.ModifiedBy = "Admin";
                         company.ModifiedOn = DateTime.Now;
                     }
@@ -74,8 +76,8 @@ namespace HR.Areas.Master.Controllers
                     company.CompanyName = !string.IsNullOrWhiteSpace(companyViewModel.CompanyName) ? companyViewModel.CompanyName : string.Empty;
                     company.IsActive = companyViewModel.IsActive;
                     company.RegNo = companyViewModel.RegNo;
-                    company.Address = new Address();
-                    company.Address = GetAddress(companyViewModel.Address);
+                    company.Address = companyViewModel.Address.AddressID == 0 ? new Address() : company.Address;
+                    company.Address = GetAddress(companyViewModel.Address, company.Address, true);
 
                     MasterService.Save(company);
 
@@ -86,6 +88,25 @@ namespace HR.Areas.Master.Controllers
                     if (ex.InnerException != null && !string.IsNullOrEmpty(ex.InnerException.Message))
                         return Json(new { success = false, message = ex.InnerException.Message }, JsonRequestBehavior.AllowGet);
                 }
+            }
+            return result;
+        }
+        #endregion
+
+        #region common JsonResults
+        public JsonResult GetCountries()
+        {
+            JsonResult result = null;
+            try
+            {
+                List<CountryViewModel> countryViewModelList = GetCountryDetails();
+                if (countryViewModelList != null)
+                    result = Json(countryViewModelList, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                if (ex.InnerException != null && !string.IsNullOrEmpty(ex.InnerException.Message))
+                    return Json(new { success = false, message = ex.InnerException.Message }, JsonRequestBehavior.AllowGet);
             }
             return result;
         }

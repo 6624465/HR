@@ -44,6 +44,7 @@
     <Compile Include="Models\Master\Branch.cs" />
     <Compile Include="Models\Master\Company.cs" />
     <Compile Include="Models\Master\Country.cs" />
+    <Compile Include="Models\Master\HolidayList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

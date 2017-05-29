@@ -167,12 +167,12 @@
     <Content Include="dashboards\analytics.html" />
     <Content Include="dashboards\school.html" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="fonts\roboto\Roboto-Bold-webfont.svg" />
-    <Content Include="fonts\roboto\Roboto-Light-webfont.svg" />
-    <Content Include="fonts\roboto\Roboto-Medium-webfont.svg" />
-    <Content Include="fonts\roboto\Roboto-Regular-webfont.svg" />
-    <Content Include="fonts\satisfy\satisfy.svg" />
+    <Content Include="Img\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Img\fonts\roboto\Roboto-Bold-webfont.svg" />
+    <Content Include="Img\fonts\roboto\Roboto-Light-webfont.svg" />
+    <Content Include="Img\fonts\roboto\Roboto-Medium-webfont.svg" />
+    <Content Include="Img\fonts\roboto\Roboto-Regular-webfont.svg" />
+    <Content Include="Img\fonts\satisfy\satisfy.svg" />
     <Content Include="Global.asax" />
     <Content Include="Img\300x200.gif" />
     <Content Include="Img\browsers\chrome.png" />
@@ -6588,7 +6588,6 @@
     <Content Include="Areas\Leave\Views\Main\LeaveCalender.cshtml" />
     <Content Include="Areas\Leave\Views\Main\Overview.cshtml" />
     <Content Include="Areas\Leave\Views\Main\WhoisIn.cshtml" />
-    <Content Include="Areas\Leave\Views\SetUp\HolidayList.cshtml" />
     <Content Include="Areas\Leave\Views\SetUp\ShiftRotationCalender.cshtml" />
     <Content Include="Areas\Leave\Views\web.config" />
     <Content Include="Areas\Payroll\Views\Admin\EmailfDetails.cshtml" />
@@ -6651,21 +6650,21 @@
     <Content Include="Areas\Reports\Views\Reports\RecentReports.cshtml" />
     <Content Include="Areas\Reports\Views\Reports\ReportsGallery.cshtml" />
     <Content Include="Areas\Reports\Views\web.config" />
-    <Content Include="fonts\roboto\Roboto-Bold-webfont.eot" />
-    <Content Include="fonts\roboto\Roboto-Bold-webfont.ttf" />
-    <Content Include="fonts\roboto\Roboto-Bold-webfont.woff" />
-    <Content Include="fonts\roboto\Roboto-Light-webfont.eot" />
-    <Content Include="fonts\roboto\Roboto-Light-webfont.ttf" />
-    <Content Include="fonts\roboto\Roboto-Light-webfont.woff" />
-    <Content Include="fonts\roboto\Roboto-Medium-webfont.eot" />
-    <Content Include="fonts\roboto\Roboto-Medium-webfont.ttf" />
-    <Content Include="fonts\roboto\Roboto-Medium-webfont.woff" />
-    <Content Include="fonts\roboto\Roboto-Regular-webfont.eot" />
-    <Content Include="fonts\roboto\Roboto-Regular-webfont.ttf" />
-    <Content Include="fonts\roboto\Roboto-Regular-webfont.woff" />
-    <Content Include="fonts\satisfy\satisfy.eot" />
-    <Content Include="fonts\satisfy\satisfy.ttf" />
-    <Content Include="fonts\satisfy\satisfy.woff" />
+    <Content Include="Img\fonts\roboto\Roboto-Bold-webfont.eot" />
+    <Content Include="Img\fonts\roboto\Roboto-Bold-webfont.ttf" />
+    <Content Include="Img\fonts\roboto\Roboto-Bold-webfont.woff" />
+    <Content Include="Img\fonts\roboto\Roboto-Light-webfont.eot" />
+    <Content Include="Img\fonts\roboto\Roboto-Light-webfont.ttf" />
+    <Content Include="Img\fonts\roboto\Roboto-Light-webfont.woff" />
+    <Content Include="Img\fonts\roboto\Roboto-Medium-webfont.eot" />
+    <Content Include="Img\fonts\roboto\Roboto-Medium-webfont.ttf" />
+    <Content Include="Img\fonts\roboto\Roboto-Medium-webfont.woff" />
+    <Content Include="Img\fonts\roboto\Roboto-Regular-webfont.eot" />
+    <Content Include="Img\fonts\roboto\Roboto-Regular-webfont.ttf" />
+    <Content Include="Img\fonts\roboto\Roboto-Regular-webfont.woff" />
+    <Content Include="Img\fonts\satisfy\satisfy.eot" />
+    <Content Include="Img\fonts\satisfy\satisfy.ttf" />
+    <Content Include="Img\fonts\satisfy\satisfy.woff" />
     <Content Include="Img\social\googleplus-128.png.crdownload" />
     <Content Include="less\app.less" />
     <Content Include="less\inc\404.less" />
@@ -8930,6 +8929,7 @@
     <Content Include="node_modules\grunt-contrib-uglify\node_modules\uri-path\README.md" />
     <Content Include="node_modules\grunt-contrib-uglify\package.json" />
     <Content Include="node_modules\grunt-contrib-uglify\README.md" />
+    <Content Include="Areas\Leave\Views\SetUp\HolidayList.cshtml" />
     <None Include="Properties\PublishProfiles\HR.pubxml" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
@@ -12886,6 +12886,7 @@
     <Compile Include="ViewModels\BranchViewModel.cs" />
     <Compile Include="ViewModels\CompanyViewModel.cs" />
     <Compile Include="ViewModels\CountryViewModel.cs" />
+    <Compile Include="ViewModels\HolidayListViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config">
@@ -12896,9 +12897,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Areas\Master\Views\Branch\Index.cshtml" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Img\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Img\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Img\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="vendors\bower.json" />

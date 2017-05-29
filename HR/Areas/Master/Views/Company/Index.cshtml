@@ -7,12 +7,18 @@
         color: red;
     }
 </style>
-<form style="margin: 5% 0 0" action="/Company/SaveCompany">
+<div class="card-header">
+    <h2>
+        Company Profile
+    </h2>
+</div>
+<form  action="/Company/SaveCompany">
     <div class="card-body card-padding p-t-15 p-b-15" id="profile-main">
         <div class="row">
             <div class="col-sm-12 col-md-6">
                 <div class="form-group fg-line">
                     <label>Company Code</label>
+                    <input type="text" name="Id"style="display:none;" />
                     <input type="text" id="txt-CompanyCode" name="CompanyCode" class="form-control" />
                 </div>
             </div>
@@ -39,6 +45,7 @@
             <div class="col-sm-12 col-md-6">
                 <div class="form-group fg-line">
                     <lable id="lbl-Address1">Address1</lable>
+                    <input type="text" name="Address.AddressID" style="display:none;" />
                     <input type="text" class="form-control" name="Address.Address1" id="txt-Address1" />
                 </div>
             </div>

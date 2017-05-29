@@ -17,20 +17,23 @@ namespace HR.Service.Master.MasterService
         public IRepository<Country> CountryRepository;
         public IRepository<Branch> BranchRepository;
         public IRepository<Address> AddressRepository;
+        public IRepository<HolidayList> HolidayRepository;
         #endregion
 
 
         #region Constructor
-        public Master(IRepository<Company> CompanyRepository, IRepository<Country> CountryRepository, IRepository<Branch> BranchRepository, IRepository<Address> AddressRepository)
+        public Master(IRepository<Company> CompanyRepository, IRepository<Country> CountryRepository, IRepository<Branch> BranchRepository, IRepository<Address> AddressRepository, IRepository<HolidayList> HolidayRepository)
         {
             this.CompanyRepository = CompanyRepository;
             this.CountryRepository = CountryRepository;
             this.BranchRepository = BranchRepository;
             this.AddressRepository = AddressRepository;
+            this.HolidayRepository = HolidayRepository;
         }
 
         #endregion
 
+        #region Company
         public void Save(Company company)
         {
             if (company.Id == 0)
@@ -50,6 +53,9 @@ namespace HR.Service.Master.MasterService
 
             return query;
         }
+        #endregion
+
+        #region Country
         public IQueryable<T> GetCountries<T>(Expression<Func<T, bool>> predicate = null) where T : Country
         {
             var query = CountryRepository.FindAll().OfType<T>();
@@ -58,12 +64,14 @@ namespace HR.Service.Master.MasterService
 
             return query;
         }
+        #endregion
 
-
+        #region Address
         public Address GetAddress(int Id)
         {
             return AddressRepository.GetById(Id);
         }
+        #endregion
 
         #region Branch
         public void Save(Branch branch)
@@ -72,6 +80,38 @@ namespace HR.Service.Master.MasterService
                 BranchRepository.Insert(branch);
             else
                 BranchRepository.Update(branch);
+        }
+
+        public Branch GetBranch(int Id)
+        {
+            return BranchRepository.GetById(Id);
+        }
+
+
+        #endregion
+
+        #region HolidayList
+        public void Save(HolidayList holidayList)
+        {
+            if (holidayList.Id == 0)
+                HolidayRepository.Insert(holidayList);
+            else
+                HolidayRepository.Update(holidayList);
+        }
+        public void Remove(HolidayList holidayList)
+        {
+            if (holidayList.Id > 0)
+            {
+                HolidayRepository.Remove(holidayList);
+            }
+        }
+        public IQueryable<T> GetHolidayLists<T>(Expression<Func<T, bool>> predicate = null) where T : HolidayList
+        {
+            var query = HolidayRepository.FindAll().OfType<T>();
+            if (predicate != null)
+                query = query.Where(predicate);
+
+            return query;
         }
 
         #endregion

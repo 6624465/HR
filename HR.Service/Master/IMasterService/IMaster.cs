@@ -21,11 +21,18 @@ namespace HR.Service.Master.IMasterService
         #endregion
 
         #region Branch
+        Branch GetBranch(int Id);
         void Save(Branch branch);
         #endregion
 
         #region Address
         Address GetAddress(int Id);
+        #endregion
+
+        #region HolidayList
+        IQueryable<T> GetHolidayLists<T>(Expression<Func<T, bool>> predicate = null) where T : HolidayList;
+        void Save(HolidayList holidayList);
+        void Remove(HolidayList holidayList);
         #endregion
     }
 }

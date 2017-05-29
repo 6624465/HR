@@ -1,8 +1,74 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "HolidayList";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="card-header">
+    <h2>Add Employee</h2>
+</div>
+<div class="card-body card-padding">
+    <div class="row">
+        <div class="col-xs-12 col-md-6">
+            <div class="form-group fg-line">
+                <label>Location</label>
+                <select class="selectpicker" data-live-search="true">
+                    <option>Manual Entry</option>
+                    <option>Permanent Employees</option>
+                    <option>Temporary Employees</option>
+                </select>
+            </div>
+        </div>
+        @*<a class="btn btn-primary waves-effect pull-right btn-sm "> <i class="zmdi zmdi-account-add"> Add Employee</i></a>*@
+        <button class="btn btn-primary waves-effect pull-right btn-sm ">Add an Holiday</button>
+        <button class="btn btn-primary waves-effect pull-right btn-sm ">Excel Export</button>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<div id="myModal" role="dialog">
+    @*<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">*@
+    <div class="row">
+        <div class="col-xs-12 col-md-6">
+            <div class="form-group fg-line">
+                <label>Date</label>
+                <div class="input-group form-group">
+                    <span class="input-group-addon"><i class="zmdi zmdi-calendar"></i></span>
+                    <div class="dtp-container">
+                        <input type='text' class="form-control date-picker"
+                               placeholder="Click here...">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-6">
+            <div class="form-group fg-line">
+                <label>
+                    Occasion
+                </label>
+                <input class="form-control input-mask" autocomplete="off" type="text">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-6">
+            <div class="form-group fg-line">
+                <label>
+                   Location
 
-<h2>HolidayList</h2>
+                </label>
+                <select class="selectpicker" data-live-search="true">
+                    <optgroup label="Please enter 1 more characters">
+                        <option>Mustard</option>
+                        <option>Ketchup</option>
+                        <option>Relish</option>
+                        <option>Tent</option>
+                        <option>Flashlight</option>
+                        <option>Toilet Paper</option>
+                    </optgroup>
+
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
 
