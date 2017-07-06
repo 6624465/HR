@@ -22,10 +22,10 @@ namespace HR
             routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
-                new { area = "Employee", controller = "Main", action = "Overview", id = UrlParameter.Optional }, // Parameter defaults
+                new { area = "Login", controller = "Login", action = "Index", id = UrlParameter.Optional }, // Parameter defaults
                 null,
-                new[] { "HR.Areas.Employee.Controllers" }
-            ).DataTokens.Add("area", "Employee");
+                new[] { "HR.Areas.Login.Controllers" }
+            ).DataTokens.Add("area", "Login");
         }
     }
 }

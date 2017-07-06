@@ -1,0 +1,158 @@
+﻿
+@{
+    ViewBag.Title = "EmployeeType";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="card-header">
+    <h2>Employee Directory </h2>
+</div>
+
+<div class="card-body card-padding" ng-app="EmployeeType" ng-controller="EmployeeTypeController">
+    <div class="add-top">
+        @*<i class="zmdi zmdi-account-add"> Add Employee Type</i>*@
+        <a href="" class="btn btn-primary waves-effect pull-right btn-sm " ng-click="addEmployeeType(table)"> <i class="zmdi zmdi-account-add"> Add Employee Type</i></a>
+        <div class="clearfix"></div>
+    </div>
+    @*<div class="form">
+            <form id="myForm">
+                <span>Employee Type Name</span>
+                <input  type="text" ng-bind="employeeType.LookUpCode"/><br />
+                <span>Employee Type Description</span>
+                <input type="text" ng-bind="employeeType.LookUpDescription"/><br />
+                <span>IsActive</span>
+                <input type="checkbox" ng-bind="employeeType.IsActive" /><br />
+
+            </form>
+        </div>*@
+
+    <div class="modal fade in" id="AddEmployeeTypeDialog" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Add Employee Type</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-8">
+                            <div class="form-group fg-line">
+                                <label>Employee Type Name</label>
+                                <input class="form-control input-mask" type="text" ng-model="EmployeeType.LookUpCode">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-8">
+                            <div class="form-group fg-line">
+                                <label>
+                                    Employee Type Description
+                                </label>
+                                <input class="form-control input-mask" type="text" ng-model="EmployeeType.LookUpDescription">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-8">
+                            <div class="form-group fg-line">
+                                <label>
+                                    IsActive
+                                </label>
+                                <input type="checkbox" ng-model="EmployeeType.IsActive" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer" style="right: 270px;">
+                    <button class="btn btn-primary waves-effect" type="submit" ng-click="onClickSaveEmployeeType(EmployeeType)">Save</button>
+                    <button type="submit" class="btn btn-primary waves-effect" ng-click="onClickCancelEmployeeType()">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Employee Type Name</th>
+                    <th>Employee Type Description</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employeeType in EmployeeType">
+                    <td><a ng-click="onEditEmployeeType(employeeType)">{{employeeType.LookUpCode}}</a></td>
+                    <td>{{employeeType.LookUpDescription}}</td>
+                    <td><input type="checkbox"  ng-model="employeeType.IsActive" disabled="true"/></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script>
+    var employeeType = angular.module('EmployeeType', []);
+    employeeType.controller('EmployeeTypeController', ['$scope', '$http', function ($scope, $http) {
+        $(".form").hide();
+        $scope.init = function () {
+            $scope.EmployeeType = {
+                LookUpID: null,
+                LookUpCode: null,
+                LookUpDescription: null,
+                IsActive: null,
+                LookUpCategory : "EmployeeType"
+            },
+
+        $scope.LookUpCategory = "EmployeeType";
+        }       
+        $scope.addEmployeeType = function () {
+            $('#AddEmployeeTypeDialog').modal('show');
+        };
+        $scope.onEditEmployeeType = function (obj) {
+            $scope.EmployeeType.LookUpCode = obj.LookUpCode;
+            $scope.EmployeeType.LookUpDescription = obj.LookUpDescription;
+            $scope.EmployeeType.IsActive = obj.IsActive;
+            $scope.EmployeeType.LookUpID = obj.LookUpID;
+            $('#AddEmployeeTypeDialog').modal('show');
+        }
+        debugger
+        var lookUpCategory = "EmployeeType";
+        $http.post('/Master/LookUp/GetLookUp?LookUpCategory=' + lookUpCategory).then(function (response) {
+            debugger
+            if (response.data.success == true) {
+                $scope.EmployeeType = response.data.lookUpLists;
+            }
+        });
+        $scope.onClickSaveEmployeeType = function (employeeType) {
+            var employeeTypeObj = {
+                'LookUpID': employeeType.LookUpID,
+                'LookUpCode': employeeType.LookUpCode,
+                'LookUpDescription': employeeType.LookUpDescription,
+                'LookUpCategory' : "EmployeeType",
+                'IsActive': employeeType.IsActive,
+            }
+            $http.post("/Master/LookUp/SaveLookUp", employeeTypeObj).then(function (response) {
+                if (response.data.success == true) {
+                    $('#AddEmployeeTypeDialog').modal('toggle');
+                    alert(response.data.message);
+                    $scope.clearTextBoxes();
+                    window.location.reload();
+                }
+            })
+            $scope.clearTextBoxes = function () {
+                $scope.EmployeeType.LookUpCode = null;
+                $scope.EmployeeType.LookUpDescription = null;
+                $scope.EmployeeType.IsActive = null;
+                $scope.EmployeeType.LookUpID = null;
+            }
+            $scope.onClickCancelEmployeeType = function () {
+                $scope.clearTextBoxes();
+            }
+
+        }
+    }])
+
+</script>

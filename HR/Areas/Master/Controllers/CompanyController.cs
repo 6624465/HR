@@ -1,6 +1,7 @@
 ﻿using HR.Controllers;
 using HR.Core.Models.Master;
 using HR.Service.Master.IMasterService;
+using HR.Service.Security.ISecurityService;
 using HR.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ namespace HR.Areas.Master.Controllers
     public class CompanyController : BaseController
     {
         #region Constructor
-        public CompanyController(IMaster MasterService) : base(MasterService)
+        public CompanyController(IMaster MasterService, ISecurity SecurityService) : base(MasterService, SecurityService)
         {
         }
         #endregion

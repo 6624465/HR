@@ -21,7 +21,9 @@ namespace HR.Service.Master.IMasterService
         #endregion
 
         #region Branch
+
         Branch GetBranch(int Id);
+        IQueryable<T> GetBranches<T>(Expression<Func<T, bool>> predicate = null) where T : Branch;
         void Save(Branch branch);
         #endregion
 
@@ -33,6 +35,12 @@ namespace HR.Service.Master.IMasterService
         IQueryable<T> GetHolidayLists<T>(Expression<Func<T, bool>> predicate = null) where T : HolidayList;
         void Save(HolidayList holidayList);
         void Remove(HolidayList holidayList);
+        #endregion
+
+        #region EmployeeType
+        void Save(LookUp lookUpData);
+        IQueryable<T> GetLookUp<T>(Expression<Func<T, bool>> predicate = null) where T : LookUp;
+        LookUp GetLookUpType(int LookUpID);
         #endregion
     }
 }

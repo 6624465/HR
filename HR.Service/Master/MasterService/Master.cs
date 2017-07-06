@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace HR.Service.Master.MasterService
 {
-    public class Master :IMaster
+    public class Master : IMaster
     {
         #region Properties
         public IRepository<Company> CompanyRepository;
@@ -18,17 +18,20 @@ namespace HR.Service.Master.MasterService
         public IRepository<Branch> BranchRepository;
         public IRepository<Address> AddressRepository;
         public IRepository<HolidayList> HolidayRepository;
+        public IRepository<LookUp> LookUpRepository;
         #endregion
 
 
         #region Constructor
-        public Master(IRepository<Company> CompanyRepository, IRepository<Country> CountryRepository, IRepository<Branch> BranchRepository, IRepository<Address> AddressRepository, IRepository<HolidayList> HolidayRepository)
+        public Master(IRepository<Company> CompanyRepository, IRepository<Country> CountryRepository,
+            IRepository<Branch> BranchRepository, IRepository<Address> AddressRepository, IRepository<HolidayList> HolidayRepository, IRepository<LookUp> LookUpRepository)
         {
             this.CompanyRepository = CompanyRepository;
             this.CountryRepository = CountryRepository;
             this.BranchRepository = BranchRepository;
             this.AddressRepository = AddressRepository;
             this.HolidayRepository = HolidayRepository;
+            this.LookUpRepository = LookUpRepository;
         }
 
         #endregion
@@ -87,6 +90,15 @@ namespace HR.Service.Master.MasterService
             return BranchRepository.GetById(Id);
         }
 
+        public IQueryable<T> GetBranches<T>(Expression<Func<T, bool>> predicate = null) where T : Branch
+        {
+            var query = BranchRepository.FindAll().OfType<T>();
+            if (predicate != null)
+                query = query.Where(predicate);
+
+            return query;
+        }
+
 
         #endregion
 
@@ -114,6 +126,29 @@ namespace HR.Service.Master.MasterService
             return query;
         }
 
+        #endregion
+
+        #region LookUP
+        public void Save(LookUp lookUp)
+        {
+            if (lookUp.LookUpID == 0)
+                LookUpRepository.Insert(lookUp);
+            else
+                LookUpRepository.Update(lookUp);
+        }
+
+        public IQueryable<T> GetLookUp<T>(Expression<Func<T, bool>> predicate = null) where T : LookUp
+        {
+            var query = LookUpRepository.FindAll().OfType<T>();
+            if (predicate != null)
+                query = query.Where(predicate);
+            return query;
+        }
+
+        public LookUp GetLookUpType(int LookUpID)
+        {
+            return LookUpRepository.GetById(LookUpID);
+        }
         #endregion
     }
 }

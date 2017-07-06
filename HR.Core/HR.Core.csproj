@@ -40,11 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants.cs" />
     <Compile Include="Models\Master\Address.cs" />
     <Compile Include="Models\Master\Branch.cs" />
     <Compile Include="Models\Master\Company.cs" />
     <Compile Include="Models\Master\Country.cs" />
     <Compile Include="Models\Master\HolidayList.cs" />
+    <Compile Include="Models\Master\LookUp.cs" />
+    <Compile Include="Models\Security\SessionObject.cs" />
+    <Compile Include="Models\Security\Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

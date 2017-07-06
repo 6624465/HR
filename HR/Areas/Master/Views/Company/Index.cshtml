@@ -12,20 +12,20 @@
         Company Profile
     </h2>
 </div>
-<form  action="/Company/SaveCompany">
+<div ng-app="companyApp" ng-controller="companyController" ng-init="init()">
     <div class="card-body card-padding p-t-15 p-b-15" id="profile-main">
         <div class="row">
             <div class="col-sm-12 col-md-6">
                 <div class="form-group fg-line">
                     <label>Company Code</label>
-                    <input type="text" name="Id"style="display:none;" />
-                    <input type="text" id="txt-CompanyCode" name="CompanyCode" class="form-control" />
+                    <input type="text" name="Id" style="display:none;" />
+                    <input type="text" id="txt-CompanyCode" ng-model="CompanyCode" class="form-control" />
                 </div>
             </div>
             <div class="col-sm-12 col-md-6">
                 <div class="form-group fg-line">
                     <label>Name</label>
-                    <input type="text" id="txt-CompanyName" name="CompanyName" class="form-control" />
+                    <input type="text" id="txt-CompanyName" ng-model="CompanyName" class="form-control" />
                 </div>
             </div>
         </div>
@@ -35,7 +35,7 @@
                 <div class="form-group fg-line">
                     <div class="form-group fg-line">
                         <label>Reg NO</label>
-                        <input type="text" id="txt-RegNo" name="RegNo" class="form-control" />
+                        <input type="text" id="txt-RegNo" ng-model="RegNo" class="form-control" />
                     </div>
                 </div>
             </div>
@@ -45,8 +45,8 @@
             <div class="col-sm-12 col-md-6">
                 <div class="form-group fg-line">
                     <lable id="lbl-Address1">Address1</lable>
-                    <input type="text" name="Address.AddressID" style="display:none;" />
-                    <input type="text" class="form-control" name="Address.Address1" id="txt-Address1" />
+                    <input type="text" ng-model="Address.AddressID" style="display:none;" />
+                    <input type="text" class="form-control" ng-model="Address.Address1" id="txt-Address1" />
                 </div>
             </div>
         </div>
@@ -54,7 +54,7 @@
             <div class="col-sm-12 col-md-6">
                 <div class="form-group fg-line">
                     <lable id="lbl-Address2">Address2</lable>
-                    <input type="text" class="form-control" name="Address.Address2" id="txt-Address2" />
+                    <input type="text" class="form-control" ng-model="Address.Address2" id="txt-Address2" />
                 </div>
             </div>
         </div>
@@ -62,13 +62,13 @@
             <div class="col-xs-12 col-md-6">
                 <div class="form-group fg-line">
                     <lable id="lbl-City">City</lable>
-                    <input type="text" id="txt-City" name="Address.CityName" class="form-control" />
+                    <input type="text" id="txt-City" ng-model="Address.CityName" class="form-control" />
                 </div>
             </div>
             <div class="col-xs-12 col-md-6">
                 <div class="form-group fg-line">
                     <lable id="lbl-State">State</lable>
-                    <input type="text" id="txt-State" name="Address.StateName" class="form-control" />
+                    <input type="text" id="txt-State" ng-model="Address.StateName" class="form-control" />
                 </div>
             </div>
         </div>
@@ -77,13 +77,18 @@
             <div class="col-xs-12 col-md-6">
                 <div class="form-group fg-line">
                     <lable id="lbl-ZIPCode">ZIP Code</lable>
-                    <input type="text" id="txt-ZIPCode" name="Address.ZipCode" class="form-control" />
+                    <input type="text" id="txt-ZIPCode" ng-model="Address.ZipCode" class="form-control" />
                 </div>
             </div>
             <div class="col-xs-12 col-md-6">
                 <div class="form-group fg-line">
                     <lable id="lbl-Country">Country</lable>
-                    @Html.DropDownList("Address.CountryId", new SelectList((System.Collections.IEnumerable)ViewData["Countries"], "Id", "CountryName"), "Please select a Country", new { @class = "form-control" })
+                    <select class="form-control" ng-model="Address.CountryCode"
+                            ng-options="Country.CountryName for Country in Countries">
+                        <option value="">Select</option>
+                    </select>
+                    @*{{selectedName}} // ng-change="onChangeCounrtyCode()"*@
+                    @* @Html.DropDownList("Address.CountryId", new SelectList((System.Collections.IEnumerable)ViewData["Countries"], "Id", "CountryName"), "Please select a Country", new { @class = "form-control" })*@
                 </div>
             </div>
         </div>
@@ -91,13 +96,13 @@
             <div class="col-xs-12 col-md-6">
                 <div class="form-group fg-line">
                     <lable id="lbl-PhoneNo">Phone No</lable>
-                    <input type="text" id="txt-PhoneNo" name="Address.MobileNo" class="form-control" />
+                    <input type="text" id="txt-PhoneNo" ng-model="Address.MobileNo" class="form-control" />
                 </div>
             </div>
             <div class="col-xs-12 col-md-6">
                 <div class="form-group fg-line">
                     <lable id="lbl-Fax">Fax</lable>
-                    <input type="text" id="txt-Fax" name="Address.FaxNo" class="form-control" />
+                    <input type="text" id="txt-Fax" ng-model="Address.FaxNo" class="form-control" />
                 </div>
             </div>
         </div>
@@ -105,128 +110,161 @@
             <div class="col-xs-12 col-md-6">
                 <div class="form-group fg-line">
                     <lable id="lbl-WebSite">Web Site</lable>
-                    <input type="text" id="txt-WebSite" class="form-control" name="Address.Email" />
+                    <input type="text" id="txt-WebSite" class="form-control" ng-model="Address.Email" />
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12 col-md-6">
-                <button type="Submit" class="btn btn-primary btn-sm waves-effect">Save</button>
-                <button type="button" class="btn btn-primary btn-sm waves-effect">Add Branch</button>
+                <button type="Submit" class="btn btn-primary btn-sm waves-effect" ng-click="">Save</button>
+                <button type="button" class="btn btn-primary btn-sm waves-effect" ng-click="">Add Branch</button>
             </div>
         </div>
     </div>
-</form>
+</div>
+
 <script src="~/scripts/jquery-1.10.2.min.js"></script>
 <script src="~/scripts/jquery.validate.min.js"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 <script type="text/javascript">
-
-    $(document).ready(function () {
-        $.getJSON("/Company/GetCompanyDetails?companyId=1005", function (data) {
-
-            $.each(data, function (key, value) {
-                if (key && key == "Address") {
-                    debugger
-                    $.each(data.Address, function (name, value) {
-                        $("form").find("input[name='" + "Address." +name + "']").val(value);
-                    })
-                }
-                else
-                    $("form").find("input[name='" + key + "']").val(value);
-            });
-
-        })
-        jQuery.validator.addMethod("noSpace", function (value, element) {
-            debugger//Code used for blank space Validation
-            return value.indexOf(" ") < 0 && value != "";
+    var app = angular.module('companyApp', []);
+    app.controller('companyController', ['$scope', '$http', function ($scope, $http) {
+        //var app = angular.module('companyApp', []);
+        //app.contoller('companyController', ['$scope', '$http'], function ($scope, $http) {
+        debugger
+        $scope.init = function () {
+            debugger
+            $scope.CompanyCode = '',
+            $scope.CompanyName = '',
+            $scope.RegNo = '',
+            $scope.Address = {
+                Address1: '',
+                Address2: '',
+                CityName: '',
+                StateName: '',
+                ZipCode: '',
+                MobileNo: '',
+                FaxNo: '',
+                Email: '',
+                CountryCode: ''
+            },
+            $scope.Countries = [];
+        }
+        $http.get("/Company/GetCountries").then(function (response) {
+            if (response.data != null) {
+                $scope.Countries = response.data;
+            }
         });
 
-        $("form").validate({
-            errorClass: "my-Validate-class",
-            rules: {
-                CompanyCode: {
-                    //noSpace: true,
-                    required: true,
-                },
-                //CompanyCode: "required",
-                CompanyName: {
-                    noSpace: true,
-                    required: true,
-                },
-                RegNo: {
-                    noSpace: true,
-                    required: true,
-                },
-            },
-            messages: {
-                CompanyCode: "CompanyCode field cannot be blank!",
-                CompanyName: "Name field cannot be blank!",
-                RegNo: "RegNo field cannot be blank!"
-            }
-        })
+        //$http.post("/Login/Login", JSON.stringify(user))
+        //$scope.onChangeCounrtyCode = function () {
+        //    $scope.Address.CountryCode = $scope.Address.CountryCode.CountryName;
+        //}
+    }])
+    //$(document).ready(function () {
+    //    $.getJSON("/Company/GetCompanyDetails?companyId=1005", function (data) {
+
+    //        $.each(data, function (key, value) {
+    //            if (key && key == "Address") {
+    //                debugger
+    //                $.each(data.Address, function (name, value) {
+    //                    $("form").find("input[name='" + "Address." + name + "']").val(value);
+    //                })
+    //            }
+    //            else
+    //                $("form").find("input[name='" + key + "']").val(value);
+    //        });
+
+    //    })
+    //    jQuery.validator.addMethod("noSpace", function (value, element) {
+    //        debugger//Code used for blank space Validation
+    //        return value.indexOf(" ") < 0 && value != "";
+    //    });
+
+    //    $("form").validate({
+    //        errorClass: "my-Validate-class",
+    //        rules: {
+    //            CompanyCode: {
+    //                //noSpace: true,
+    //                required: true,
+    //            },
+    //            //CompanyCode: "required",
+    //            CompanyName: {
+    //                required: true,
+    //            },
+    //            RegNo: {
+    //                noSpace: true,
+    //                required: true,
+    //            },
+    //        },
+    //        messages: {
+    //            CompanyCode: "CompanyCode field cannot be blank!",
+    //            CompanyName: "Name field cannot be blank!",
+    //            RegNo: "RegNo field cannot be blank!"
+    //        }
+    //    })
 
 
 
-        //});
-        //$.ajax({
-        //    url: '/Company/GetCountries',
-        //    type: "POST",
-        //    dataType: "json",
-        //    async: false,
-        //    contentType: 'application/json, charset=utf-8',
-        //    success: function (data) {
-        //        $.each(data, function (index, elem) {
-        //            $('#ddl-Country').append($("<option value='" + elem.Id + "'>" + elem.CountryName + "</option>"));
-        //        })
-        //    },
-        //    error: function (e, data) {
-        //        notify("error", '');
-        //    }
-        //});
-        //var companyId = 4;
-        //$.ajax({
-        //    url: '/Company/getCompanyDetails',
-        //    type: "GET",
-        //    dataType: "json",
-        //    //async: false,
-        //    data: { companyId: companyId },
-        //    contentType: 'application/json, charset=utf-8',
-        //    success: function (data) {
-        //        $('#txt-Address1').val(data.AddressID);
-        //        $('#txt-CompanyCode').val(data.CompanyCode);
-        //        $('#txt-CompanyName').val(data.CompanyName);
-        //        $('#txt-RegNo').val(data.RegNo);
-        //    },
-        //    error: function (e, data) {
-        //        notify("error", '');
-        //    }
-        //});
+    //    //});
+    //    //$.ajax({
+    //    //    url: '/Company/GetCountries',
+    //    //    type: "POST",
+    //    //    dataType: "json",
+    //    //    async: false,
+    //    //    contentType: 'application/json, charset=utf-8',
+    //    //    success: function (data) {
+    //    //        $.each(data, function (index, elem) {
+    //    //            $('#ddl-Country').append($("<option value='" + elem.Id + "'>" + elem.CountryName + "</option>"));
+    //    //        })
+    //    //    },
+    //    //    error: function (e, data) {
+    //    //        notify("error", '');
+    //    //    }
+    //    //});
+    //    //var companyId = 4;
+    //    //$.ajax({
+    //    //    url: '/Company/getCompanyDetails',
+    //    //    type: "GET",
+    //    //    dataType: "json",
+    //    //    //async: false,
+    //    //    data: { companyId: companyId },
+    //    //    contentType: 'application/json, charset=utf-8',
+    //    //    success: function (data) {
+    //    //        $('#txt-Address1').val(data.AddressID);
+    //    //        $('#txt-CompanyCode').val(data.CompanyCode);
+    //    //        $('#txt-CompanyName').val(data.CompanyName);
+    //    //        $('#txt-RegNo').val(data.RegNo);
+    //    //    },
+    //    //    error: function (e, data) {
+    //    //        notify("error", '');
+    //    //    }
+    //    //});
 
-        //$('#btn-Save').click(function () {
-        //    $.ajax({
-        //        url: "/Company/SaveComanyDetails",
-        //        type: "POST",
-        //        dataType: "json",
-        //        async: false,
-        //        contentType: 'application/json, charset=utf-8',
-        //        data: JSON.stringify({
-        //            companyViewModel: {
-        //                AddressID: $('#txt-Address1').val(),
-        //                CompanyCode: $('#txt-CompanyCode').val(),
-        //                CompanyName: $('#txt-CompanyName').val(),
-        //                IsActive: true,
-        //                RegNo: $('#txt-RegNo').val(),
-        //            }
-        //        }),
-        //        success: function (data) {
-        //        }
-        //    })
-        //})
+    //    //$('#btn-Save').click(function () {
+    //    //    $.ajax({
+    //    //        url: "/Company/SaveComanyDetails",
+    //    //        type: "POST",
+    //    //        dataType: "json",
+    //    //        async: false,
+    //    //        contentType: 'application/json, charset=utf-8',
+    //    //        data: JSON.stringify({
+    //    //            companyViewModel: {
+    //    //                AddressID: $('#txt-Address1').val(),
+    //    //                CompanyCode: $('#txt-CompanyCode').val(),
+    //    //                CompanyName: $('#txt-CompanyName').val(),
+    //    //                IsActive: true,
+    //    //                RegNo: $('#txt-RegNo').val(),
+    //    //            }
+    //    //        }),
+    //    //        success: function (data) {
+    //    //        }
+    //    //    })
+    //    //})
 
-        //$('#btn-Branch').click(function () {
-        //    location.href = '/Branch/Index';
-        //})
-    })
+    //    //$('#btn-Branch').click(function () {
+    //    //    location.href = '/Branch/Index';
+    //    //})
+    //})
 
 </script>
