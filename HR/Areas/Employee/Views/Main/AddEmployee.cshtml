@@ -3,14 +3,11 @@
     ViewBag.Title = "AddEmployee";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-
-
 <div class="card-header">
     <h2>Add Employee</h2>
 
 </div>
-<div class="card-body card-padding">
+<div class="card-body card-padding" ng-controller="AddEmployeeController">
     <div class="">
         <div class="row">
             <div class="col-sm-12">
@@ -54,7 +51,7 @@
                                                 <i class="zmdi  zmdi-balance"></i>
                                             </div>
 
-                                        </a>    
+                                        </a>
                                         <span>PF &amp; ESI</span>
                                     </li>
                                     <li>
@@ -87,8 +84,8 @@
 
 
                                                         </select>
-                                                        </div>
                                                     </div>
+                                                </div>
 
                                                 <div class="col-xs-12 col-md-6">
                                                     <div class="form-group fg-line">
@@ -103,8 +100,8 @@
                                                     <div class="form-group fg-line">
                                                         <label>Employee No</label>
                                                         <input class="form-control input-mask" value="100" autocomplete="off" type="text" disabled>
-                                                        </div>
                                                     </div>
+                                                </div>
 
                                                 <div class="col-xs-12 col-md-6">
                                                     <div class="form-group fg-line">
@@ -117,8 +114,8 @@
                                                                        placeholder="Click here...">
                                                             </div>
                                                         </div>
-                                                        </div>
                                                     </div>
+                                                </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-xs-12 col-md-6">
@@ -129,7 +126,7 @@
 
                                                         <input class="form-control input-mask" autocomplete="off" type="text">
                                                     </div>
-                                                    </div>
+                                                </div>
                                                 <div class="col-xs-12 col-md-6">
                                                     <div class="form-group fg-line">
                                                         <label>Email</label>
@@ -153,7 +150,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    </div>
+                                                </div>
 
                                                 <div class="col-xs-12 col-md-6">
                                                     <div class="form-group fg-line">
@@ -167,31 +164,31 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-xs-12 col-md-6 m-b-15">
-                                                   
-                                                        <label>
-                                                            Gender
 
-                                                        </label><br /><br />
+                                                    <label>
+                                                        Gender
+
+                                                    </label><br /><br />
 
 
-                                                        <label class="radio radio-inline m-r-20">
-                                                            <input type="radio" name="inlineRadioOptions" value="option1">
-                                                            <i class="input-helper"></i>
-                                                            Female
-                                                        </label>
+                                                    <label class="radio radio-inline m-r-20">
+                                                        <input type="radio" name="inlineRadioOptions" value="option1">
+                                                        <i class="input-helper"></i>
+                                                        Female
+                                                    </label>
 
-                                                        <label class="radio radio-inline m-r-20">
-                                                            <input type="radio" name="inlineRadioOptions" value="option2">
-                                                            <i class="input-helper"></i>
-                                                            male
-                                                        </label>
+                                                    <label class="radio radio-inline m-r-20">
+                                                        <input type="radio" name="inlineRadioOptions" value="option2">
+                                                        <i class="input-helper"></i>
+                                                        male
+                                                    </label>
 
-                                                        <label class="radio radio-inline m-r-20">
-                                                            <input type="radio" name="inlineRadioOptions" value="option3">
-                                                            <i class="input-helper"></i>
-                                                            Others
-                                                        </label>
-                                                    </div>
+                                                    <label class="radio radio-inline m-r-20">
+                                                        <input type="radio" name="inlineRadioOptions" value="option3">
+                                                        <i class="input-helper"></i>
+                                                        Others
+                                                    </label>
+                                                </div>
                                                 <div class="col-xs-12 col-md-6">
                                                     <div class="form-group fg-line">
                                                         <label>
@@ -282,9 +279,6 @@
                                                     <div class="form-group fg-line">
                                                         <label>
                                                             Spouse Name
-
-
-
                                                         </label>
                                                         <input class="form-control input-mask" autocomplete="off" type="text">
                                                     </div>
@@ -334,7 +328,6 @@
                                                     <div class="form-group fg-line">
                                                         <label>
                                                             Grade
-
                                                         </label>
                                                         <select class="selectpicker" data-live-search="true">
                                                             <option>G1</option>
@@ -348,7 +341,6 @@
                                                     <div class="form-group fg-line">
                                                         <label>
                                                             Location
-
                                                         </label>
                                                         <select class="selectpicker" data-live-search="true">
                                                             <option>Bangalore</option>
@@ -368,8 +360,6 @@
                                                         </label>
                                                         <select class="selectpicker" data-live-search="true">
                                                             <option>General scheme</option>
-
-
                                                         </select>
                                                     </div>
                                                 </div>
@@ -384,7 +374,6 @@
                                         <div class="card-body card-padding">
                                             <div class="row">
                                                 <div class="col-sm-12">
-
                                                     <div class="col-xs-12 col-md-6">
                                                         <div class="form-group fg-line">
                                                             <label>PAN Number</label>
@@ -400,11 +389,8 @@
                                                             <input type="checkbox" value="" id="chk1">
                                                             <i class="input-helper"></i>
                                                             Include PF
-
                                                         </label>
                                                     </div>
-
-
                                                     <div id="sb1" style="display:none;">
                                                         <div class="card">
                                                             <div class="card-body card-padding">
@@ -420,13 +406,10 @@
                                                                     <label>  UAN Number</label>
                                                                     <input class="form-control input-mask" autocomplete="off" type="text">
                                                                 </div>
-
                                                                 <label>
                                                                     PF Excess Contribution
 
                                                                 </label><br /><br />
-
-
                                                                 <label class="radio radio-inline m-r-20">
                                                                     <input type="radio" name="PF-Excess" value="Employee-max">
                                                                     <i class="input-helper"></i>
@@ -497,7 +480,7 @@
                             <div class="wizard-footer">
                                 <div class="pull-right">
                                     <input type='button' class='btns bgm-lightblue btn-sm waves-effect btn-next btn-wd' name='next' value='Next' />
-                                    <input type='button' class='btns bgm-green btn-sm waves-effect btn-finish  btn-wd' name='finish' value='Finish'  onclick="window.location.href='@Url.Action("EmployeeDirectory","Main",new { area ="Employee"},null)'" />
+                                    <input type='button' class='btns bgm-green btn-sm waves-effect btn-finish  btn-wd' name='finish' value='Finish' onclick="window.location.href='@Url.Action("EmployeeDirectory","Main",new { area ="Employee"},null)'" />
                                 </div>
 
                                 <div class="pull-left">
@@ -513,3 +496,10 @@
         </div>
     </div><!-- end row -->
 </div> <!--  big container -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"> </script>
+<script>
+    var addEmployee = angular.module('HRAPP', []);
+    addEmployee.controller('AddEmployeeController', ['$scope', '$http', function ($scope, $http) {
+
+    }])
+</script>

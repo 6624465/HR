@@ -12,20 +12,20 @@
         Company Profile
     </h2>
 </div>
-<div ng-app="companyApp" ng-controller="companyController" ng-init="init()">
+<div ng-controller="companyController">
     <div class="card-body card-padding p-t-15 p-b-15" id="profile-main">
         <div class="row">
             <div class="col-sm-12 col-md-6">
                 <div class="form-group fg-line">
                     <label>Company Code</label>
                     <input type="text" name="Id" style="display:none;" />
-                    <input type="text" id="txt-CompanyCode" ng-model="CompanyCode" class="form-control" />
+                    <input type="text" id="txt-CompanyCode" ng-model="Company.CompanyCode" class="form-control" />
                 </div>
             </div>
             <div class="col-sm-12 col-md-6">
                 <div class="form-group fg-line">
                     <label>Name</label>
-                    <input type="text" id="txt-CompanyName" ng-model="CompanyName" class="form-control" />
+                    <input type="text" id="txt-CompanyName" ng-model="Company.CompanyName" class="form-control" />
                 </div>
             </div>
         </div>
@@ -35,7 +35,7 @@
                 <div class="form-group fg-line">
                     <div class="form-group fg-line">
                         <label>Reg NO</label>
-                        <input type="text" id="txt-RegNo" ng-model="RegNo" class="form-control" />
+                        <input type="text" id="txt-RegNo" ng-model="Company.RegNo" class="form-control" />
                     </div>
                 </div>
             </div>
@@ -46,7 +46,7 @@
                 <div class="form-group fg-line">
                     <lable id="lbl-Address1">Address1</lable>
                     <input type="text" ng-model="Address.AddressID" style="display:none;" />
-                    <input type="text" class="form-control" ng-model="Address.Address1" id="txt-Address1" />
+                    <input type="text" class="form-control" ng-model="Company.Address.Address1" id="txt-Address1" />
                 </div>
             </div>
         </div>
@@ -54,7 +54,7 @@
             <div class="col-sm-12 col-md-6">
                 <div class="form-group fg-line">
                     <lable id="lbl-Address2">Address2</lable>
-                    <input type="text" class="form-control" ng-model="Address.Address2" id="txt-Address2" />
+                    <input type="text" class="form-control" ng-model="Company.Address.Address2" id="txt-Address2" />
                 </div>
             </div>
         </div>
@@ -62,13 +62,13 @@
             <div class="col-xs-12 col-md-6">
                 <div class="form-group fg-line">
                     <lable id="lbl-City">City</lable>
-                    <input type="text" id="txt-City" ng-model="Address.CityName" class="form-control" />
+                    <input type="text" id="txt-City" ng-model="Company.Address.CityName" class="form-control" />
                 </div>
             </div>
             <div class="col-xs-12 col-md-6">
                 <div class="form-group fg-line">
                     <lable id="lbl-State">State</lable>
-                    <input type="text" id="txt-State" ng-model="Address.StateName" class="form-control" />
+                    <input type="text" id="txt-State" ng-model="Company.Address.StateName" class="form-control" />
                 </div>
             </div>
         </div>
@@ -77,18 +77,18 @@
             <div class="col-xs-12 col-md-6">
                 <div class="form-group fg-line">
                     <lable id="lbl-ZIPCode">ZIP Code</lable>
-                    <input type="text" id="txt-ZIPCode" ng-model="Address.ZipCode" class="form-control" />
+                    <input type="text" id="txt-ZIPCode" ng-model="Company.Address.ZipCode" class="form-control" />
                 </div>
             </div>
             <div class="col-xs-12 col-md-6">
                 <div class="form-group fg-line">
                     <lable id="lbl-Country">Country</lable>
-                    <select class="form-control" ng-model="Address.CountryCode"
-                            ng-options="Country.CountryName for Country in Countries">
+                    <select class="form-control" ng-model="ddlCountry"
+                         ng-change="onChangeCounrtyCode()"  ng-options="Country.CountryName for Country in Countries">
                         <option value="">Select</option>
                     </select>
                     @*{{selectedName}} // ng-change="onChangeCounrtyCode()"*@
-                    @* @Html.DropDownList("Address.CountryId", new SelectList((System.Collections.IEnumerable)ViewData["Countries"], "Id", "CountryName"), "Please select a Country", new { @class = "form-control" })*@
+                    @* @Html.DropDownList("Address.CountryId", new SelectList((System.Collections.IEnumerable)ViewData["Countries"], "Id", "CountryName"), "Please select a Company", new { @class = "form-control" })*@
                 </div>
             </div>
         </div>
@@ -96,13 +96,13 @@
             <div class="col-xs-12 col-md-6">
                 <div class="form-group fg-line">
                     <lable id="lbl-PhoneNo">Phone No</lable>
-                    <input type="text" id="txt-PhoneNo" ng-model="Address.MobileNo" class="form-control" />
+                    <input type="text" id="txt-PhoneNo" ng-model="Company.Address.MobileNo" class="form-control" />
                 </div>
             </div>
             <div class="col-xs-12 col-md-6">
                 <div class="form-group fg-line">
                     <lable id="lbl-Fax">Fax</lable>
-                    <input type="text" id="txt-Fax" ng-model="Address.FaxNo" class="form-control" />
+                    <input type="text" id="txt-Fax" ng-model="Company.Address.FaxNo" class="form-control" />
                 </div>
             </div>
         </div>
@@ -110,44 +110,43 @@
             <div class="col-xs-12 col-md-6">
                 <div class="form-group fg-line">
                     <lable id="lbl-WebSite">Web Site</lable>
-                    <input type="text" id="txt-WebSite" class="form-control" ng-model="Address.Email" />
+                    <input type="text" id="txt-WebSite" class="form-control" ng-model="Company.Address.Email" />
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12 col-md-6">
-                <button type="Submit" class="btn btn-primary btn-sm waves-effect" ng-click="">Save</button>
+                <button type="Submit" class="btn btn-primary btn-sm waves-effect" ng-click="onSaveCompanyDetails(Company)">Save</button>
                 <button type="button" class="btn btn-primary btn-sm waves-effect" ng-click="">Add Branch</button>
             </div>
         </div>
     </div>
 </div>
 
-<script src="~/scripts/jquery-1.10.2.min.js"></script>
-<script src="~/scripts/jquery.validate.min.js"></script>
+@*<script src="~/scripts/jquery-1.10.2.min.js"></script>*@
+@*<script src="~/scripts/jquery.validate.min.js"></script>*@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 <script type="text/javascript">
-    var app = angular.module('companyApp', []);
+    var app = angular.module('HRAPP', []);
     app.controller('companyController', ['$scope', '$http', function ($scope, $http) {
-        //var app = angular.module('companyApp', []);
-        //app.contoller('companyController', ['$scope', '$http'], function ($scope, $http) {
-        debugger
         $scope.init = function () {
-            debugger
-            $scope.CompanyCode = '',
-            $scope.CompanyName = '',
-            $scope.RegNo = '',
-            $scope.Address = {
-                Address1: '',
-                Address2: '',
-                CityName: '',
-                StateName: '',
-                ZipCode: '',
-                MobileNo: '',
-                FaxNo: '',
-                Email: '',
-                CountryCode: ''
+            $scope.Company = {
+                CompanyCode: null,
+                CompanyName: null,
+                RegNo: null,
+                Address: {
+                    Address1: null,
+                    Address2: null,
+                    CityName: null,
+                    StateName: null,
+                    ZipCode: null,
+                    MobileNo: null,
+                    FaxNo: null,
+                    Email: null,
+                    CountryCode: null
+                },
             },
+            $scope.ddlCountry = null,
             $scope.Countries = [];
         }
         $http.get("/Company/GetCountries").then(function (response) {
@@ -155,11 +154,14 @@
                 $scope.Countries = response.data;
             }
         });
-
+        $scope.onSaveCompanyDetails = function (obj) {
+            $http.post("/Company/SaveCompany", obj).then(function (response) {
+            })
+        }
         //$http.post("/Login/Login", JSON.stringify(user))
-        //$scope.onChangeCounrtyCode = function () {
-        //    $scope.Address.CountryCode = $scope.Address.CountryCode.CountryName;
-        //}
+        $scope.onChangeCounrtyCode = function () {
+            $scope.Company.Address.CountryCode = $scope.ddlCountry.Id;
+        }
     }])
     //$(document).ready(function () {
     //    $.getJSON("/Company/GetCompanyDetails?companyId=1005", function (data) {

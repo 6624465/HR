@@ -2,6 +2,7 @@
 using HR.Core.Models.Master;
 using HR.Service.Master.IMasterService;
 using HR.Service.Security.ISecurityService;
+using HR.Service.Utilities;
 using HR.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -63,13 +64,13 @@ namespace HR.Areas.Master.Controllers
                     {
                         company = MasterService.GetCompany(companyViewModel.Id);
                         //company.Address = MasterService.GetAddress(company.AddressID);
-                        company.ModifiedBy = "Admin";
-                        company.ModifiedOn = DateTime.Now;
+                        company.ModifiedBy = USER_OBJECT.UserName;
+                        company.ModifiedOn = DateTimeConverter.SingaporeDateTimeConversion(DateTime.Now);
                     }
                     else
                     {
-                        company.CreatedBy = "Admin";
-                        company.CreatedOn = DateTime.Now;
+                        company.CreatedBy = USER_OBJECT.UserName;
+                        company.CreatedOn = DateTimeConverter.SingaporeDateTimeConversion(DateTime.Now);
                         company.ModifiedOn = null;
                     }
 

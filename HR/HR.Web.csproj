@@ -8940,10 +8940,13 @@
     <Content Include="Areas\Master\Views\Roles\Index.cshtml" />
     <Content Include="Areas\Master\Views\LookUp\EmployeeType.cshtml" />
     <Content Include="Areas\Master\Views\LookUp\Designation.cshtml" />
+    <Content Include="Areas\Master\Views\LookUp\EmployeeDepartment.cshtml" />
+    <Content Include="Areas\Master\Views\LookUp\PaymentType.cshtml" />
     <None Include="Properties\PublishProfiles\HR.pubxml" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\calendar.js" />
     <Content Include="scripts\calendar.min.js" />
+    <Content Include="scripts\Employee\AddEmployee.js" />
     <Content Include="scripts\fullcalendar.min.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
@@ -8954,6 +8957,8 @@
     <Content Include="scripts\jquery.validate.min.js" />
     <Content Include="scripts\jquery.validate.unobtrusive.js" />
     <Content Include="scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="scripts\LookUp\Designation.js" />
+    <Content Include="scripts\Master\MasterService.js" />
     <Content Include="scripts\modernizr-2.6.2.js" />
     <Content Include="scripts\moment.min.js" />
     <Content Include="scripts\respond.js" />

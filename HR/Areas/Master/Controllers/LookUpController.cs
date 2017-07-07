@@ -95,12 +95,22 @@ namespace HR.Areas.Master.Controllers
             return result;
         }
         #endregion
+
         #region ActionResult
         public ActionResult EmployeeType()
         {
             return View();
         }
         public ActionResult Designation()
+        {
+            return View();
+        }
+        public ActionResult EmployeeDepartment()
+        {
+            return View();
+        }
+
+        public ActionResult PaymentType()
         {
             return View();
         }

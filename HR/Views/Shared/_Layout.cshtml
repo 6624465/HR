@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="HRAPP">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -186,6 +186,15 @@
                             <ul>
                                 <li>
                                     <a href="@Url.Action("EmployeeType","LookUp",new { area ="Master"},null)">Employee Type</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Designation","LookUp",new { area ="Master"},null)">Employee Designation</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("EmployeeDepartment","LookUp",new { area ="Master"},null)">Employee Department</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("PaymentType","LookUp",new { area ="Master"},null)">Payment Type</a>
                                 </li>
                             </ul>
                         </li>
@@ -591,6 +600,7 @@
     <script src="@Url.Content("~/vendors/summernote/dist/summernote-updated.min.js")"></script>
     <script src="@Url.Content("~/vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js")"></script>
     <script src="@Url.Content("~/vendors/bower_components/datatables.net/js/jquery.dataTables.min.js")"></script>
+    @*<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>*@
 
     <!-- Placeholder for IE9 -->
     <!--[if IE 9 ]>

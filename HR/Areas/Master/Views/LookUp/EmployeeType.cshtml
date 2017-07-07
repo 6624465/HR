@@ -4,27 +4,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="card-header">
-    <h2>Employee Directory </h2>
+    <h2>Employee Type </h2>
 </div>
 
 <div class="card-body card-padding" ng-app="EmployeeType" ng-controller="EmployeeTypeController">
     <div class="add-top">
-        @*<i class="zmdi zmdi-account-add"> Add Employee Type</i>*@
         <a href="" class="btn btn-primary waves-effect pull-right btn-sm " ng-click="addEmployeeType(table)"> <i class="zmdi zmdi-account-add"> Add Employee Type</i></a>
         <div class="clearfix"></div>
     </div>
-    @*<div class="form">
-            <form id="myForm">
-                <span>Employee Type Name</span>
-                <input  type="text" ng-bind="employeeType.LookUpCode"/><br />
-                <span>Employee Type Description</span>
-                <input type="text" ng-bind="employeeType.LookUpDescription"/><br />
-                <span>IsActive</span>
-                <input type="checkbox" ng-bind="employeeType.IsActive" /><br />
-
-            </form>
-        </div>*@
-
     <div class="modal fade in" id="AddEmployeeTypeDialog" role="dialog">
         <div class="modal-dialog">
 
@@ -84,7 +71,7 @@
                 <tr ng-repeat="employeeType in EmployeeType">
                     <td><a ng-click="onEditEmployeeType(employeeType)">{{employeeType.LookUpCode}}</a></td>
                     <td>{{employeeType.LookUpDescription}}</td>
-                    <td><input type="checkbox"  ng-model="employeeType.IsActive" disabled="true"/></td>
+                    <td><input type="checkbox" ng-model="employeeType.IsActive" disabled="true" /></td>
                 </tr>
             </tbody>
         </table>
@@ -103,12 +90,13 @@
                 LookUpCode: null,
                 LookUpDescription: null,
                 IsActive: null,
-                LookUpCategory : "EmployeeType"
+                LookUpCategory: "EmployeeType"
             },
 
         $scope.LookUpCategory = "EmployeeType";
-        }       
+        }
         $scope.addEmployeeType = function () {
+            $scope.clearTextBoxes();
             $('#AddEmployeeTypeDialog').modal('show');
         };
         $scope.onEditEmployeeType = function (obj) {
@@ -118,10 +106,8 @@
             $scope.EmployeeType.LookUpID = obj.LookUpID;
             $('#AddEmployeeTypeDialog').modal('show');
         }
-        debugger
         var lookUpCategory = "EmployeeType";
         $http.post('/Master/LookUp/GetLookUp?LookUpCategory=' + lookUpCategory).then(function (response) {
-            debugger
             if (response.data.success == true) {
                 $scope.EmployeeType = response.data.lookUpLists;
             }
@@ -131,7 +117,7 @@
                 'LookUpID': employeeType.LookUpID,
                 'LookUpCode': employeeType.LookUpCode,
                 'LookUpDescription': employeeType.LookUpDescription,
-                'LookUpCategory' : "EmployeeType",
+                'LookUpCategory': "EmployeeType",
                 'IsActive': employeeType.IsActive,
             }
             $http.post("/Master/LookUp/SaveLookUp", employeeTypeObj).then(function (response) {
@@ -142,16 +128,15 @@
                     window.location.reload();
                 }
             })
-            $scope.clearTextBoxes = function () {
-                $scope.EmployeeType.LookUpCode = null;
-                $scope.EmployeeType.LookUpDescription = null;
-                $scope.EmployeeType.IsActive = null;
-                $scope.EmployeeType.LookUpID = null;
-            }
-            $scope.onClickCancelEmployeeType = function () {
-                $scope.clearTextBoxes();
-            }
-
+        }
+        $scope.clearTextBoxes = function () {
+            $scope.EmployeeType.LookUpCode = null;
+            $scope.EmployeeType.LookUpDescription = null;
+            $scope.EmployeeType.IsActive = null;
+            $scope.EmployeeType.LookUpID = null;
+        }
+        $scope.onClickCancelEmployeeType = function () {
+            $scope.clearTextBoxes();
         }
     }])
 
