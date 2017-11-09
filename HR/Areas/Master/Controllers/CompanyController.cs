@@ -1,6 +1,8 @@
 ﻿using HR.Controllers;
 using HR.Core.Models.Master;
 using HR.Service.Master.IMasterService;
+using HR.Service.Security.ISecurityService;
+using HR.Service.Utilities;
 using HR.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -13,7 +15,7 @@ namespace HR.Areas.Master.Controllers
     public class CompanyController : BaseController
     {
         #region Constructor
-        public CompanyController(IMaster MasterService) : base(MasterService)
+        public CompanyController(IMaster MasterService, ISecurity SecurityService) : base(MasterService, SecurityService)
         {
         }
         #endregion
@@ -60,13 +62,15 @@ namespace HR.Areas.Master.Controllers
                     Company company = new Company();
                     if (companyViewModel.Id > 0)
                     {
-                        company.ModifiedBy = "Admin";
-                        company.ModifiedOn = DateTime.Now;
+                        company = MasterService.GetCompany(companyViewModel.Id);
+                        //company.Address = MasterService.GetAddress(company.AddressID);
+                        company.ModifiedBy = USER_OBJECT.UserName;
+                        company.ModifiedOn = DateTimeConverter.SingaporeDateTimeConversion(DateTime.Now);
                     }
                     else
                     {
-                        company.CreatedBy = "Admin";
-                        company.CreatedOn = DateTime.Now;
+                        company.CreatedBy = USER_OBJECT.UserName;
+                        company.CreatedOn = DateTimeConverter.SingaporeDateTimeConversion(DateTime.Now);
                         company.ModifiedOn = null;
                     }
 
@@ -74,8 +78,8 @@ namespace HR.Areas.Master.Controllers
                     company.CompanyName = !string.IsNullOrWhiteSpace(companyViewModel.CompanyName) ? companyViewModel.CompanyName : string.Empty;
                     company.IsActive = companyViewModel.IsActive;
                     company.RegNo = companyViewModel.RegNo;
-                    company.Address = new Address();
-                    company.Address = GetAddress(companyViewModel.Address);
+                    company.Address = companyViewModel.Address.AddressID == 0 ? new Address() : company.Address;
+                    company.Address = GetAddress(companyViewModel.Address, company.Address, true);
 
                     MasterService.Save(company);
 
@@ -86,6 +90,25 @@ namespace HR.Areas.Master.Controllers
                     if (ex.InnerException != null && !string.IsNullOrEmpty(ex.InnerException.Message))
                         return Json(new { success = false, message = ex.InnerException.Message }, JsonRequestBehavior.AllowGet);
                 }
+            }
+            return result;
+        }
+        #endregion
+
+        #region common JsonResults
+        public JsonResult GetCountries()
+        {
+            JsonResult result = null;
+            try
+            {
+                List<CountryViewModel> countryViewModelList = GetCountryDetails();
+                if (countryViewModelList != null)
+                    result = Json(countryViewModelList, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                if (ex.InnerException != null && !string.IsNullOrEmpty(ex.InnerException.Message))
+                    return Json(new { success = false, message = ex.InnerException.Message }, JsonRequestBehavior.AllowGet);
             }
             return result;
         }

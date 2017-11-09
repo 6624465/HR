@@ -12,6 +12,8 @@ namespace HR.App_Start
     using Service.Master;
     using Service.Master.IMasterService;
     using Service.Master.MasterService;
+    using Service.Security.ISecurityService;
+    using Service.Security.SecurityService;
     public static class NinjectWebCommon 
     {
         private static readonly Bootstrapper bootstrapper = new Bootstrapper();
@@ -64,6 +66,7 @@ namespace HR.App_Start
         {
             kernel.Bind(typeof(IRepository<>)).To(typeof(Repository<>)).InRequestScope();
             kernel.Bind<IMaster>().To<Master>();
+            kernel.Bind<ISecurity>().To<Security>();
         }
     }
 }

@@ -1,0 +1,107 @@
+﻿
+@{
+    ViewBag.Title = "Salary";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card-header">
+    <h2>
+        Salary
+    </h2>
+
+</div>
+<div class="card-body card-padding" id="profile-main">
+    <div class="row m-b-25">
+        <div class="col-sm-12 col-md-4">
+            <select class="selectpicker" data-live-search="true" title='slect an employee'>
+                <option>Vinathi</option>
+            </select>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body card-padding">
+
+            <div class="row">
+                <div class="col-sm-12 col-md-4">
+                    <dl class="dl-horizontal"> <dt>Join Date</dt><dd>	01/01/2016</dd></dl>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <dl class="dl-horizontal"> <dt>Date Of Birth</dt><dd>	01/01/1979 (37 Yrs 10 Months)</dd></dl>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <dl class="dl-horizontal"> <dt>Gender</dt><dd>	Male</dd></dl>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-4">
+                    <dl class="dl-horizontal"> <dt>Location</dt><dd>Bangalore</dd></dl>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <dl class="dl-horizontal"> <dt>Is PF Eligible</dt><dd>Yes</dd></dl>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <dl class="dl-horizontal"> <dt>Is ESI Eligible</dt><dd>Yes</dd></dl>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-4">
+                    <dl class="dl-horizontal"> <dt>Is TDS Eligible</dt><dd>No</dd></dl>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <dl class="dl-horizontal"> <dt>Is Loan Eligible</dt><dd>No</dd></dl>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row m-b-25">
+        <div class="col-sm-12 col-md-4">
+            <select class="selectpicker" data-live-search="true" title='slect an employee'>
+                <option >CTC Group</option>
+                <option >Deduction</option>
+                <option >Employee Info</option>
+                <option >ESI</option>
+                <option >Gross</option>
+                <option >Income Tax</option>
+                <option>One Time Deduction</option>
+                <option >One Time Payment</option>
+                <option>Payslip</option>
+                <option >PF</option>
+                <option>Reimbursement</option>
+                <option>Salary Master</option>
+                <option>All Components</option>
+                </select></div>
+        <div class="col-sm-12 col-md-4 col-md-offset-4 text-right">
+            <a href="@Url.Action("AddSalary","PayrollInputs",new { area ="Payroll"},null)" class="btn btn-primary waves-effect btn-sm" >
+                
+    <i class="zmdi zmdi-plus"></i>
+    Add Salary
+      </a>
+        </div>
+        </div>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Item</th>
+                                <th>Amount</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <tr>
+                                <td>NET PAY</td>
+                                <td>20000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+        </div>

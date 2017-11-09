@@ -1,0 +1,149 @@
+﻿
+@{
+    ViewBag.Title = "Designation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card-header">
+    <h2>Employee Designation </h2>
+</div>
+<form name="EmployeeDesignationForm" ng-class="{'submitted': submitted}">
+    <div class="card-body card-padding" ng-controller="EmployeeDesignationController" >
+        <div class="add-top">
+            <a href="" class="btn btn-primary waves-effect pull-right btn-sm " ng-click="addEmployeeDesignation(table)"> <i class="zmdi zmdi-account-add"> Add Employee Designation</i></a>
+            <div class="clearfix"></div>
+        </div>
+        <div class="modal fade in" id="AddEmployeeDesignationDialog" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Add Employee Designation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-8">
+                                <div class="form-group fg-line">
+                                    <label>Employee Designation Name</label>
+                                    <input class="form-control input-mask" type="text" ng-required="true" ng-model="EmployeeDesignation.LookUpCode">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-md-8">
+                                <div class="form-group fg-line">
+                                    <label>
+                                        Employee Designation Description
+                                    </label>
+                                    <input class="form-control input-mask" type="text" ng-model="EmployeeDesignation.LookUpDescription" ng-required="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-md-8">
+                                <div class="form-group fg-line">
+                                    <label>
+                                        IsActive
+                                    </label>
+                                    <input type="checkbox" ng-model="EmployeeDesignation.IsActive" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer" style="right: 270px;">
+                        <button class="btn btn-primary waves-effect" type="button" ng-click="onClickSaveEmployeeDesignation(EmployeeDesignation)">Save</button>
+                        <button type="button" class="btn btn-default btn-primary waves-effect" data-dismiss="modal" ng-click="onClickCancelEmployeeDesignation()">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Employee Designation Name</th>
+                        <th>Employee Designation Description</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="employeeDesignation in EmployeeDesignation">
+                        <td><a ng-click="onEditEmployeeDesignation(employeeDesignation)">{{employeeDesignation.LookUpCode}}</a></td>
+                        <td>{{employeeDesignation.LookUpDescription}}</td>
+                        <td><input type="checkbox" ng-model="employeeDesignation.IsActive" disabled /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</form>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+@*<script src="~/scripts/LookUp/Designation.js"></script>
+<script src="~/scripts/Master/MasterService.js"></script>*@
+
+<script>
+    var employeeDesignation = angular.module('HRAPP', []);
+   
+        employeeDesignation.controller('EmployeeDesignationController', ['$scope', '$http', function ($scope, $http) {
+            $scope.init = function () {
+                $scope.EmployeeDesignation = {
+                    LookUpID: null,
+                    LookUpCode: null,
+                    LookUpDescription: null,
+                    IsActive: null,
+                    LookUpCategory: "EmployeeDesignation"
+                },
+
+            $scope.LookUpCategory = "EmployeeDesignation";
+            }
+            $scope.addEmployeeDesignation = function () {
+                $scope.clearTextBoxes();
+                $('#AddEmployeeDesignationDialog').modal('show');
+            };
+            $scope.onEditEmployeeDesignation = function (obj) {
+                $scope.EmployeeDesignation.LookUpCode = obj.LookUpCode;
+                $scope.EmployeeDesignation.LookUpDescription = obj.LookUpDescription;
+                $scope.EmployeeDesignation.IsActive = obj.IsActive;
+                $scope.EmployeeDesignation.LookUpID = obj.LookUpID;
+                $('#AddEmployeeDesignationDialog').modal('show');
+            }
+            var lookUpCategory = "EmployeeDesignation";
+            $http.post('/Master/LookUp/GetLookUp?LookUpCategory=' + lookUpCategory).then(function (response) {
+                if (response.data.success == true) {
+                    $scope.EmployeeDesignation = response.data.lookUpLists;
+                }
+            });
+            $scope.onClickSaveEmployeeDesignation = function (employeeDesignation) {
+                if (employeeDesignation.LookUpCode && employeeDesignation.LookUpDescription) {
+                    var employeeDesignationObj = {
+                        'LookUpID': employeeDesignation.LookUpID,
+                        'LookUpCode': employeeDesignation.LookUpCode,
+                        'LookUpDescription': employeeDesignation.LookUpDescription,
+                        'LookUpCategory': "EmployeeDesignation",
+                        'IsActive': employeeDesignation.IsActive,
+                    }
+                    $http.post("/Master/LookUp/SaveLookUp", employeeDesignationObj).then(function (response) {
+                        if (response.data.success == true) {
+                            $('#AddEmployeeDesignationDialog').modal('toggle');
+                            alert(response.data.message);
+                            $scope.clearTextBoxes();
+                            window.location.reload();
+                        }
+                    })
+                }
+            }
+
+            $scope.clearTextBoxes = function () {
+                $scope.EmployeeDesignation.LookUpCode = null;
+                $scope.EmployeeDesignation.LookUpDescription = null;
+                $scope.EmployeeDesignation.IsActive = null;
+                $scope.EmployeeDesignation.LookUpID = null;
+            }
+            $scope.onClickCancelEmployeeDesignation = function () {
+                $scope.clearTextBoxes();
+            }
+        }])
+
+    </script>

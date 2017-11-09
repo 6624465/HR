@@ -1,13 +1,12 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="HRAPP">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Material Admin</title>
+    <title>EZY-HR</title>
 
     <!-- Vendor CSS -->
-    <link href="@Url.Content("~/vendors/bower_components/fullcalendar/dist/fullcalendar.min.css")" rel="stylesheet">
     <link href="@Url.Content("~/vendors/bower_components/animate.css/animate.min.css")" rel="stylesheet">
     <link href="@Url.Content("~/vendors/bower_components/sweetalert2/dist/sweetalert2.min.css")" rel="stylesheet">
     <link href="@Url.Content("~/vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css")" rel="stylesheet">
@@ -33,7 +32,7 @@
     <link href="@Url.Content("~/css/overwrite-theme.css")" rel="stylesheet" />
     <link href="@Url.Content("~/css/style.css")" rel="stylesheet" />
     @*@Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")*@
+        @Scripts.Render("~/bundles/modernizr")*@
 
 </head>
 <body id="wrapper">
@@ -68,58 +67,135 @@
                         <li class="sub-menu">
                             <a href="" data-ma-action="submenu-toggle">Main</a>
                             <ul>
-                                <li><a href="@Url.Action("Index","Company",new { area="Master" },null)">Company</a></li>
-                                <li><a href="@Url.Action("Index","Branch",new { area="Master" },null)">Branch</a></li>
-                                <li><a href="@Url.Action("OverView","Main",new { area ="Employee"},null)">Overview</a></li>
-                                <li><a href="@Url.Action("EmployeeDirectory","Main",new { area ="Employee"},null)">Employee Directory</a></li>
-                                <li><a href="@Url.Action("ReportingStructure","Main",new { area ="Employee"},null)">Reporting Structure</a></li>
+                                @*<li><a href="@Url.Action("OverView","Main",new { area ="Employee"},null)">Overview</a></li>*@
+                                <li>
+                                    <a href="@Url.Action("EmployeeDirectory","Main",new { area ="Employee"},null)">Employee Directory</a>
+                                </li>
+                                @*<li><a href="@Url.Action("ReportingStructure","Main",new { area ="Employee"},null)">Reporting Structure</a></li>*@
+                                <li>
+                                    <a href="@Url.Action("Index","Company",new { area="Master" },null)">Company</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Index","Branch",new { area="Master" },null)">Branch</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="sub-menu">
                             <a href="" data-ma-action="submenu-toggle">Information</a>
 
                             <ul>
-                                <li><a href="@Url.Action("EmployeeProfile","Information",new { area ="Employee"},null)">Employee Profile</a></li>
-                                <li><a href="@Url.Action("BankAccounts","Information",new { area ="Employee"},null)">Bank/PF/ESI Accounts</a></li>
-                                <li><a href="@Url.Action("FamilyDetails","Information",new { area ="Employee"},null)">Family Details</a></li>
-                                <li><a href="@Url.Action("PassportVisa","Information",new { area ="Employee"},null)">Passport & Visa</a></li>
-                                <li><a href="@Url.Action("Assets","Information",new { area ="Employee"},null)">Assets</a></li>
-                                <li><a href="@Url.Action("Assetss","Information",new { area ="Employee"},null)">Assets</a></li>
-                                <li><a href="@Url.Action("PositionHistory","Information",new { area ="Employee"},null)">Position History</a></li>
-                                <li><a href="@Url.Action("PreviousEmployment","Information",new { area ="Employee"},null)">Previous Employment</a></li>
-                                <li><a href="@Url.Action("Separation","Information",new { area ="Employee"},null)">Separation</a></li>
-                                <li><a href="@Url.Action("AccessCardDetails","Information",new { area ="Employee"},null)">Access Card Details</a></li>
-                                <li><a href="@Url.Action("NominationDetails","Information",new { area ="Employee"},null)">Nomination Details</a></li>
-                                <li><a href="@Url.Action("EmployeeDocuments","Information",new { area ="Employee"},null)">Employee Documents </a></li>
-                                <li><a href="@Url.Action("EmployeeContracts","Information",new { area ="Employee"},null)">Employee Contracts</a></li>
+                                <li>
+                                    <a href="@Url.Action("EmployeeProfile","Information",new { area ="Employee"},null)">Employee Profile</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("BankAccounts","Information",new { area ="Employee"},null)">Bank/PF/ESI Accounts</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("FamilyDetails","Information",new { area ="Employee"},null)">Family Details</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("PassportVisa","Information",new { area ="Employee"},null)">Passport & Visa</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Assets","Information",new { area ="Employee"},null)">Assets</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Assetss","Information",new { area ="Employee"},null)">Assets</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("PositionHistory","Information",new { area ="Employee"},null)">Position History</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("PreviousEmployment","Information",new { area ="Employee"},null)">Previous Employment</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Separation","Information",new { area ="Employee"},null)">Separation</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("AccessCardDetails","Information",new { area ="Employee"},null)">Access Card Details</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("NominationDetails","Information",new { area ="Employee"},null)">Nomination Details</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("EmployeeDocuments","Information",new { area ="Employee"},null)">Employee Documents </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("EmployeeContracts","Information",new { area ="Employee"},null)">Employee Contracts</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="sub-menu">
                             <a href="" data-ma-action="submenu-toggle">Admin</a>
                             <ul>
-                                <li><a href="@Url.Action("GenerateLetter","Admin",new { area ="Employee"},null)">Generate Letter</a></li>
-                                <li><a href="@Url.Action("ExcelImport","Admin",new { area ="Employee"},null)">Excel Import</a></li>
-                                <li><a href="@Url.Action("BulletinBoard","Admin",new { area ="Employee"},null)">Bulletin Board</a></li>
-                                <li><a href="@Url.Action("MassCommunication","Admin",new { area ="Employee"},null)">Mass Communication</a></li>
-                                <li><a href="@Url.Action("IdentityVerification","Admin",new { area ="Employee"},null)">Identity Verification</a></li>
-                                <li><a href="@Url.Action("DataDrive","Admin",new { area ="Employee"},null)">Data Drive</a></li>
-                                <li><a href="@Url.Action("ContractDetails","Admin",new { area ="Employee"},null)">Contract Details</a></li>
+                                <li>
+                                    <a href="@Url.Action("GenerateLetter","Admin",new { area ="Employee"},null)">Generate Letter</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("ExcelImport","Admin",new { area ="Employee"},null)">Excel Import</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("BulletinBoard","Admin",new { area ="Employee"},null)">Bulletin Board</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("MassCommunication","Admin",new { area ="Employee"},null)">Mass Communication</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("IdentityVerification","Admin",new { area ="Employee"},null)">Identity Verification</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("DataDrive","Admin",new { area ="Employee"},null)">Data Drive</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("ContractDetails","Admin",new { area ="Employee"},null)">Contract Details</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="sub-menu">
                             <a href="" data-ma-action="submenu-toggle">Setup</a>
 
                             <ul>
-                                @*<li><a href="@Url.Action("LetterTemplate","Setup",new { area ="Employee"},null)">Letter Template</a></li>
-                                <li><a href="@Url.Action("HRForms","Setup",new { area ="Employee"},null)">HR Forms</a></li>
-                                <li><a href="@Url.Action("EmployeeFilter","Setup",new { area ="Employee"},null)">Employee Filter</a></li>*@
+                                <li>
+                                    <a href="@Url.Action("LetterTemplate","Setup",new { area ="Employee"},null)">Letter Template</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("HRForms","Setup",new { area ="Employee"},null)">HR Forms</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("EmployeeFilter","Setup",new { area ="Employee"},null)">Employee Filter</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="sub-menu">
                             <a href="" data-ma-action="submenu-toggle">Statutory</a>
 
                             <ul>
-                                @*<li><a href="@Url.Action("FinesDamages","Statutory",new { area ="Employee"},null)">Fines/Damages</a></li>*@
+                                <li>
+                                    <a href="@Url.Action("FinesDamages","Statutory",new { area ="Employee"},null)">Fines/Damages</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="sub-menu">
+                    <a href="" data-ma-action="submenu-toggle"><i class="zmdi zmdi-money-box"></i> Master Data</a>
+                    <ul>
+                        <li class="sub-menu">
+                            <a href="" data-ma-action="submenu-toggle">Employee</a>
+                            <ul>
+                                <li>
+                                    <a href="@Url.Action("EmployeeType","LookUp",new { area ="Master"},null)">Employee Type</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Designation","LookUp",new { area ="Master"},null)">Employee Designation</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("EmployeeDepartment","LookUp",new { area ="Master"},null)">Employee Department</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("PaymentType","LookUp",new { area ="Master"},null)">Payment Type</a>
+                                </li>
                             </ul>
                         </li>
                     </ul>
@@ -133,7 +209,9 @@
                             <a href="" data-ma-action="submenu-toggle">Main</a>
 
                             <ul>
-                               @* <li><a href="@Url.Action("Overview","Main",new { area ="Payroll"},null)">Overview</a></li>*@
+                                <li>
+                                    <a href="@Url.Action("Overview","Main",new { area ="Payroll"},null)">Overview</a>
+                                </li>
 
                             </ul>
                         </li>
@@ -141,8 +219,12 @@
                             <a href="" data-ma-action="submenu-toggle">Information</a>
 
                             <ul>
-                                <li><a href="@Url.Action("SalaryRevisonHistory","Information",new { area ="Payroll"},null)">Salary Revison History</a></li>
-                                <li><a href="@Url.Action("SalaryRevisionAnalytics","Information",new { area ="Payroll"},null)">Salary Revision Analytics</a></li>
+                                <li>
+                                    <a href="@Url.Action("SalaryRevisonHistory","Information",new { area ="Payroll"},null)">Salary Revison History</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("SalaryRevisionAnalytics","Information",new { area ="Payroll"},null)">Salary Revision Analytics</a>
+                                </li>
 
                             </ul>
                         </li>
@@ -150,85 +232,169 @@
                             <a href="" data-ma-action="submenu-toggle">Payroll Inputs</a>
 
                             <ul>
-                                @*<li><a href="@Url.Action("Salary","PayrollInputs",new { area ="Payroll"},null)">Salary</a></li>
-                                <li><a href="@Url.Action("Loan","PayrollInputs",new { area ="Payroll"},null)">Loan </a></li>
-                                <li><a href="@Url.Action("SalaryRevisions","PayrollInputs",new { area ="Payroll"},null)">Salary Revisions</a></li>
-                                <li><a href="@Url.Action("Reimbursement","PayrollInputs",new { area ="Payroll"},null)">Reimbursement</a></li>
-                                <li><a href="@Url.Action("IncomeTax","PayrollInputs",new { area ="Payroll"},null)">Income Tax  </a></li>
-                                <li><a href="@Url.Action("EmployeeLOPDays","PayrollInputs",new { area ="Payroll"},null)">Employee LOP Days</a></li>
-                                <li><a href="@Url.Action("StopSalaryProcessing","PayrollInputs",new { area ="Payroll"},null)">Stop Salary Processing</a></li>
-                                <li><a href="@Url.Action("Arrears","PayrollInputs",new { area ="Payroll"},null)">Arrears</a></li>
-                                <li><a href="@Url.Action("FinalSettlement","PayrollInputs",new { area ="Payroll"},null)">Final Settlement</a></li>
-                                <li><a href="@Url.Action("Resettkement","PayrollInputs",new { area ="Payroll"},null)">Resettkement</a></li>
-                                <li><a href="@Url.Action("OvertimeRegister","PayrollInputs",new { area ="Payroll"},null)">Overtime Register</a></li>*@
-                                
+                                <li>
+                                    <a href="@Url.Action("Salary","PayrollInputs",new { area ="Payroll"},null)">Salary</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Loan","PayrollInputs",new { area ="Payroll"},null)">Loan </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("SalaryRevisions","PayrollInputs",new { area ="Payroll"},null)">Salary Revisions</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Reimbursement","PayrollInputs",new { area ="Payroll"},null)">Reimbursement</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("IncomeTax","PayrollInputs",new { area ="Payroll"},null)">Income Tax  </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("EmployeeLOPDays","PayrollInputs",new { area ="Payroll"},null)">Employee LOP Days</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("StopSalaryProcessing","PayrollInputs",new { area ="Payroll"},null)">Stop Salary Processing</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Arrears","PayrollInputs",new { area ="Payroll"},null)">Arrears</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("FinalSettlement","PayrollInputs",new { area ="Payroll"},null)">Final Settlement</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Resettkement","PayrollInputs",new { area ="Payroll"},null)">Resettkement</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("OvertimeRegister","PayrollInputs",new { area ="Payroll"},null)">Overtime Register</a>
+                                </li>
+
                             </ul>
                         </li>
                         <li class="sub-menu">
                             <a href="" data-ma-action="submenu-toggle">Process</a>
 
                             <ul>
-                               @* <li><a href="@Url.Action("PayrollProcess","Process",new { area ="Payroll"},null)">Payroll Process</a></li>*@
+                                <li>
+                                    <a href="@Url.Action("PayrollProcess","Process",new { area ="Payroll"},null)">Payroll Process</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="sub-menu">
                             <a href="" data-ma-action="submenu-toggle">Verify</a>
 
                             <ul>
-                                @*<li><a href="@Url.Action("QuikeSalaryStatement","Verify",new { area ="Payroll"},null)">Quike Salary Statement</a></li>
-                                <li><a href="@Url.Action("PayrollStatement","Verify",new { area ="Payroll"},null)">Payroll Statement</a></li>
-                                <li><a href="@Url.Action("PayrollDifferences","Verify",new { area ="Payroll"},null)">Payroll Differences</a></li>*@
+                                <li>
+                                    <a href="@Url.Action("QuikeSalaryStatement","Verify",new { area ="Payroll"},null)">Quike Salary Statement</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("PayrollStatement","Verify",new { area ="Payroll"},null)">Payroll Statement</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("PayrollDifferences","Verify",new { area ="Payroll"},null)">Payroll Differences</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="sub-menu">
                             <a href="" data-ma-action="submenu-toggle">Payout</a>
 
                             <ul>
-                                @*<li><a href="@Url.Action("JVQuickBooksOnline","Payout",new { area ="Payroll"},null)">JV-QuickBooks Online</a></li>
-                                <li><a href="@Url.Action("BankTransfer","Payout",new { area ="Payroll"},null)">Bank Transfer</a></li>
-                                <li><a href="@Url.Action("ChequeCashStatement","Payout",new { area ="Payroll"},null)">Cheque / Cash Statement</a></li>
-                                <li><a href="@Url.Action("Payslips","Payout",new { area ="Payroll"},null)">Payslips</a></li>*@
+                                <li>
+                                    <a href="@Url.Action("JVQuickBooksOnline","Payout",new { area ="Payroll"},null)">JV-QuickBooks Online</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("BankTransfer","Payout",new { area ="Payroll"},null)">Bank Transfer</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("ChequeCashStatement","Payout",new { area ="Payroll"},null)">Cheque / Cash Statement</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Payslips","Payout",new { area ="Payroll"},null)">Payslips</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="sub-menu">
                             <a href="" data-ma-action="submenu-toggle">Published Info</a>
 
                             <ul>
-                                @*<li><a href="@Url.Action("Payslip","PublishedInfo",new { area ="Payroll"},null)">Payslip</a></li>
-                                <li><a href="@Url.Action("ReimbursementPayslip","PublishedInfo",new { area ="Payroll"},null)">Reimbursement Payslip</a></li>
-                                <li><a href="@Url.Action("YTDSummary","PublishedInfo",new { area ="Payroll"},null)">YTD Summary</a></li>
-                                <li><a href="@Url.Action("PFYTDStatement","PublishedInfo",new { area ="Payroll"},null)">PF YTD Statement</a></li>
-                                <li><a href="@Url.Action("ReimbursementStatement","PublishedInfo",new { area ="Payroll"},null)">Reimbursement Statement</a></li>
-                                <li><a href="@Url.Action("LoanStatement","PublishedInfo",new { area ="Payroll"},null)">Loan Statement</a></li>
-                                <li><a href="@Url.Action("ITStatement","PublishedInfo",new { area ="Payroll"},null)">IT Statement</a></li>
-                                <li><a href="@Url.Action("PayslITDeclarationip","PublishedInfo",new { area ="Payroll"},null)">IT Declaration</a></li>
-                                <li><a href="@Url.Action("FBPDeclaration","PublishedInfo",new { area ="Payroll"},null)">FBP Declaration</a></li>*@
+                                <li>
+                                    <a href="@Url.Action("Payslip","PublishedInfo",new { area ="Payroll"},null)">Payslip</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("ReimbursementPayslip","PublishedInfo",new { area ="Payroll"},null)">Reimbursement Payslip</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("YTDSummary","PublishedInfo",new { area ="Payroll"},null)">YTD Summary</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("PFYTDStatement","PublishedInfo",new { area ="Payroll"},null)">PF YTD Statement</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("ReimbursementStatement","PublishedInfo",new { area ="Payroll"},null)">Reimbursement Statement</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("LoanStatement","PublishedInfo",new { area ="Payroll"},null)">Loan Statement</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("ITStatement","PublishedInfo",new { area ="Payroll"},null)">IT Statement</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("PayslITDeclarationip","PublishedInfo",new { area ="Payroll"},null)">IT Declaration</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("FBPDeclaration","PublishedInfo",new { area ="Payroll"},null)">FBP Declaration</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="sub-menu">
                             <a href="" data-ma-action="submenu-toggle">Admin</a>
 
                             <ul>
-                                @*<li><a href="@Url.Action("Form16","Admin",new { area ="Payroll"},null)">Form16</a></li>
-                                <li><a href="@Url.Action("Form24Q","Admin",new { area ="Payroll"},null)">Form24Q</a></li>
-                                <li><a href="@Url.Action("EmployeeITDeclaration","Admin",new { area ="Payroll"},null)">Employee IT Declaration</a></li>
-                                <li><a href="@Url.Action("PANStatus","Admin",new { area ="Payroll"},null)">PAN Status</a></li>
-                                <li><a href="@Url.Action("Remittances","Admin",new { area ="Payroll"},null)">Remittances</a></li>
-                                <li><a href="@Url.Action("PayrollRelease","Admin",new { area ="Payroll"},null)">Payroll Release</a></li>
-                                <li><a href="@Url.Action("POITrack","Admin",new { area ="Payroll"},null)">POI Track</a></li>
-                                <li><a href="@Url.Action("PFKYCMapping","Admin",new { area ="Payroll"},null)">PF KYC Mapping</a></li>
-                                <li><a href="@Url.Action("FBPPlanner","Admin",new { area ="Payroll"},null)">FBP Planner</a></li>*@
+                                <li>
+                                    <a href="@Url.Action("Form16","Admin",new { area ="Payroll"},null)">Form16</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Form24Q","Admin",new { area ="Payroll"},null)">Form24Q</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("EmployeeITDeclaration","Admin",new { area ="Payroll"},null)">Employee IT Declaration</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("PANStatus","Admin",new { area ="Payroll"},null)">PAN Status</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Remittances","Admin",new { area ="Payroll"},null)">Remittances</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("PayrollRelease","Admin",new { area ="Payroll"},null)">Payroll Release</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("POITrack","Admin",new { area ="Payroll"},null)">POI Track</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("PFKYCMapping","Admin",new { area ="Payroll"},null)">PF KYC Mapping</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("FBPPlanner","Admin",new { area ="Payroll"},null)">FBP Planner</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="sub-menu">
                             <a href="" data-ma-action="submenu-toggle">Setup</a>
 
                             <ul>
-                                @*<li><a href="@Url.Action("PayItemGroup","SetUp",new { area ="Payroll"},null)">Pay Item Group</a></li>
-                                <li><a href="@Url.Action("PayrollRepository","SetUp",new { area ="Payroll"},null)">Payroll Repository</a></li>
-                                <li><a href="@Url.Action("SalarySetup","SetUp",new { area ="Payroll"},null)">Salary Setup</a></li>
-                                <li><a href="@Url.Action("PayslipSetup","SetUp",new { area ="Payroll"},null)">Payslip Setup</a></li>
-                                <li><a href="@Url.Action("PayslipGallery","SetUp",new { area ="Payroll"},null)">Payslip Gallery</a></li>*@
+                                <li>
+                                    <a href="@Url.Action("PayItemGroup","SetUp",new { area ="Payroll"},null)">Pay Item Group</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("PayrollRepository","SetUp",new { area ="Payroll"},null)">Payroll Repository</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("SalarySetup","SetUp",new { area ="Payroll"},null)">Salary Setup</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("PayslipSetup","SetUp",new { area ="Payroll"},null)">Payslip Setup</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("PayslipGallery","SetUp",new { area ="Payroll"},null)">Payslip Gallery</a>
+                                </li>
 
                             </ul>
                         </li>
@@ -243,41 +409,75 @@
                             <a href="" data-ma-action="submenu-toggle">Main</a>
 
                             <ul>
-                                @*<li><a href="@Url.Action("Overview","Main",new { area ="Leave"},null)">Overview</a></li>
-                                <li><a href="@Url.Action("LeaveCalender","Main",new { area ="Leave"},null)">Leave Calender</a></li>
-                                <li><a href="@Url.Action("WhoisIn","Main",new { area ="Leave"},null)">Who is In?</a></li>*@
+                                <li>
+                                    <a href="@Url.Action("Overview","Main",new { area ="Leave"},null)">Overview</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("LeaveCalender","Main",new { area ="Leave"},null)">Leave Calender</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("WhoisIn","Main",new { area ="Leave"},null)">Who is In?</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="sub-menu">
                             <a href="" data-ma-action="submenu-toggle">Information</a>
 
                             <ul>
-                                @*<li><a href="@Url.Action("EmployeeLeave","Information",new { area ="Leave"},null)">Employee Leave</a></li>
-                                <li><a href="@Url.Action("ShiftRoster","Information",new { area ="Leave"},null)">Shift Roster</a></li>
-                                <li><a href="@Url.Action("EmployeeSwipes","Information",new { area ="Leave"},null)">Employee Swipes</a></li>
-                                <li><a href="@Url.Action("AttendanceMuster","Information",new { area ="Leave"},null)">Attendance Muster</a></li>
-                                <li><a href="@Url.Action("AttendanceInfo","Information",new { area ="Leave"},null)">Attendance Info</a></li>*@
+                                <li>
+                                    <a href="@Url.Action("EmployeeLeave","Information",new { area ="Leave"},null)">Employee Leave</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("ShiftRoster","Information",new { area ="Leave"},null)">Shift Roster</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("EmployeeSwipes","Information",new { area ="Leave"},null)">Employee Swipes</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("AttendanceMuster","Information",new { area ="Leave"},null)">Attendance Muster</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("AttendanceInfo","Information",new { area ="Leave"},null)">Attendance Info</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="sub-menu">
                             <a href="" data-ma-action="submenu-toggle">Admin</a>
 
                             <ul>
-                                @*<li><a href="@Url.Action("LeaveGranter","Admin",new { area ="Leave"},null)">Leave Granter</a></li>
-                                <li><a href="@Url.Action("yearEndProcess","Admin",new { area ="Leave"},null)">year End Process</a></li>
-                                <li><a href="@Url.Action("ProcessAttendance","Admin",new { area ="Leave"},null)">Process Attendance</a></li>
-                                <li><a href="@Url.Action("AttesndancePeriodFinalistion","Admin",new { area ="Leave"},null)">Attesndance Period Finalistion</a></li>
-                                <li><a href="@Url.Action("AttendanceException","Admin",new { area ="Leave"},null)">Attendance Exception </a></li>
-                                <li><a href="@Url.Action("AttendanceLockConfig","Admin",new { area ="Leave"},null)">Attendance Lock Config</a></li>
-                                <li><a href="@Url.Action("ManualOverride","Admin",new { area ="Leave"},null)">Manual Override</a></li>*@
+                                <li>
+                                    <a href="@Url.Action("LeaveGranter","Admin",new { area ="Leave"},null)">Leave Granter</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("yearEndProcess","Admin",new { area ="Leave"},null)">year End Process</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("ProcessAttendance","Admin",new { area ="Leave"},null)">Process Attendance</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("AttesndancePeriodFinalistion","Admin",new { area ="Leave"},null)">Attesndance Period Finalistion</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("AttendanceException","Admin",new { area ="Leave"},null)">Attendance Exception </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("AttendanceLockConfig","Admin",new { area ="Leave"},null)">Attendance Lock Config</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("ManualOverride","Admin",new { area ="Leave"},null)">Manual Override</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="sub-menu">
                             <a href="" data-ma-action="submenu-toggle">Setup</a>
 
                             <ul>
-                                @*<li><a href="@Url.Action("HolidayList","Setup",new { area ="Leave"},null)">Holiday List</a></li>
-                                <li><a href="@Url.Action("ShiftRotationCalender","Setup",new { area ="Leave"},null)">Shift Rotation Calender</a></li>*@
+                                <li>
+                                    <a href="@Url.Action("HolidayList","Setup",new { area ="Leave"},null)">Holiday List</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("ShiftRotationCalender","Setup",new { area ="Leave"},null)">Shift Rotation Calender</a>
+                                </li>
 
                             </ul>
                         </li>
@@ -289,16 +489,16 @@
                     <ul>
 
                         @*<li class="sub-menu">
-                            <a href="" data-ma-action="submenu-toggle">Reports</a>
+                                <a href="" data-ma-action="submenu-toggle">Reports</a>
 
-                            <ul>
-                                <li><a href="@Url.Action("ReportsGallery","Reports",new { area ="Reports"},null)">Reports Gallery</a></li>
-                                <li><a href="@Url.Action("RecentReports","Reports",new { area ="Reports"},null)">Recent Reports</a></li>
+                                <ul>
+                                    <li><a href="@Url.Action("ReportsGallery","Reports",new { area ="Reports"},null)">Reports Gallery</a></li>
+                                    <li><a href="@Url.Action("RecentReports","Reports",new { area ="Reports"},null)">Recent Reports</a></li>
 
-                            </ul>
-                        </li>*@
+                                </ul>
+                            </li>*@
                         <li>
-                           @* <a href="@Url.Action("ExpenseClaims","ExpenseClaims",new { area ="ExpenseClaims"},null)"> Travel Expenses Claim  </a>*@
+                            <a href="@Url.Action("ExpenseClaims","ExpenseClaims",new { area ="ExpenseClaims"},null)"> Travel Expenses Claim  </a>
 
 
                         </li>
@@ -313,13 +513,17 @@
                             <a href="" data-ma-action="submenu-toggle">Reports</a>
 
                             <ul>
-                                @*<li><a href="@Url.Action("ReportsGallery","Reports",new { area ="Reports"},null)">Reports Gallery</a></li>
-                                <li><a href="@Url.Action("RecentReports","Reports",new { area ="Reports"},null)">Recent Reports</a></li>*@
+                                <li>
+                                    <a href="@Url.Action("ReportsGallery","Reports",new { area ="Reports"},null)">Reports Gallery</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("RecentReports","Reports",new { area ="Reports"},null)">Recent Reports</a>
+                                </li>
 
                             </ul>
                         </li>
                         <li>
-                            @*<a href="@Url.Action("QueryBuilder","QueryBuilder",new { area ="Reports"},null)">Query Builder</a>*@
+                            <a href="@Url.Action("QueryBuilder","QueryBuilder",new { area ="Reports"},null)">Query Builder</a>
 
 
                         </li>
@@ -327,30 +531,40 @@
                 </li>
             </ul>
         </aside>
-    
-    <div class="" id="page-content-wrapper">
-        <section id="content">
-            <div class="container">
-                <div class="card">
-                    
-                        @RenderBody()
-                 
+
+        <div class="" id="page-content-wrapper">
+            <section id="content">
+                <div class="container">
+                    <div class="card">
+                        <div class="card-body card-padding">
+                            @RenderBody()
+                        </div>
+                    </div>
+
                 </div>
+            </section>
 
-            </div>
-        </section>
-
-    </div>
+        </div>
     </section>
     <footer id="footer">
         Copyright &copy; 2017 HR
 
         <ul class="f-menu">
-            <li><a href="">Home</a></li>
-            <li><a href="">Dashboard</a></li>
-            <li><a href="">Reports</a></li>
-            <li><a href="">Support</a></li>
-            <li><a href="">Contact</a></li>
+            <li>
+                <a href="">Home</a>
+            </li>
+            <li>
+                <a href="">Dashboard</a>
+            </li>
+            <li>
+                <a href="">Reports</a>
+            </li>
+            <li>
+                <a href="">Support</a>
+            </li>
+            <li>
+                <a href="">Contact</a>
+            </li>
         </ul>
     </footer>
     <!-- Page Loader -->
@@ -363,16 +577,18 @@
             <p>Please wait...</p>
         </div>
     </div>
-   
-    @*<script src="~/js/wizard/jquery-2.2.4.min.js"></script>*@
+
+    <script src="~/js/wizard/jquery-2.2.4.min.js"></script>
 
     <!-- Javascript Libraries -->
+    <script src="~/scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/vendors/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="@Url.Content("~/vendors/bower_components/jquery/dist/jquery.min.js")"></script>
     <script src="@Url.Content("~/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js")"></script>
 
 
     <script src="@Url.Content("~/vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js")"></script>
-    @*<script src= "@Url.Content("~/vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js")"></script>*@
+    <script src="@Url.Content("~/vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js")"></script>
     <script src="@Url.Content("~/vendors/bower_components/Waves/dist/waves.min.js")"></script>
     <script src="@Url.Content("~/vendors/bootstrap-growl/bootstrap-growl.min.js")"></script>
     <script src="@Url.Content("~/vendors/bower_components/sweetalert2/dist/sweetalert2.min.js")"></script>
@@ -384,6 +600,7 @@
     <script src="@Url.Content("~/vendors/summernote/dist/summernote-updated.min.js")"></script>
     <script src="@Url.Content("~/vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js")"></script>
     <script src="@Url.Content("~/vendors/bower_components/datatables.net/js/jquery.dataTables.min.js")"></script>
+    @*<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>*@
 
     <!-- Placeholder for IE9 -->
     <!--[if IE 9 ]>
@@ -405,8 +622,8 @@
     <script src="@Url.Content("~/js/app.min.js")"></script>
     <script>
         $("#menu-toggle").click(function (e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
         });
 
         /* checkbox in add employee */
@@ -426,7 +643,7 @@
                     $('#sb' + index).hide(700);
             });
 
-      
+
             $('.tab-pane > .card input[type="radio"]').click(function () {
                 var inputValue = $(this).attr("value");
                 var targetBox = $("." + inputValue);
@@ -442,17 +659,17 @@
         });
     </script>
     <script type="text/javascript">
-            $(document).ready(function() {
-                $('.data-table-basic').DataTable();
-            });
-            //$('.dtp-container').datepicker({
-            //    format: 'yyyy',
-            //    viewMode: 'years',
-            //    minViewMode: 'years'
-            //});
+        $(document).ready(function () {
+            $('.data-table-basic').DataTable();
+        });
+        //$('.dtp-container').datepicker({
+        //    format: 'yyyy',
+        //    viewMode: 'years',
+        //    minViewMode: 'years'
+        //});
 
     </script>
 
-    
+
 </body>
 </html>

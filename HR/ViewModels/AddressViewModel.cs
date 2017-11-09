@@ -7,7 +7,7 @@ namespace HR.ViewModels
 {
     public class AddressViewModel
     {
-        public int Id { get; set; }
+        public int AddressID { get; set; }
         public string AddressLinkID { get; set; }
         public int SeqNo { get; set; }
         public string AddressType { get; set; }

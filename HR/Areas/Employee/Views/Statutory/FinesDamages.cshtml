@@ -1,0 +1,561 @@
+﻿
+@{
+    ViewBag.Title = "FinesDamages";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="card-header">
+    <h2>
+        Fines And Damages
+    </h2>
+
+</div>
+<div class="card-body card-padding p-t-25">
+
+    <div class="row">
+        <div class="col-sm-12 col-md-4">
+            <select class="selectpicker" data-live-search="true" title='slect an employee'>
+                <option>Vinathi</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row m-t-25">
+        <div class="col-sm-12 ">
+            <div class="" id="profile-main">
+                <div class="pm-body clearfix p-0">
+                    <div class="form-wizard-basic fw-container">
+                        <ul class="tab-nav text-left">
+                            <li><a href="#Bank-Account" data-toggle="tab">Fines</a></li>
+                            <li><a href="#Ps-ESI-LWF" data-toggle="tab">Damages</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <div class="tab-pane fade" id="Bank-Account">
+
+                                <div class="row">
+                                    <div class="col-sm-12 ">
+                                        <div class="pmb-block">
+                                           
+                                            <div class="add-top">
+                                                <button class="btn btn-primary waves-effect btn-sm pull-right m-b-20" data-ma-action="profile-edit"><i class="zmdi zmdi-plus"></i> Add</button>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                            <div class="pmbb-body p-l-0">
+                                                <div class="pmbb-view">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-striped">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Date of offence</th>
+                                                                    <th>Employee No</th>
+                                                                    <th>Employee Name</th>
+                                                                    <th>Act/Omission</th>
+                                                                    <th>Fine Amount</th>
+                                                                    <th>Fine Realized on</th>
+                                                                    <th>Remarks</th>
+                                                                    <th>Edit / Delete</th>
+
+                                                                </tr>
+                                                            </thead>
+                                                            <tfoot>
+                                                                <tr>
+                                                                    <th>Date of offence</th>
+                                                                    <th>Employee No</th>
+                                                                    <th>Employee Name</th>
+                                                                    <th>Act/Omission</th>
+                                                                    <th>Fine Amount</th>
+                                                                    <th>Fine Realized on</th>
+                                                                    <th>Remarks</th>
+                                                                    <th>Edit / Delete</th>
+
+
+                                                                </tr>
+                                                            </tfoot>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>05/01/2016</td>
+                                                                    <td>001#</td>
+                                                                    <td>Vinathi</td>
+                                                                    <td>Lost Company Mobile</td>
+                                                                    <td>1,520.00</td>
+                                                                    <td>05/01/2016</td>
+                                                                    <td>Lost Company Mobile</td>
+                                                                    <td>
+                                                                        <button class="btn btn-primary waves-effect btn-xs" data-ma-action="profile-edit">
+                                                                            <i class="zmdi zmdi-edit"></i>
+                                                                            Edit
+                                                                        </button>
+                                                                        <button class="btn btn-danger waves-effect btn-xs" data-ma-action="profile-edit">
+                                                                            <i class="zmdi zmdi-delete"></i>
+                                                                            Delete
+                                                                        </button>
+                                                                    </td>
+
+
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>05/01/2016</td>
+                                                                    <td>001#</td>
+                                                                    <td>Vinathi</td>
+                                                                    <td>Lost Company Mobile</td>
+                                                                    <td>1,520.00</td>
+                                                                    <td>05/01/2016</td>
+                                                                    <td>Lost Company Mobile</td>
+                                                                    <td>
+                                                                        <button class="btn btn-primary waves-effect btn-xs" data-ma-action="profile-edit">
+                                                                            <i class="zmdi zmdi-edit"></i>
+                                                                            Edit
+                                                                        </button>
+                                                                        <button class="btn btn-danger waves-effect btn-xs" data-ma-action="profile-edit">
+                                                                            <i class="zmdi zmdi-delete"></i>
+                                                                            Delete
+                                                                        </button>
+                                                                    </td>
+
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="pmbb-edit">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group fg-line">
+                                                                <label>
+                                                                    Name
+                                                                </label>
+
+                                                                <select class="selectpicker">
+                                                                    <option>Vinathi</option>
+
+
+                                                                </select>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group fg-line">
+                                                                <label>
+                                                                    Date of Offence
+                                                                </label>
+
+
+                                                                <div class="input-group form-group">
+                                                                    <span class="input-group-addon"><i class="zmdi zmdi-calendar"></i></span>
+                                                                    <div class="dtp-container">
+                                                                        <input type='text' class="form-control date-picker"
+                                                                               placeholder="Click here...">
+                                                                    </div>
+                                                                </div>
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group fg-line">
+                                                                <label>
+                                                                    Act/omission for which fine imposed
+                                                                </label>
+
+                                                                <div class="fg-line">
+                                                                    <input type="text" class="form-control">
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group fg-line">
+                                                                <label>
+                                                                    Whether workman showed cause against fine
+                                                                </label>
+
+                                                                <div class="fg-line">
+                                                                    <input type="text" class="form-control">
+                                                                </div>
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group fg-line">
+                                                                <label>
+                                                                    Amount of fine imposed
+                                                                </label>
+
+                                                                <div class="fg-line">
+                                                                    <input type="text" class="form-control">
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group fg-line">
+                                                                <label>
+                                                                    Date on which fine realized
+                                                                </label>
+
+                                                                <div class="input-group form-group">
+                                                                    <span class="input-group-addon"><i class="zmdi zmdi-calendar"></i></span>
+                                                                    <div class="dtp-container">
+                                                                        <input type='text' class="form-control date-picker"
+                                                                               placeholder="Click here...">
+                                                                    </div>
+                                                                </div>
+
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group fg-line">
+                                                                <label>
+                                                                    Remarks
+                                                                </label>
+
+                                                                <div class="fg-line">
+                                                                    <textarea class="form-control"></textarea>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+
+
+                                                    <div class="m-t-30">
+                                                        <button class="btn btn-primary btn-sm">Save</button>
+                                                        <button data-ma-action="profile-edit-cancel" class="btn bgm-gray waves-effect btn-sm">Cancel</button>
+                                                    </div>
+                                                </div>
+                                              
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="Ps-ESI-LWF">
+                                <div class="row">
+                                    <div class="col-sm-12 ">
+                                        <div class="pmb-block">
+                                            <div class="add-top">
+                                                <button class="btn btn-primary waves-effect btn-sm pull-right m-b-20" data-ma-action="profile-edit"><i class="zmdi zmdi-plus"></i> Add</button>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                            <div class="pmbb-body p-l-0">
+                                                <div class="pmbb-view">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-striped">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Date of damage</th>
+                                                                    <th>Employee No</th>
+                                                                    <th>Employee Name</th>
+                                                                    <th>Damage/loss</th>
+                                                                    <th>Deduction Amount</th>
+                                                                    <th>Installments</th>
+                                                                    <th>First Installment on</th>
+                                                                    <th>Last Installment on</th>
+                                                                    <th>Remarks</th>
+                                                                    <th>Edit / Delete</th>
+
+                                                                </tr>
+                                                            </thead>
+                                                            <tfoot>
+                                                                <tr>
+                                                                    <th>Date of damage</th>
+                                                                    <th>Employee No</th>
+                                                                    <th>Employee Name</th>
+                                                                    <th>Damage/loss</th>
+                                                                    <th>Deduction Amount</th>
+                                                                    <th>Installments</th>
+                                                                    <th>First Installment on</th>
+                                                                    <th>Last Installment on</th>
+                                                                    <th>Remarks</th>
+                                                                    <th>Edit / Delete</th>
+
+
+
+                                                                </tr>
+                                                            </tfoot>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>05/01/2016</td>
+                                                                    <td>010</td>
+                                                                    <td>Vinathi</td>
+                                                                    <td>Damaged Company Laptop</td>
+                                                                    <td>750.00</td>
+                                                                    <td>3</td>
+                                                                    <td>05/01/2016</td>
+                                                                    <td>05/01/2016</td>
+                                                                    <td>Damaged Company Laptop</td>
+                                                                    <td>
+                                                                        <button class="btn btn-primary waves-effect btn-xs" data-ma-action="profile-edit">
+                                                                            <i class="zmdi zmdi-edit"></i>
+                                                                            Edit
+                                                                        </button>
+                                                                        <button class="btn btn-danger waves-effect btn-xs" data-ma-action="profile-edit">
+                                                                            <i class="zmdi zmdi-delete"></i>
+                                                                            Delete
+                                                                        </button>
+                                                                    </td>
+
+
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>05/01/2016</td>
+                                                                    <td>010</td>
+                                                                    <td>Vinathi</td>
+                                                                    <td>Damaged Company Laptop</td>
+                                                                    <td>750.00</td>
+                                                                    <td>3</td>
+                                                                    <td>05/01/2016</td>
+                                                                    <td>05/01/2016</td>
+                                                                    <td>Damaged Company Laptop</td>
+                                                                    <td>
+                                                                        <button class="btn btn-primary waves-effect btn-xs" data-ma-action="profile-edit">
+                                                                            <i class="zmdi zmdi-edit"></i>
+                                                                            Edit
+                                                                        </button>
+                                                                        <button class="btn btn-danger waves-effect btn-xs" data-ma-action="profile-edit">
+                                                                            <i class="zmdi zmdi-delete"></i>
+                                                                            Delete
+                                                                        </button>
+                                                                    </td>
+
+
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+
+                                                </div>
+                                                <div class="pmbb-edit">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group fg-line">
+                                                                <label>
+                                                                    Name
+                                                                </label>
+
+                                                                <select class="selectpicker">
+                                                                    <option>Vinathi</option>
+
+
+                                                                </select>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group fg-line">
+                                                                <label>
+                                                                    Date of damage/loss
+
+                                                                </label>
+
+
+                                                                <div class="input-group form-group">
+                                                                    <span class="input-group-addon"><i class="zmdi zmdi-calendar"></i></span>
+                                                                    <div class="dtp-container">
+                                                                        <input type='text' class="form-control date-picker"
+                                                                               placeholder="Click here...">
+                                                                    </div>
+                                                                </div>
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group fg-line">
+                                                                <label>
+                                                                    Particulars of damage/loss
+
+                                                                </label>
+
+                                                                <div class="fg-line">
+                                                                    <input type="text" class="form-control">
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group fg-line">
+                                                                <label>
+                                                                    Whether workman showed cause against deduction
+                                                                </label>
+
+                                                                <select class="selectpicker">
+                                                                    <option>Yes</option>
+                                                                    <option>No</option>
+
+                                                                </select>
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group fg-line">
+                                                                <label>
+                                                                    Name of the person in whose presence employee's explaination was heard
+
+                                                                </label>
+
+                                                                <div class="fg-line">
+                                                                    <input type="text" class="form-control">
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group fg-line">
+                                                                <label>
+                                                                    Amount of deduction imposed
+                                                                </label>
+
+                                                                <div class="fg-line">
+                                                                    <input type="number" class="form-control">
+                                                                </div>
+
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group fg-line">
+                                                                <label>
+                                                                    No of installments
+
+                                                                </label>
+
+                                                                <div class="fg-line">
+                                                                    <input type="number" class="form-control">
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group fg-line">
+                                                                <label>
+                                                                    Date of recovery-first installment
+                                                                </label>
+
+
+                                                                <div class="input-group form-group">
+                                                                    <span class="input-group-addon"><i class="zmdi zmdi-calendar"></i></span>
+                                                                    <div class="dtp-container">
+                                                                        <input type='text' class="form-control date-picker"
+                                                                               placeholder="Click here...">
+                                                                    </div>
+                                                                </div>
+
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group fg-line">
+                                                                <label>
+                                                                    Date of recovery-last installment
+                                                                </label>
+
+
+                                                                <div class="input-group form-group">
+                                                                    <span class="input-group-addon"><i class="zmdi zmdi-calendar"></i></span>
+                                                                    <div class="dtp-container">
+                                                                        <input type='text' class="form-control date-picker"
+                                                                               placeholder="Click here...">
+                                                                    </div>
+                                                                </div>
+
+
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group fg-line">
+                                                                <label>
+                                                                    Remarks
+                                                                </label>
+
+                                                                <div class="fg-line">
+                                                                    <textarea class="form-control"></textarea>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+
+
+                                                    <div class="m-t-30">
+                                                        <button class="btn btn-primary btn-sm">Save</button>
+                                                        <button data-ma-action="profile-edit-cancel" class="btn bgm-gray waves-effect btn-sm">Cancel</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <ul class="fw-footer pagination wizard">
+                                <li class="previous first">
+                                    <a class="a-prevent" href="">
+                                        <i class="zmdi zmdi-more-horiz"></i>
+                                    </a>
+                                </li>
+                                <li class="previous">
+                                    <a class="a-prevent" href="">
+                                        <i class="zmdi zmdi-chevron-left"></i>
+                                    </a>
+                                </li>
+                                <li class="next">
+                                    <a class="a-prevent" href="">
+                                        <i class="zmdi zmdi-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="next last">
+                                    <a class="a-prevent" href="">
+                                        <i class="zmdi zmdi-more-horiz"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

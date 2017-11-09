@@ -76,7 +76,7 @@ namespace HR.Data
                 throw fail;
             }
         }
-        public void Delete(T entity)
+        public void Remove(T entity)
         {
             try
             {

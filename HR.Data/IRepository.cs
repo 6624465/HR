@@ -11,7 +11,7 @@ namespace HR.Data
         T GetById(object id);
         void Insert(T entity);
         void Update(T entity);
-        void Delete(T entity);
+        void Remove(T entity);
         IQueryable<T> FindAll(bool disableProxies = false);
         IQueryable<T> Table { get; }
     }

@@ -1,0 +1,96 @@
+﻿
+@{
+    ViewBag.Title = "Arrears";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<div class="card-header">
+    <h2>
+        Arrears
+    </h2>
+
+</div>
+<div class="card-body card-padding" id="profile-main">
+    <div class="row">
+        <div class="col-sm-12 col-md-3">
+            <div class="form-group fg-line">
+
+                <select class="selectpicker" data-live-search="true" title='filter'>
+                    <option>All</option>
+                    <option>Jan 2017</option>
+
+                </select>
+            </div>
+
+        </div>
+        <div class="col-sm-12 col-md-3">
+            <div class="form-group fg-line">
+
+                <select class="selectpicker" data-live-search="true" title='slect an employee'>
+                    <option>All</option>
+                    <option>Vinathi</option>
+
+                </select>
+            </div>
+
+        </div>
+        <div class="col-sm-12 col-md-6 text-right">
+            <a href="@Url.Action("PayArrears","PayrollInputs",new { area ="Payroll"},null)" class="btn btn-primary waves-effect btn-sm">  Pay Arrears</a>
+        </div>
+
+
+
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped expense-table">
+            <thead>
+                <tr>
+                    <th>
+                        <div class="checkbox m-b-15">
+                            <label>
+                                <input type="checkbox" value="">
+                                <i class="input-helper"></i>
+
+
+                            </label>
+                        </div>
+                    </th>
+                    <th>Employee No</th>
+                    <th>Employee Name</th>
+                    <th>Payroll</th>
+                    <th>Amount</th>
+                    <th>Actions</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="checkbox m-b-15">
+                            <label>
+                                <input type="checkbox" value="">
+                                <i class="input-helper"></i>
+
+
+                            </label>
+                        </div>
+                    </td>
+                    <td>001#</td>
+                    <td>Vinathi</td>
+                    <td>07/01/2016</td>
+                    <td>31</td>
+
+                    <td><button class="btn btn-danger waves-effect btn-xs" data-ma-action="profile-edit"><i class="zmdi zmdi-delete"></i> Delete</button> <button class="btn btn-info waves-effect btn-xs" data-ma-action="profile-edit"><i class="zmdi zmdi-download"></i> download</button></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <div class="m-t-30 text-right">
+        <button class="btn btn-primary btn-sm btn-sm">Process</button>
+        <button data-ma-action="profile-edit-cancel" class="btn btn-primary waves-effect btn-sm">Process All</button>
+    </div>
+</div>

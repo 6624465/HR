@@ -1,0 +1,172 @@
+﻿
+@{
+    ViewBag.Title = "AddSalary";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="card-header">
+    <h2>
+        Add Salary
+    </h2>
+
+</div>
+<div class="card-body card-padding" id="profile-main">
+    <div class="row m-b-25">
+        <div class="col-sm-12 col-md-4">
+            <select class="selectpicker" data-live-search="true" title='slect an employee'>
+                <option>Vinathi</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-12 ">
+            <div class="card">
+                <div class="card-body card-padding">
+
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                            <dl class="dl-horizontal"> <dt>Join Date</dt><dd>	01/01/2016</dd></dl>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <dl class="dl-horizontal"> <dt>Designation</dt><dd>	Business Development Manager</dd></dl>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                            <dl class="dl-horizontal"> <dt>Experience</dt><dd>0.3 Years</dd></dl>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <dl class="dl-horizontal"> <dt>Department</dt><dd>Sales</dd></dl>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row m-t-5 m-b-5">
+        <div class="col-sm-12 col-md-12 text-right">
+            <a href="@Url.Action("Salary","PayrollInputs",new { area ="Payroll"},null)" class="btn btn-primary waves-effect btn-sm">
+
+                <i class="zmdi zmdi-plus"></i>
+               Back
+            </a>
+            </div>
+        </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 ">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Salary Item</th>
+                                    <th>Current Salary  </th>
+                                </tr>
+                            </thead>
+                            @*<tfoot>
+                                    <tr>
+                                        <th>Item</th>
+                                        <th>Amount</th>
+                                    </tr>
+                                </tfoot>*@
+                            <tbody>
+                                <tr>
+                                    <td>FULL BASIC</td>
+                                    <td>Rs  1.00 </td>
+                                </tr>
+                                <tr>
+                                    <td>FULL HRA</td>
+                                    <td>Rs  1.00 </td>
+                                </tr>
+                                <tr>
+                                    <td>FULL CONVEYANCE</td>
+                                    <td>Rs  1.00 </td>
+                                </tr>
+                                <tr>
+                                    <td>FULL DA</td>
+                                    <td>Rs  1.00 </td>
+                                </tr>
+                                <tr>
+                                    <td>FULL MEDICAL</td>
+
+                                    <td>Rs  1.00 </td>
+                                </tr>
+                                <tr>
+                                    <td>FULL SPECIAL ALLOWANCE</td>
+                                    <td>Rs  1.00 </td>
+                                </tr>
+                                <tr>
+                                    <td>FULL LTA</td>
+                                    <td>Rs  1.00 </td>
+                                </tr>
+                                <tr>
+                                    <td>MONTHLY CTC</td>
+                                    <td>Rs  1.00 </td>
+                                </tr>
+                                <tr>
+                                    <td>ANNUAL CTC</td>
+                                    <td><input type="text" /> </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row m-t-25">
+                <div class="col-sm-12 col-md-12">
+                    <div class="card">
+                        <div class="card-body card-padding">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6">
+                                    <div class="form-group fg-line">
+                                        <label> Effective From </label>
+
+                                        <div class="input-group form-group">
+                                            <span class="input-group-addon"><i class="zmdi zmdi-calendar"></i></span>
+                                            <div class="dtp-container">
+                                                <input type='text' class="form-control date-picker"
+                                                       placeholder="Click here...">
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-6">
+                                    <div class="form-group fg-line">
+                                        <label>Payout Month</label>
+
+                                        <div class="input-group form-group">
+                                            <span class="input-group-addon"><i class="zmdi zmdi-calendar"></i></span>
+                                            <div class="dtp-container">
+                                                <input type='text' class="form-control date-picker"
+                                                       placeholder="Click here...">
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6">
+                                    <div class="form-group fg-line">
+                                        <label> Remarks</label>
+                                        <div class="fg-line">
+                                            <textarea class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

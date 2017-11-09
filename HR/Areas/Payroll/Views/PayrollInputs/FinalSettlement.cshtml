@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewBag.Title = "FinalSettlement";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<div class="card-header">
+    <h2>
+        Final Settlement
+    </h2>
+
+</div>
+<div class="card-body card-padding" id="profile-main">
+    <div class="row">
+        <div class="col-sm-12 col-md-3">
+            <div class="form-group fg-line">
+
+                <select class="selectpicker" data-live-search="true" title='filter'>
+                    <option>All</option>
+                    <option>Jan 2017</option>
+
+                </select>
+            </div>
+
+        </div>
+        <div class="col-sm-12 col-md-3">
+            <div class="form-group fg-line">
+
+                <select class="selectpicker" data-live-search="true" title='slect an employee'>
+                    <option>All</option>
+                    <option>Vinathi</option>
+
+                </select>
+            </div>
+
+        </div>
+        <div class="col-sm-12 col-md-6 text-right">
+            <a href="@Url.Action("SettleEmployee","PayrollInputs",new { area ="Payroll"},null)" class="btn btn-primary waves-effect btn-sm">  Settle Employee</a>
+        </div>
+
+
+
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped expense-table">
+            <thead>
+                <tr>
+                    <th>
+                        Payout Month
+                    </th>
+                    <th>Serial No</th>
+                    <th>Employee Number</th>
+                    <th>Employee Name</th>
+                    <th>Leaving Date</th>
+                    <th>Settlement Date</th>
+                    <th>Net Pay</th>
+                    <th>Processed On</th>
+                    <th>Lock / Unlock</th>
+                    <th></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        Jan 2017
+                    </td>
+                    <td></td>
+                    <td>001#</td>
+                    <td>Vinathi</td>
+                    <td>31/09/2017</td>
+                    <td>31/10/2017</td>
+                    <td></td>
+                    <td>31/09/2017</td>
+                    <td>Unlock</td>
+                    <td><button class="btn btn-primary waves-effect btn-xs" data-ma-action="profile-edit"><i class="zmdi zmdi-edit"></i> Edit</button> <button class="btn btn-danger waves-effect btn-xs" data-ma-action="profile-edit"><i class="zmdi zmdi-delete"></i> Delete</button> <button class="btn btn-info waves-effect btn-xs" data-ma-action="profile-edit"><i class="zmdi zmdi-download"></i> download</button></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+   
+</div>

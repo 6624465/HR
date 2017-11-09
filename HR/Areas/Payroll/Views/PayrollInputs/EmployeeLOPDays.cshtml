@@ -1,0 +1,131 @@
+﻿
+@{
+    ViewBag.Title = "EmployeeLOPDays";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="card-header">
+    <h2>
+        Employee LOP Days
+    </h2>
+
+</div>
+<div class="card-body card-padding" id="profile-main">
+    <div class="pmb-block">
+
+        <div class="row">
+            <div class="col-sm-12 col-md-4">
+                <div class="form-group fg-line">
+
+                    <select class="selectpicker" data-live-search="true" title='slect an employee'>
+                        <option>Vinathi</option>
+
+                    </select>
+                </div>
+
+            </div>
+            <div class="col-sm-12 col-md-8 text-right">
+                <button class="btn btn-primary waves-effect" data-ma-action="profile-edit"><i class="zmdi zmdi-plus"></i> Add LOP Days</button>
+            </div>
+
+
+
+        </div>
+        <div class="pmbb-body p-l-0">
+            <div class="pmbb-view">
+                <div class="table-responsive">
+                    <table class="table table-striped expense-table">
+                        <thead>
+                            <tr>
+                                <th>Employee No</th>
+                                <th>Name</th>
+                                <th>Join Date</th>
+                                <th>Work Days</th>
+                                <th>LOP</th>
+                                <th>Remarks</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>001#</td>
+                                <td>Vinathi</td>
+                                <td>07/01/2016</td>
+                                <td>31</td>
+                                <td>1</td>
+                                <td></td>
+                                <td><button class="btn btn-danger waves-effect btn-xs" data-ma-action="profile-edit"><i class="zmdi zmdi-delete"></i> Delete</button></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row m-t-15 text-right">
+                    <div class="col-md-12">
+                        <a href="" class="btn btn-primary waves-effect btn-sm ">
+                            Save
+                        </a>
+                        </div>
+</div>
+                    </div>
+
+                    <div class="pmbb-edit">
+                        <div class="card">
+                            <div class="card-body card-padding">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group fg-line">
+                                            <label>
+                                                Employee
+                                            </label>
+
+                                            <select class="selectpicker" data-live-search="true" title='slect an employee'>
+                                                <option>Vinathi</option>
+
+                                            </select>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group fg-line">
+                                            <label> LOP Days </label>
+
+                                           
+                                            <div class="fg-line">
+                                                <input type="number" class="form-control">
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group fg-line">
+                                            <label>Remarks </label>
+
+                                            <div class="fg-line">
+                                                <textarea class="form-control"></textarea>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                  
+                                </div>
+                           
+                              
+
+
+                                <div class="m-t-30">
+                                    <button class="btn btn-primary btn-sm">Save</button>
+                                    <button data-ma-action="profile-edit-cancel" class="btn bgm-gray waves-effect btn-sm">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>

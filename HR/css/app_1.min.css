@@ -6717,10 +6717,11 @@ button.close {
 @font-face {
     font-family: roboto;
     src: url(../fonts/roboto/Roboto-Regular-webfont.eot);
-    src: url(../fonts/roboto/Roboto-Regular-webfont.eot?#iefix) format('embedded-opentype'),url(../fonts/roboto/Roboto-Regular-webfont.woff) format('woff'),url(../fonts/roboto/Roboto-Regular-webfont.ttf) format('truetype'),url(../fonts/roboto/Roboto-Regular-webfont.svg#icon) format('svg');
+    src: url(../fonts/roboto/Roboto-Regular-webfont.eot?#iefix) format('embedded-opentype'),url('../Img/fonts/roboto/Roboto-Medium-webfont.woff') format('woff'),url(../fonts/roboto/Roboto-Regular-webfont.ttf) format('truetype'),url(../fonts/roboto/Roboto-Regular-webfont.svg#icon) format('svg');
     font-weight: 400;
     font-style: normal;
 }
+
 
 @font-face {
     font-family: roboto;

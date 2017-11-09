@@ -1,0 +1,105 @@
+﻿
+@{
+    ViewBag.Title = "SalaryRevisions";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card-header">
+    <h2>
+        Salary Revisions
+    </h2>
+
+</div>
+<div class="card-body card-padding" id="profile-main">
+    <div class="row m-b-25">
+        <div class="col-sm-12 col-md-4">
+            <select class="selectpicker" data-live-search="true" title='Status'>
+                <option> PENDING</option>
+                <option> APPROVED</option>
+                <option> REJECTED</option>
+            </select>
+        </div>
+        <div class="col-sm-12 col-md-4">
+            <select class="selectpicker" data-live-search="true" title='slect an employee'>
+                <option>Vinathi</option>
+            </select>
+        </div>
+        <div class="col-sm-12 col-md-4 text-right">
+            <a href="" class="btn btn-primary waves-effect btn-sm">
+
+                APPROVe
+            </a>
+            <a href="" class="btn btn-primary waves-effect btn-sm">
+
+
+                REJECT
+            </a>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        <div class="checkbox m-b-15">
+                            <label>
+                                <input type="checkbox" value="">
+                                <i class="input-helper"></i>
+                               
+
+                            </label>
+                        </div>
+                    </th>
+                    <th>Employee Number</th>
+                    <th>Employee Name</th>
+                    <th>Revised Date</th>
+                    <th>Revised Salary</th>
+                    <th>%</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>
+                        <div class="checkbox m-b-15">
+                            <label>
+                                <input type="checkbox" value="">
+                                <i class="input-helper"></i>
+                               
+
+                            </label>
+                        </div>
+                    </th>
+                    <th>Employee Number</th>
+                    <th>Employee Name</th>
+                    <th>Revised Date</th>
+                    <th>Revised Salary</th>
+                    <th>%</th>
+                    <th>Status</th>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="checkbox m-b-15">
+                            <label>
+                                <input type="checkbox" value="">
+                                <i class="input-helper"></i>
+                                
+
+                            </label>
+                        </div>
+                    </td>
+                    <td>#001</td>
+                    <td>Vinathi</td>
+                    <td>10/1/2016</td>
+                    <td>Rs  3,84,912.00</td>
+                    <td>8</td>
+                    <td>APPROVe</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

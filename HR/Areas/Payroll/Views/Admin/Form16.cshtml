@@ -1,0 +1,205 @@
+﻿
+@{
+    ViewBag.Title = "Form16";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card-header">
+    <h2>
+        Form16
+    </h2>
+
+</div>
+
+<div class="card-body card-padding" id="profile-main">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <div class="card">
+                        <div class="card-header bgm-bluegray">
+                            <h2 class="text-center">
+                                Part A
+
+                            </h2>
+
+
+                        </div>
+
+                        <div class="card-body card-padding">
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    Pending
+                                </dt>
+                                <dd>21</dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    Completed
+                                </dt>
+                                <dd> 0</dd>
+                            </dl>
+                        </div>
+                        <div class="m-t-10 m-b-0 text-right" style="border-top:1px solid rgb(243, 243, 243);">
+                            <a href="@Url.Action("PartAUpload","Admin",new { area ="Payroll"},null)" class="btn btn-primary waves-effect btn-sm m-t-15 m-b-15"> Upload </a>
+                            <a href="@Url.Action("PartADetails","Admin",new { area ="Payroll"},null)" class="btn btn-primary waves-effect btn-sm m-t-15 m-b-15 m-r-15"> Details </a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <div class="card">
+                        <div class="card-header bgm-bluegray">
+                            <h2 class="text-center">
+                                Part B
+                            </h2>
+                        </div>
+
+                        <div class="card-body card-padding">
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    Pending
+                                </dt>
+                                <dd>18</dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    Completed
+                                </dt>
+                                <dd> 0</dd>
+                            </dl>
+                        </div>
+                        <div class="m-t-10 m-b-0 text-right" style="border-top:1px solid rgb(243, 243, 243);">
+                            <a href="@Url.Action("PartBGenerate","Admin",new { area ="Payroll"},null)" class="btn btn-primary waves-effect btn-sm m-t-15 m-b-15"> Generate </a>
+                            <a href="@Url.Action("PartBDetails","Admin",new { area ="Payroll"},null)" class="btn btn-primary waves-effect btn-sm m-t-15 m-b-15 m-r-15"> Details </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <div class="card">
+                        <div class="card-header bgm-bluegray">
+                            <h2 class="text-center">
+                                Publish to Portal
+                            </h2>
+
+
+                        </div>
+
+                        <div class="card-body card-padding">
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    Pending
+                                </dt>
+                                <dd>18</dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    Completed
+                                </dt>
+                                <dd> 0</dd>
+                            </dl>
+
+                        </div>
+                        <div class="m-t-10 m-b-0 text-right" style="border-top:1px solid rgb(243, 243, 243);">
+
+                            <a href="@Url.Action("PublishDetails","Admin",new { area ="Payroll"},null)" class="btn btn-primary waves-effect btn-sm m-t-15 m-b-15 m-r-15"> Details </a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <div class="card">
+                        <div class="card-header bgm-bluegray">
+                            <h2 class="text-center">
+                                Email Form 16
+                            </h2>
+
+
+                        </div>
+
+                        <div class="card-body card-padding">
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    Pending
+                                </dt>
+                                <dd>18</dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    Completed
+                                </dt>
+                                <dd> 0</dd>
+                            </dl>
+                        </div>
+                        <div class="m-t-10 m-b-0 text-right" style="border-top:1px solid rgb(243, 243, 243);">
+
+                            <a href="@Url.Action("EmailfDetails","Admin",new { area ="Payroll"},null)" class="btn btn-primary waves-effect btn-sm m-t-15 m-b-15 m-r-15"> Details </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card list-content">
+                <div class="card-header">
+                    <h2>
+                        CURRENT SETTINGS
+                    </h2>
+
+                </div>
+                <div class="block-header">
+                    <h2> Part B Configuration</h2>
+                </div>
+                <ul class="list-content">
+                    <li>
+                        <i class="zmdi zmdi-close"></i> Show With Previous Employment
+                    </li>
+                    <li>
+                        <i class="zmdi zmdi-check"></i> Show With Form12BA
+                    </li>
+                    <li>
+                        <i class="zmdi zmdi-close"></i> Show Annexure B
+                    </li>
+                    <li>
+                        <i class="zmdi zmdi-close"></i>  Suppress Zero Tax
+                    </li>
+                    <li>
+                        <i class="zmdi zmdi-close"></i> Suppress Zero Exemptions
+                    </li>
+                    <li>
+                        <i class="zmdi zmdi-close"></i>  Salary Breakup
+                    </li>
+                </ul>
+                <div class="block-header">
+                    <h2> Form 16 Generation</h2>
+
+                </div>
+                <ul class="list-content">
+                    <li>
+                        <i class="zmdi zmdi-check"></i> Show Form16 Cover Page
+                    </li>
+                    <li>
+                        <i class="zmdi zmdi-check"></i> Merge Part A and Part B
+                    </li>
+                    <li>
+                        <i class="zmdi zmdi-close"></i> Use default appearance for the digital signature
+                    </li>
+                    <li>
+                        <i class="zmdi zmdi-close"></i>  Whether Form16 should be digitally signed
+                    </li>
+
+                </ul>
+                <div class="row text-center">
+                    <div class="col-xs-12">
+                        <a href="" class="btn bgm-gray waves-effect btn-sm m-t-15 m-b-15"> Settings </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
